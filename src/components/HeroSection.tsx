@@ -7,11 +7,11 @@ const HeroSection = () => {
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Network Lines SVG */}
-        <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 1920 1080">
+        <svg className="absolute inset-0 w-full h-full opacity-40" viewBox="0 0 1920 1080">
           <defs>
             <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="hsl(168 56% 48%)" stopOpacity="0.5" />
-              <stop offset="100%" stopColor="hsl(168 56% 48%)" stopOpacity="0" />
+              <stop offset="0%" stopColor="hsl(168 56% 40%)" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="hsl(168 56% 40%)" stopOpacity="0" />
             </linearGradient>
           </defs>
           {/* Network nodes and lines */}
@@ -29,7 +29,7 @@ const HeroSection = () => {
             <line x1="1300" y1="500" x2="1500" y2="600" />
             <line x1="1500" y1="600" x2="1700" y2="550" />
           </g>
-          <g fill="hsl(168 56% 48%)">
+          <g fill="hsl(168 56% 40%)">
             <circle cx="100" cy="200" r="4" opacity="0.6" />
             <circle cx="300" cy="400" r="3" opacity="0.4" />
             <circle cx="500" cy="350" r="5" opacity="0.5" />
@@ -45,19 +45,19 @@ const HeroSection = () => {
         </svg>
 
         {/* Bar chart visualization */}
-        <div className="absolute right-20 bottom-40 opacity-30 hidden lg:block">
+        <div className="absolute right-20 bottom-40 opacity-50 hidden lg:block">
           <svg width="300" height="200" viewBox="0 0 300 200">
-            <g fill="hsl(168 56% 48%)">
-              <rect x="20" y="140" width="30" height="50" opacity="0.4" />
-              <rect x="60" y="100" width="30" height="90" opacity="0.5" />
-              <rect x="100" y="120" width="30" height="70" opacity="0.4" />
-              <rect x="140" y="80" width="30" height="110" opacity="0.6" />
-              <rect x="180" y="60" width="30" height="130" opacity="0.5" />
-              <rect x="220" y="40" width="30" height="150" opacity="0.7" />
-              <rect x="260" y="20" width="30" height="170" opacity="0.8" />
+            <g fill="hsl(168 56% 40%)">
+              <rect x="20" y="140" width="30" height="50" opacity="0.3" />
+              <rect x="60" y="100" width="30" height="90" opacity="0.4" />
+              <rect x="100" y="120" width="30" height="70" opacity="0.3" />
+              <rect x="140" y="80" width="30" height="110" opacity="0.5" />
+              <rect x="180" y="60" width="30" height="130" opacity="0.4" />
+              <rect x="220" y="40" width="30" height="150" opacity="0.5" />
+              <rect x="260" y="20" width="30" height="170" opacity="0.6" />
             </g>
             {/* Data points */}
-            <g fill="hsl(168 56% 48%)">
+            <g fill="hsl(168 56% 35%)">
               <circle cx="35" cy="135" r="4" />
               <circle cx="75" cy="95" r="4" />
               <circle cx="115" cy="115" r="4" />
@@ -69,10 +69,10 @@ const HeroSection = () => {
             {/* Connecting line */}
             <path 
               d="M35 135 L75 95 L115 115 L155 75 L195 55 L235 35 L275 15" 
-              stroke="hsl(168 56% 48%)" 
+              stroke="hsl(168 56% 35%)" 
               strokeWidth="2" 
               fill="none"
-              opacity="0.6"
+              opacity="0.7"
             />
           </svg>
         </div>
