@@ -18,7 +18,7 @@ const TrustedBySection = () => {
           {industries.map((industry) => (
             <span
               key={industry}
-              className="text-muted-foreground/60 font-medium text-sm lg:text-base hover:text-muted-foreground transition-colors"
+              className="text-foreground/60 font-medium text-sm lg:text-base hover:text-foreground transition-colors"
             >
               {industry}
             </span>
