@@ -14,11 +14,11 @@ const buttonVariants = cva(
         outline: "border-2 border-border bg-transparent text-foreground hover:bg-muted hover:border-muted-foreground/30",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "text-muted-foreground hover:bg-muted hover:text-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        // Primary gradient CTA
-        hero: "btn-gradient text-primary-foreground font-semibold shadow-lg hover:shadow-xl hover:shadow-primary/25 hover:scale-[1.03] active:scale-[0.98] transition-all duration-250",
+        link: "text-accent underline-offset-4 hover:underline",
+        // Primary CTA with vibrant teal gradient
+        hero: "btn-gradient text-cta-foreground font-semibold shadow-lg hover:shadow-xl hover:shadow-cta/25 hover:scale-[1.03] active:scale-[0.98] transition-all duration-250",
         // Secondary outline CTA
-        heroOutline: "border-2 border-primary/30 bg-transparent text-primary hover:bg-primary hover:text-primary-foreground font-semibold transition-all duration-250",
+        heroOutline: "border-2 border-cta/30 bg-transparent text-cta hover:bg-cta hover:text-cta-foreground font-semibold transition-all duration-250",
         // On dark backgrounds
         heroDark: "bg-background text-foreground font-semibold shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-250",
         heroOutlineDark: "border-2 border-background/30 bg-transparent text-background hover:bg-background hover:text-foreground font-semibold transition-all duration-250",

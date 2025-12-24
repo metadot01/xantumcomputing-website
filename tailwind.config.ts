@@ -49,6 +49,10 @@ export default {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        cta: {
+          DEFAULT: "hsl(var(--cta))",
+          foreground: "hsl(var(--cta-foreground))",
+        },
         success: {
           DEFAULT: "hsl(var(--success))",
           foreground: "hsl(var(--success-foreground))",
@@ -119,8 +123,8 @@ export default {
           to: { opacity: "1", transform: "translateY(0)" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(224 64% 40% / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(224 64% 40% / 0.5)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(162 47% 53% / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(162 47% 53% / 0.5)" },
         },
         "float": {
           "0%, 100%": { transform: "translateY(0)" },
