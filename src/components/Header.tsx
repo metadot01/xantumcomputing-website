@@ -26,8 +26,8 @@ const Header = () => {
               alt="Xantum Computing Logo" 
               className="w-8 h-8 sm:w-10 sm:h-10 object-contain flex-shrink-0"
             />
-            <span className="text-base sm:text-lg font-bold text-foreground whitespace-nowrap">
-              Xantum<span className="text-muted-foreground">™</span> <span className="hidden xs:inline">Computing</span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-primary text-primary-foreground text-base sm:text-lg font-bold whitespace-nowrap">
+              Xantum Computing
             </span>
           </div>
 
