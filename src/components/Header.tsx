@@ -24,17 +24,17 @@ const Header = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${
         isScrolled 
-          ? "bg-primary shadow-lg py-2" 
-          : "bg-primary py-4"
+          ? "shadow-md py-2 border-b border-border" 
+          : "py-4"
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo & Company Name */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="bg-white/10 rounded-lg p-1.5">
+            <div className="bg-primary/10 rounded-lg p-1.5">
               <img 
                 src={xantumLogo} 
                 alt="Xantum Computing Logo" 
@@ -42,10 +42,10 @@ const Header = () => {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-display font-bold text-lg md:text-xl text-white leading-tight">
+              <span className="font-display font-bold text-lg md:text-xl text-primary leading-tight">
                 Xantum Computing
               </span>
-              <span className="text-[10px] text-white/60 uppercase tracking-widest hidden sm:block">
+              <span className="text-[10px] text-muted-foreground uppercase tracking-widest hidden sm:block">
                 Enterprise Solutions
               </span>
             </div>
@@ -57,7 +57,7 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="px-4 py-2 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200"
+                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
               >
                 {item.label}
               </a>
@@ -69,7 +69,7 @@ const Header = () => {
             <Button 
               variant="ghost" 
               size="sm" 
-              className="text-white/80 hover:text-white hover:bg-white/10"
+              className="text-muted-foreground hover:text-primary"
             >
               Talk to Sales
             </Button>
@@ -83,7 +83,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
+            className="lg:hidden p-2 text-foreground hover:bg-muted rounded-lg transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
@@ -105,21 +105,21 @@ const Header = () => {
         <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-out ${
           isMenuOpen ? "max-h-[400px] opacity-100 mt-4" : "max-h-0 opacity-0"
         }`}>
-          <nav className="py-4 flex flex-col gap-1 border-t border-white/10">
+          <nav className="py-4 flex flex-col gap-1 border-t border-border">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="flex items-center px-4 py-3 text-base font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-xl transition-colors"
+                className="flex items-center px-4 py-3 text-base font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-xl transition-colors"
               >
                 {item.label}
               </a>
             ))}
-            <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-white/10">
+            <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-border">
               <Button 
                 variant="outline" 
-                className="w-full h-12 border-white/30 text-white hover:bg-white/10"
+                className="w-full h-12"
               >
                 Talk to Sales
               </Button>
