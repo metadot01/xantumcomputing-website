@@ -1,11 +1,11 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import TrustedBySection from "@/components/TrustedBySection";
-import SolutionsSection from "@/components/SolutionsSection";
-import PlatformSection from "@/components/PlatformSection";
-import EnterpriseSection from "@/components/EnterpriseSection";
-import PartnershipSection from "@/components/PartnershipSection";
-import CTASection from "@/components/CTASection";
+import ValuePropositionSection from "@/components/ValuePropositionSection";
+import TechnologySection from "@/components/TechnologySection";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import FeatureHighlightsSection from "@/components/FeatureHighlightsSection";
+import UseCasesSection from "@/components/UseCasesSection";
+import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -14,12 +14,12 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <TrustedBySection />
-        <SolutionsSection />
-        <PlatformSection />
-        <EnterpriseSection />
-        <PartnershipSection />
-        <CTASection />
+        <ValuePropositionSection />
+        <TechnologySection />
+        <HowItWorksSection />
+        <FeatureHighlightsSection />
+        <UseCasesSection />
+        <FinalCTASection />
       </main>
       <Footer />
     </div>
