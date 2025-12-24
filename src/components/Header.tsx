@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
+import xantumLogo from "@/assets/xantum-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,16 +20,14 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 flex items-center justify-center">
-              <svg viewBox="0 0 32 32" className="w-8 h-8" fill="none">
-                <path d="M8 8L16 4L24 8L16 12L8 8Z" fill="hsl(var(--primary))" />
-                <path d="M8 8V20L16 24V12L8 8Z" fill="hsl(var(--primary))" opacity="0.7" />
-                <path d="M24 8V20L16 24V12L24 8Z" fill="hsl(var(--primary))" opacity="0.5" />
-              </svg>
-            </div>
-            <span className="text-lg font-bold text-foreground">
-              Xantum<span className="text-muted-foreground">™</span> Computing
+          <div className="flex items-center gap-2 min-w-0">
+            <img 
+              src={xantumLogo} 
+              alt="Xantum Computing Logo" 
+              className="w-8 h-8 sm:w-10 sm:h-10 object-contain flex-shrink-0"
+            />
+            <span className="text-base sm:text-lg font-bold text-foreground whitespace-nowrap">
+              Xantum<span className="text-muted-foreground">™</span> <span className="hidden xs:inline">Computing</span>
             </span>
           </div>
 
@@ -37,7 +36,7 @@ const Header = () => {
             {navItems.map((item) => (
               <button
                 key={item.label}
-                className="flex items-center gap-1 px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="flex items-center gap-1 px-3 xl:px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {item.label}
                 {item.hasDropdown && <ChevronDown className="w-4 h-4" />}
@@ -46,11 +45,11 @@ const Header = () => {
           </nav>
 
           {/* Desktop CTAs */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Button variant="ghost" size="sm">
+          <div className="hidden lg:flex items-center gap-2 xl:gap-3">
+            <Button variant="ghost" size="sm" className="text-xs xl:text-sm px-2 xl:px-3">
               Talk to an Expert
             </Button>
-            <Button variant="hero" size="sm">
+            <Button variant="hero" size="sm" className="text-xs xl:text-sm px-3 xl:px-4">
               Request a Demo
             </Button>
           </div>
