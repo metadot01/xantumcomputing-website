@@ -33,11 +33,11 @@ const HeroSection = () => {
               className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground opacity-0 animate-fade-in leading-[1.1]"
               style={{ animationDelay: '0.2s' }}
             >
-              Next-Generation
+              Enterprise Software &
               <br />
-              <span className="text-gradient">Computing Solutions</span>
+              <span className="text-gradient">AI Solutions</span>
               <br />
-              for Enterprise
+              Through Collaborative Excellence
             </h1>
 
             {/* Description */}
@@ -45,7 +45,7 @@ const HeroSection = () => {
               className="text-lg md:text-xl text-muted-foreground max-w-xl mb-8 opacity-0 animate-fade-in leading-relaxed"
               style={{ animationDelay: '0.3s' }}
             >
-              Harness the power of advanced computing infrastructure with Xantum Computing – where cutting-edge technology meets business transformation.
+              Xantum™ Computing partners with Defantra UK Ltd to deliver cutting-edge software development, AI optimization, and blockchain solutions for businesses across the USA and UK.
             </p>
 
             {/* CTA Buttons */}
@@ -68,7 +68,7 @@ const HeroSection = () => {
               className="flex flex-wrap gap-6 opacity-0 animate-fade-in"
               style={{ animationDelay: '0.5s' }}
             >
-              {['99.99% Uptime SLA', 'Enterprise Security', '24/7 Support'].map((point) => (
+              {['Expert Development Teams', 'AI/Blockchain Specialists', '24/7 Support'].map((point) => (
                 <div key={point} className="flex items-center gap-2 text-sm text-muted-foreground">
                   <CheckCircle2 className="w-4 h-4 text-cta" />
                   <span>{point}</span>
@@ -91,51 +91,51 @@ const HeroSection = () => {
                   <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
                   <div className="w-3 h-3 rounded-full bg-success/60" />
                 </div>
-                <span className="text-xs text-muted-foreground font-mono">xantum-dashboard</span>
+                <span className="text-xs text-muted-foreground font-mono">xantum-solutions</span>
               </div>
 
               {/* Stats Grid */}
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="bg-background rounded-xl p-4 border border-border">
-                  <p className="text-2xl font-bold text-foreground mb-1">2.4M</p>
-                  <p className="text-xs text-muted-foreground">Active Users</p>
+                  <p className="text-2xl font-bold text-foreground mb-1">50+</p>
+                  <p className="text-xs text-muted-foreground">AI/Blockchain Experts</p>
                 </div>
                 <div className="bg-background rounded-xl p-4 border border-border">
-                  <p className="text-2xl font-bold text-cta mb-1">99.99%</p>
-                  <p className="text-xs text-muted-foreground">Uptime</p>
+                  <p className="text-2xl font-bold text-cta mb-1">15+</p>
+                  <p className="text-xs text-muted-foreground">Years Experience</p>
                 </div>
                 <div className="bg-background rounded-xl p-4 border border-border">
-                  <p className="text-2xl font-bold text-secondary mb-1">&lt;10ms</p>
-                  <p className="text-xs text-muted-foreground">Latency</p>
+                  <p className="text-2xl font-bold text-secondary mb-1">100%</p>
+                  <p className="text-xs text-muted-foreground">Client Satisfaction</p>
                 </div>
                 <div className="bg-background rounded-xl p-4 border border-border">
-                  <p className="text-2xl font-bold text-accent mb-1">50+</p>
-                  <p className="text-xs text-muted-foreground">Regions</p>
+                  <p className="text-2xl font-bold text-accent mb-1">USA & UK</p>
+                  <p className="text-xs text-muted-foreground">Delivery Teams</p>
                 </div>
               </div>
 
-              {/* Chart Placeholder */}
+              {/* CYXOR Learning Highlight */}
               <div className="bg-background rounded-xl p-4 border border-border">
-                <div className="flex items-end justify-between h-24 gap-2">
-                  {[40, 65, 45, 80, 55, 90, 70, 85, 60, 95, 75, 88].map((height, i) => (
-                    <div 
-                      key={i} 
-                      className="flex-1 bg-gradient-to-t from-cta to-secondary rounded-t"
-                      style={{ height: `${height}%` }}
-                    />
-                  ))}
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cta to-secondary flex items-center justify-center">
+                    <span className="text-white font-bold text-xs">CX</span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">CYXOR Learning</p>
+                    <p className="text-xs text-muted-foreground">Our Platform</p>
+                  </div>
                 </div>
-                <p className="text-xs text-muted-foreground mt-3">Performance Overview - Last 12 months</p>
+                <p className="text-xs text-muted-foreground">Blockchain-verified credentials</p>
               </div>
             </div>
 
             {/* Floating Elements */}
             <div className="absolute -top-4 -right-4 bg-cta text-white px-4 py-2 rounded-xl shadow-lg animate-float">
-              <p className="text-sm font-semibold">+127% Growth</p>
+              <p className="text-sm font-semibold">Proven Innovation</p>
             </div>
             <div className="absolute -bottom-4 -left-4 bg-white border border-border px-4 py-3 rounded-xl shadow-lg animate-float" style={{ animationDelay: '-2s' }}>
-              <p className="text-xs text-muted-foreground">Infrastructure Status</p>
-              <p className="text-sm font-semibold text-success">All Systems Operational</p>
+              <p className="text-xs text-muted-foreground">Development Methodology</p>
+              <p className="text-sm font-semibold text-success">Agile & DevOps</p>
             </div>
           </div>
         </div>
@@ -146,15 +146,15 @@ const HeroSection = () => {
           style={{ animationDelay: '0.6s' }}
         >
           <p className="text-sm text-muted-foreground text-center mb-8 uppercase tracking-wider">
-            Trusted by Industry Leaders
+            Serving Clients Across Industries in USA & UK
           </p>
           <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
-            {['Microsoft', 'Google', 'Amazon', 'IBM', 'Oracle'].map((company) => (
+            {['Financial Services', 'Healthcare', 'E-Commerce', 'Manufacturing', 'Education'].map((industry) => (
               <div 
-                key={company} 
-                className="text-muted-foreground/40 font-display font-bold text-xl hover:text-muted-foreground/60 transition-colors cursor-default"
+                key={industry} 
+                className="text-muted-foreground/40 font-display font-bold text-lg hover:text-muted-foreground/60 transition-colors cursor-default"
               >
-                {company}
+                {industry}
               </div>
             ))}
           </div>

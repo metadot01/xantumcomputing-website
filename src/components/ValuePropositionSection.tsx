@@ -1,21 +1,21 @@
-import { Cpu, Network, Shield } from "lucide-react";
+import { Layers, Code, Brain } from "lucide-react";
 
 const ValuePropositionSection = () => {
   const features = [
     {
-      icon: Cpu,
-      title: "Advanced Computing Power",
-      description: "Experience unparalleled performance with Xantum™'s next-generation computing infrastructure designed for enterprise-scale operations.",
+      icon: Layers,
+      title: "Platform Engineering",
+      description: "Enterprise-grade platform architecture and engineering services designed to modernize your technology stack and accelerate digital transformation.",
     },
     {
-      icon: Network,
-      title: "Seamless Integration",
-      description: "Connect your existing systems effortlessly with our API-first architecture and enterprise-grade integration capabilities.",
+      icon: Code,
+      title: "Custom Software Development",
+      description: "Bespoke software solutions engineered to your exact specifications, from web applications to enterprise systems.",
     },
     {
-      icon: Shield,
-      title: "Enterprise Security",
-      description: "Bank-grade encryption and compliance certifications ensure your data remains secure across all computing operations.",
+      icon: Brain,
+      title: "Language Model Optimization & Development",
+      description: "Advanced LLM fine-tuning, optimization, and custom model development to unlock AI capabilities tailored to your business needs.",
     },
   ];
 
@@ -25,10 +25,10 @@ const ValuePropositionSection = () => {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
           <h2 className="font-display text-3xl md:text-section lg:text-section-lg font-bold text-foreground mb-6">
-            Enterprise Solutions That Scale
+            Partnership-Driven Technology Solutions
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Built for businesses that demand reliability, performance, and security at every level.
+            Through our strategic partnership with Defantra UK Ltd, we deliver comprehensive software engineering and emerging technology expertise.
           </p>
         </div>
 

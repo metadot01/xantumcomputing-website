@@ -1,30 +1,30 @@
-import { Zap, Globe, TrendingUp, Clock } from "lucide-react";
+import { Users, Clock, Trophy, Sparkles } from "lucide-react";
 
 const TechnologySection = () => {
   const stats = [
     {
-      icon: Zap,
-      value: "<10ms",
-      label: "Average Latency",
-      description: "Ultra-fast response times",
-    },
-    {
-      icon: Globe,
+      icon: Users,
       value: "50+",
-      label: "Data Centers",
-      description: "Global infrastructure",
-    },
-    {
-      icon: TrendingUp,
-      value: "∞",
-      label: "Scalability",
-      description: "Auto-scale to millions",
+      label: "AI/Blockchain Experts",
+      description: "Combined team strength",
     },
     {
       icon: Clock,
-      value: "99.99%",
-      label: "Uptime SLA",
-      description: "Enterprise guarantee",
+      value: "15+",
+      label: "Years Experience",
+      description: "Proven track record",
+    },
+    {
+      icon: Trophy,
+      value: "100%",
+      label: "Client Satisfaction",
+      description: "Partnership commitment",
+    },
+    {
+      icon: Sparkles,
+      value: "CYXOR",
+      label: "Learning Platform",
+      description: "Blockchain-verified credentials",
     },
   ];
 
@@ -39,10 +39,10 @@ const TechnologySection = () => {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
           <h2 className="font-display text-3xl md:text-section lg:text-section-lg font-bold text-surface-dark-foreground mb-6">
-            The Xantum™ Technology Advantage
+            The Xantum™ Partnership Advantage
           </h2>
           <p className="text-lg text-surface-dark-foreground/70 leading-relaxed">
-            Built on cutting-edge infrastructure that scales with your ambition.
+            Built on deep technical expertise and commitment to innovation.
           </p>
         </div>
 
@@ -78,9 +78,9 @@ const TechnologySection = () => {
         {/* Additional Features */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
           {[
-            "Zero-downtime deployments",
-            "Multi-cloud orchestration",
-            "Real-time monitoring",
+            "Agile development methodology",
+            "DevOps best practices",
+            "Continuous innovation",
           ].map((feature, index) => (
             <div
               key={feature}
