@@ -1,24 +1,24 @@
-import { Rocket, TrendingUp, Activity } from "lucide-react";
+import { MessageSquare, Wrench, TrendingUp } from "lucide-react";
 
 const HowItWorksSection = () => {
   const steps = [
     {
       number: "01",
-      icon: Rocket,
-      title: "Deploy",
-      description: "Deploy your applications to Xantum™ infrastructure in minutes with our intuitive dashboard and CLI tools.",
+      icon: MessageSquare,
+      title: "Consult",
+      description: "We collaborate with you to understand your technology challenges and define the optimal solution architecture across software, AI, or blockchain domains.",
     },
     {
       number: "02",
-      icon: TrendingUp,
-      title: "Scale",
-      description: "Our intelligent auto-scaling responds to demand in real-time, optimizing performance and cost automatically.",
+      icon: Wrench,
+      title: "Develop",
+      description: "Our expert teams design, build, and deploy custom solutions using cutting-edge technologies and industry best practices.",
     },
     {
       number: "03",
-      icon: Activity,
-      title: "Monitor",
-      description: "Gain deep insights with advanced analytics and monitoring tools that keep you in complete control.",
+      icon: TrendingUp,
+      title: "Optimize",
+      description: "Continuous refinement and support ensure your solutions evolve with your business through AI optimization and strategic consulting.",
     },
   ];
 
@@ -28,10 +28,10 @@ const HowItWorksSection = () => {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
           <h2 className="font-display text-3xl md:text-section lg:text-section-lg font-bold text-foreground mb-6">
-            How It Works
+            How Our Partnership Works
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Get started in three simple steps and transform your infrastructure today.
+            Get started in three simple steps and accelerate your digital transformation.
           </p>
         </div>
 
@@ -88,10 +88,11 @@ const HowItWorksSection = () => {
             </div>
             {/* Terminal Content */}
             <div className="p-6 font-mono text-sm">
-              <p className="text-surface-dark-foreground/60">$ xantum deploy --production</p>
-              <p className="text-success mt-2">✓ Application deployed successfully</p>
-              <p className="text-surface-dark-foreground/40 mt-1">  → Live at: https://your-app.xantum.cloud</p>
-              <p className="text-surface-dark-foreground/40">  → Latency: 8ms | Uptime: 99.99%</p>
+              <p className="text-surface-dark-foreground/60">$ xantum-deploy --solution</p>
+              <p className="text-success mt-2">✓ Development pipeline initialized</p>
+              <p className="text-surface-dark-foreground/40 mt-1">  → Status: In production</p>
+              <p className="text-surface-dark-foreground/40">  → Performance: Optimized for scale</p>
+              <p className="text-surface-dark-foreground/40">  → Support: Dedicated technical team</p>
             </div>
           </div>
         </div>
