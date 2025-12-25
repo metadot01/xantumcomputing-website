@@ -43,7 +43,7 @@ const Header = () => {
             </div>
             <div className="flex flex-col">
               <span className="font-display font-bold text-lg md:text-xl text-primary leading-tight">
-                Xantum Computing
+                Xantum<span className="text-cta">™</span> Computing
               </span>
               <span className="text-[10px] text-muted-foreground uppercase tracking-widest hidden sm:block">
                 Enterprise Solutions
