@@ -48,36 +48,7 @@ const Footer = () => {
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-accent/5 rounded-full blur-3xl" />
 
       <div className="relative z-10">
-        {/* Newsletter Section */}
-        <div className="border-b border-border/10">
-          <div className="container mx-auto px-4 lg:px-8 py-16">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-              <div className="text-center lg:text-left">
-                <h3 className="font-display text-2xl md:text-3xl font-bold text-surface-dark-foreground mb-2">
-                  Stay Updated
-                </h3>
-                <p className="text-surface-dark-foreground/60">
-                  Get the latest insights on AI, blockchain, and platform engineering.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
-                <div className="relative">
-                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="w-full sm:w-80 h-12 pl-12 pr-4 rounded-xl bg-background/10 border border-border/20 text-surface-dark-foreground placeholder:text-surface-dark-foreground/40 focus:outline-none focus:border-primary/50 transition-colors"
-                  />
-                </div>
-                <Button variant="hero" size="lg" className="h-12">
-                  Subscribe
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Main Footer Content */}
+      {/* Main Footer Content */}
         <div className="container mx-auto px-4 lg:px-8 py-16">
           <div className="grid grid-cols-2 md:grid-cols-6 gap-10 lg:gap-12">
             {/* Brand Column */}
