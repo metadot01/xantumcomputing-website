@@ -16,12 +16,9 @@ const Leadership = () => {
             <span className="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase bg-cta/20 text-cta rounded-full">
               About Us
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold">
               Leadership Team
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Meet the visionary leaders driving innovation at Xantum™ Computing and Defantra UK Ltd.
-            </p>
           </div>
         </div>
       </section>
