@@ -15,11 +15,11 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { label: "Home", href: "#" },
-    { label: "Solutions", href: "#solutions" },
-    { label: "Technology", href: "#technology" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "/" },
+    { label: "Solutions", href: "/#solutions" },
+    { label: "Technology", href: "/#technology" },
+    { label: "Leadership", href: "/about/leadership" },
+    { label: "Contact", href: "/#contact" },
   ];
 
   return (
