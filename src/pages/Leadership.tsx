@@ -53,7 +53,7 @@ const Leadership = () => {
                   
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
-                      Bharath Shivaram specializes in AI Agent Architecture, Development, and Implementation, with deep expertise in agentic AI systems, LLM optimization, AI security, and platform engineering. He is currently pursuing a Master's in Artificial Intelligence at the University of Stirling, where his research focuses on LLM security and interpretability.
+                      Bharath Shivaram specializes in AI Agent Architecture, Development, and Implementation, with deep expertise in agentic AI systems, LLM optimization, AI security, and platform engineering. He holds a Master's in Artificial Intelligence from the University of Stirling, Scotland, UK, where his research focused on LLM security and interpretability, and an MS in Business Analytics and Project Management from the University of Connecticut, USA.
                     </p>
                     <p>
                       His dissertation, <em className="text-foreground">"Analyzing Chain-of-Thought Vulnerabilities in LLMs using Interpretation and Quantization,"</em> examines structural and security vulnerabilities in large language models.
