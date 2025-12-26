@@ -43,9 +43,20 @@ const Leadership = () => {
                 {/* Profile Content */}
                 <div className="flex-1">
                   <div className="mb-6">
-                    <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-2">
-                      Bharath Shivaram
-                    </h2>
+                    <div className="flex items-center justify-between">
+                      <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-2">
+                        Bharath Shivaram
+                      </h2>
+                      <a 
+                        href="https://www.linkedin.com/in/bharathshivaram/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="p-2 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+                        aria-label="LinkedIn Profile"
+                      >
+                        <Linkedin className="w-5 h-5" />
+                      </a>
+                    </div>
                     <p className="text-lg text-cta font-semibold">
                       Director – Solutions Architecture & AI Platforms
                     </p>
