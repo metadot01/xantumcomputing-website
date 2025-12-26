@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Linkedin, Mail, GraduationCap, Briefcase, Scale, Users } from "lucide-react";
+import bharathPhoto from "@/assets/bharath-shivaram.jpeg";
+import roopaPhoto from "@/assets/roopa-kiran.png";
 
 const Leadership = () => {
   return (
@@ -32,11 +34,13 @@ const Leadership = () => {
             {/* Bharath Shivaram */}
             <article className="bg-card rounded-3xl p-8 md:p-12 shadow-card border border-border">
               <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-                {/* Profile Image Placeholder */}
+                {/* Profile Image */}
                 <div className="flex-shrink-0">
-                  <div className="w-48 h-48 lg:w-56 lg:h-56 rounded-2xl bg-gradient-to-br from-primary/20 to-cta/20 flex items-center justify-center mx-auto lg:mx-0">
-                    <span className="text-6xl font-display font-bold text-primary">BS</span>
-                  </div>
+                  <img 
+                    src={bharathPhoto} 
+                    alt="Bharath Shivaram" 
+                    className="w-48 h-48 lg:w-56 lg:h-56 rounded-2xl object-cover mx-auto lg:mx-0 shadow-lg"
+                  />
                 </div>
                 
                 {/* Profile Content */}
@@ -92,6 +96,13 @@ const Leadership = () => {
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
+                      <GraduationCap className="w-5 h-5 text-cta mt-0.5" />
+                      <div>
+                        <p className="text-sm font-medium text-foreground">MS Business Analytics & Project Management</p>
+                        <p className="text-xs text-muted-foreground">University of Connecticut</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
                       <Briefcase className="w-5 h-5 text-cta mt-0.5" />
                       <div>
                         <p className="text-sm font-medium text-foreground">Founder & AI Platform Architect</p>
@@ -106,11 +117,13 @@ const Leadership = () => {
             {/* Dr. Roopa Kiran */}
             <article className="bg-card rounded-3xl p-8 md:p-12 shadow-card border border-border">
               <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-                {/* Profile Image Placeholder */}
+                {/* Profile Image */}
                 <div className="flex-shrink-0">
-                  <div className="w-48 h-48 lg:w-56 lg:h-56 rounded-2xl bg-gradient-to-br from-secondary/20 to-accent/20 flex items-center justify-center mx-auto lg:mx-0">
-                    <span className="text-6xl font-display font-bold text-secondary">RK</span>
-                  </div>
+                  <img 
+                    src={roopaPhoto} 
+                    alt="Dr. Roopa Kiran" 
+                    className="w-48 h-48 lg:w-56 lg:h-56 rounded-2xl object-cover mx-auto lg:mx-0 shadow-lg"
+                  />
                 </div>
                 
                 {/* Profile Content */}
