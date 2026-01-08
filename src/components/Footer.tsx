@@ -18,11 +18,11 @@ const Footer = () => {
       { name: "AI & Blockchain Consulting", href: "#" },
     ],
     "CYXOR Learning": [
-      { name: "Browse Courses", href: "#" },
-      { name: "Learning Paths", href: "#" },
-      { name: "Verify Credentials", href: "#" },
-      { name: "For Organizations", href: "#" },
-      { name: "Platform Features", href: "#" },
+      { name: "Browse Courses", href: "https://www.cyxorlearning.co.uk" },
+      { name: "Learning Paths", href: "https://www.cyxorlearning.co.uk" },
+      { name: "Verify Credentials", href: "https://www.cyxorlearning.co.uk" },
+      { name: "For Organizations", href: "https://www.cyxorlearning.co.uk" },
+      { name: "Platform Features", href: "https://www.cyxorlearning.co.uk" },
     ],
     Resources: [
       { name: "Documentation", href: "#" },
@@ -136,7 +136,9 @@ const Footer = () => {
                 </div>
               </div>
               <a
-                href="#"
+                href="https://www.cyxorlearning.co.uk"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center gap-2 text-sm font-medium text-cta hover:text-cta/80 transition-colors"
               >
                 Explore Platform

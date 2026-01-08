@@ -58,13 +58,17 @@ const CyxorLearningSection = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="lg" className="group">
-                Explore CYXOR Learning
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button variant="heroOutline" size="lg">
-                View Demo
-              </Button>
+              <a href="https://www.cyxorlearning.co.uk" target="_blank" rel="noopener noreferrer">
+                <Button variant="hero" size="lg" className="group">
+                  Explore CYXOR Learning
+                  <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </a>
+              <a href="https://www.cyxorlearning.co.uk" target="_blank" rel="noopener noreferrer">
+                <Button variant="heroOutline" size="lg">
+                  View Demo
+                </Button>
+              </a>
             </div>
           </div>
 
