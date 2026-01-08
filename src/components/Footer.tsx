@@ -52,7 +52,7 @@ const Footer = () => {
           <div className="grid grid-cols-2 md:grid-cols-6 gap-10 lg:gap-12">
             {/* Brand Column */}
             <div className="col-span-2">
-              <h3 className="font-display font-bold text-lg md:text-xl text-primary mb-3">
+              <h3 className="font-display font-bold text-lg md:text-xl text-white mb-3">
                 Xantum Computing
               </h3>
               <p className="text-sm text-surface-dark-foreground/60 mb-6 leading-relaxed">
