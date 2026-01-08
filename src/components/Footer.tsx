@@ -53,7 +53,7 @@ const Footer = () => {
             {/* Brand Column */}
             <div className="col-span-2">
               <h3 className="font-display font-bold text-lg md:text-xl text-white mb-3">
-                Xantum Computing
+                Xantum<sup>™</sup> Computing
               </h3>
               <p className="text-sm text-surface-dark-foreground/60 mb-6 leading-relaxed">
                 Strategic Partnership with Defantra UK Ltd
