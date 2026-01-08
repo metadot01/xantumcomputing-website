@@ -8,7 +8,7 @@ const FinalCTASection = () => {
       <div className="absolute inset-0 particle-bg opacity-30" />
       <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
         <h2 className="font-display text-3xl md:text-section lg:text-section-lg font-bold text-primary-foreground mb-6">
-          Ready to Transform Your Technology?
+          Ready for Digital Transformation?
         </h2>
         <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto mb-10">
           Join forward-thinking organizations already benefiting from our strategic partnership with Defantra UK Ltd.
