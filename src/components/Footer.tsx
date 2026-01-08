@@ -17,12 +17,11 @@ const Footer = () => {
       { name: "Blockchain Development", href: "#" },
       { name: "AI & Blockchain Consulting", href: "#" },
     ],
-    "CYXOR Learning": [
+    "CYXOR LEARNING": [
       { name: "Browse Courses", href: "https://www.cyxorlearning.co.uk" },
       { name: "Learning Paths", href: "https://www.cyxorlearning.co.uk" },
       { name: "Verify Credentials", href: "https://www.cyxorlearning.co.uk" },
       { name: "For Organizations", href: "https://www.cyxorlearning.co.uk" },
-      { name: "Platform Features", href: "https://www.cyxorlearning.co.uk" },
     ],
     Resources: [
       { name: "Documentation", href: "#" },
