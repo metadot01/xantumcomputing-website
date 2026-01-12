@@ -5,7 +5,7 @@ const Footer = () => {
   const footerLinks = {
     Company: [
       { name: "About Xantum™ Computing", href: "#" },
-      { name: "Partnership with Defantra UK Ltd", href: "#" },
+      { name: "Partnership with Defantra Ltd, UK", href: "#" },
       { name: "Our Team & Expertise", href: "#" },
       { name: "Careers", href: "#", badge: "Hiring" },
       { name: "Press & Media", href: "#" },
@@ -56,7 +56,7 @@ const Footer = () => {
                 Xantum<sup>™</sup> Computing
               </h3>
               <p className="text-sm text-surface-dark-foreground/60 mb-6 leading-relaxed">
-                Strategic Partnership with Defantra UK Ltd
+                Strategic Partnership with Defantra Ltd, UK
               </p>
 
               {/* Locations */}
@@ -152,7 +152,7 @@ const Footer = () => {
           <div className="container mx-auto px-4 lg:px-8 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-xs text-surface-dark-foreground/40 text-center md:text-left">
-                © 2024 Xantum™ Computing | Strategic Partnership with Defantra UK Ltd
+                © 2024 Xantum™ Computing | Strategic Partnership with Defantra Ltd, UK
               </p>
               <div className="flex flex-wrap justify-center gap-6">
                 {["Privacy Policy", "Terms of Service", "Cookie Policy", "Security"].map((link) => (

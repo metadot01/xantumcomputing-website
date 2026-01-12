@@ -25,7 +25,7 @@ const HeroSection = () => {
               style={{ animationDelay: '0.1s' }}
             >
               <span className="w-2 h-2 rounded-full bg-cta animate-pulse" />
-              <span className="text-sm text-foreground/70 font-medium">Strategic Partnership with Defantra UK Ltd</span>
+              <span className="text-sm text-foreground/70 font-medium">Strategic Partnership with Defantra Ltd, UK</span>
             </div>
 
             {/* Headline */}
@@ -43,7 +43,7 @@ const HeroSection = () => {
               className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-8 opacity-0 animate-fade-in leading-relaxed"
               style={{ animationDelay: '0.3s' }}
             >
-              Xantum™ Computing delivers AI/ML and blockchain software for RegTech and FinTech, in partnership with Defantra UK Ltd, across the USA and UK.
+              Xantum™ Computing delivers AI/ML and blockchain software for RegTech and FinTech, in partnership with Defantra Ltd, UK, across the USA and UK.
             </p>
 
             {/* CTA Buttons */}
