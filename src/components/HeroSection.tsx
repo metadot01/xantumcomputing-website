@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -30,22 +30,20 @@ const HeroSection = () => {
 
             {/* Headline */}
             <h1 
-              className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground opacity-0 animate-fade-in leading-[1.1]"
+              className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground opacity-0 animate-fade-in leading-[1.1]"
               style={{ animationDelay: '0.2s' }}
             >
-              Enterprise Software &
+              <span className="text-gradient">AI/ML & Blockchain</span>
               <br />
-              <span className="text-gradient">AI Solutions</span>
-              <br />
-              Through Collaborative Excellence
+              Software for RegTech & FinTech
             </h1>
 
             {/* Description */}
             <p 
-              className="text-lg md:text-xl text-muted-foreground max-w-xl mb-8 opacity-0 animate-fade-in leading-relaxed"
+              className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mb-8 opacity-0 animate-fade-in leading-relaxed"
               style={{ animationDelay: '0.3s' }}
             >
-              Xantum™ Computing partners with Defantra UK Ltd to deliver cutting-edge software development, AI optimization, and blockchain solutions for businesses across the USA and UK.
+              Xantum™ Computing delivers AI/ML and blockchain software for RegTech and FinTech, in partnership with Defantra UK Ltd, across the USA and UK.
             </p>
 
             {/* CTA Buttons */}
@@ -57,10 +55,12 @@ const HeroSection = () => {
                 Request Demo
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="heroOutline" size="xl" className="group">
-                <Play className="w-4 h-4" />
-                Watch Overview
-              </Button>
+              <a href="https://www.defantra.com/" target="_blank" rel="noopener noreferrer">
+                <Button variant="heroOutline" size="xl" className="group w-full">
+                  <ArrowRight className="w-4 h-4" />
+                  Defantra Partnership
+                </Button>
+              </a>
             </div>
 
             {/* Trust Points */}
