@@ -11,7 +11,7 @@ const FinalCTASection = () => {
           Ready for Digital Transformation?
         </h2>
         <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto mb-10">
-          Join forward-thinking organizations already benefiting from our strategic partnership with Defantra UK Ltd.
+          Join forward-thinking organizations already benefiting from our strategic partnership with Defantra Ltd, UK.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <Button variant="heroDark" size="xl" className="group">

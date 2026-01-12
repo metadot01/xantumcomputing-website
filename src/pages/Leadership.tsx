@@ -70,7 +70,7 @@ const Leadership = () => {
                       His dissertation, <em className="text-foreground">"Analyzing Chain-of-Thought Vulnerabilities in LLMs using Interpretation and Quantization,"</em> examines structural and security vulnerabilities in large language models.
                     </p>
                     <p>
-                      He is the Founder and AI Platform Architect at Defantra UK Ltd., a London-based startup building agent-driven, blockchain-enabled AI platforms. Previously, he founded and led solution architecture at Xantum Computing, delivering enterprise-grade AI and blockchain solutions for a range of clients.
+                      He is the Founder and AI Platform Architect at Defantra Ltd, UK, a London-based startup building agent-driven, blockchain-enabled AI platforms. Previously, he founded and led solution architecture at Xantum Computing, delivering enterprise-grade AI and blockchain solutions for a range of clients.
                     </p>
                     <p>
                       Bharath's industry background includes senior advisory and engineering roles at Dell Technologies, EMC, and healthcare analytics organizations across the United States and Canada, where he worked extensively on big data platforms, cloud infrastructure, advanced analytics, and large-scale enterprise systems.
@@ -114,7 +114,7 @@ const Leadership = () => {
                       <Briefcase className="w-5 h-5 text-cta mt-0.5" />
                       <div>
                         <p className="text-sm font-medium text-foreground">Founder & AI Platform Architect</p>
-                        <p className="text-xs text-muted-foreground">Defantra UK Ltd.</p>
+                        <p className="text-xs text-muted-foreground">Defantra Ltd, UK</p>
                       </div>
                     </div>
                   </div>
