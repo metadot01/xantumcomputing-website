@@ -72,46 +72,46 @@ const CapabilitiesSection = () => {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-background">
+    <section className="py-16 md:py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
-          <h2 className="font-display text-3xl md:text-section lg:text-section-lg font-bold text-foreground mb-6">
+        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16 lg:mb-20">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6">
             Comprehensive Technology Capabilities
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
             Everything you need to innovate, build, and scale with confidence.
           </p>
         </div>
 
         {/* Capabilities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
           {capabilities.map((capability, index) => (
             <div
               key={capability.title}
-              className="group bg-card rounded-2xl p-8 border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-300 opacity-0 animate-fade-in"
+              className="group bg-card rounded-xl md:rounded-2xl p-5 md:p-6 lg:p-8 border border-border hover:border-primary/30 hover:shadow-xl transition-all duration-300 opacity-0 animate-fade-in"
               style={{ animationDelay: `${0.05 * index}s` }}
             >
               {/* Icon */}
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
-                <capability.icon className="w-7 h-7 text-primary" />
+              <div className="w-11 h-11 md:w-14 md:h-14 rounded-lg md:rounded-xl bg-primary/10 flex items-center justify-center mb-4 md:mb-6 group-hover:bg-primary/15 transition-colors">
+                <capability.icon className="w-5 h-5 md:w-7 md:h-7 text-primary" />
               </div>
 
               {/* Title */}
-              <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+              <h3 className="font-display text-base md:text-lg lg:text-xl font-semibold text-foreground mb-2 md:mb-3">
                 {capability.title}
               </h3>
 
               {/* Description */}
-              <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+              <p className="text-muted-foreground text-xs md:text-sm mb-4 md:mb-6 leading-relaxed">
                 {capability.description}
               </p>
 
               {/* Features */}
-              <ul className="space-y-2 mb-6">
+              <ul className="space-y-1.5 md:space-y-2 mb-4 md:mb-6">
                 {capability.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2 text-sm">
-                    <Check className="w-4 h-4 text-cta flex-shrink-0 mt-0.5" />
+                  <li key={feature} className="flex items-start gap-2 text-xs md:text-sm">
+                    <Check className="w-3.5 h-3.5 md:w-4 md:h-4 text-cta flex-shrink-0 mt-0.5" />
                     <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
