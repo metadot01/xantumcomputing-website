@@ -23,14 +23,14 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-muted/30" id="about">
+    <section className="py-16 md:py-24 lg:py-32 bg-muted/30" id="about">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
-          <h2 className="font-display text-3xl md:text-section lg:text-section-lg font-bold text-foreground mb-6">
+        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16 lg:mb-20">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6">
             How Our Partnership Works
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
             Get started in three simple steps and accelerate your digital transformation.
           </p>
         </div>
@@ -40,7 +40,7 @@ const HowItWorksSection = () => {
           {/* Connection Line - Desktop */}
           <div className="hidden lg:block absolute top-20 left-[15%] right-[15%] h-0.5 bg-gradient-to-r from-primary via-accent to-secondary" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-8">
             {steps.map((step, index) => (
               <div
                 key={step.title}
@@ -48,28 +48,28 @@ const HowItWorksSection = () => {
                 style={{ animationDelay: `${0.1 + index * 0.15}s` }}
               >
                 {/* Number Circle */}
-                <div className="relative inline-flex items-center justify-center w-20 h-20 mb-8 rounded-full btn-gradient text-primary-foreground font-display font-bold text-2xl shadow-lg mx-auto">
+                <div className="relative inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-6 md:mb-8 rounded-full btn-gradient text-primary-foreground font-display font-bold text-lg md:text-xl lg:text-2xl shadow-lg mx-auto">
                   {step.number}
                   {/* Glow effect */}
                   <div className="absolute inset-0 rounded-full bg-primary/30 blur-xl -z-10" />
                 </div>
 
                 {/* Icon */}
-                <div className="w-12 h-12 mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-                  <step.icon className="w-6 h-6 text-primary" />
+                <div className="w-10 h-10 md:w-12 md:h-12 mx-auto rounded-lg md:rounded-xl bg-primary/10 flex items-center justify-center mb-4 md:mb-6">
+                  <step.icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                 </div>
 
                 {/* Content */}
-                <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+                <h3 className="font-display text-lg md:text-xl font-semibold text-foreground mb-2 md:mb-3">
                   {step.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed max-w-sm mx-auto">
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-sm mx-auto">
                   {step.description}
                 </p>
 
                 {/* Connection Line - Mobile */}
                 {index < steps.length - 1 && (
-                  <div className="lg:hidden w-0.5 h-12 bg-gradient-to-b from-primary to-accent mx-auto mt-8" />
+                  <div className="md:hidden w-0.5 h-8 bg-gradient-to-b from-primary to-accent mx-auto mt-6" />
                 )}
               </div>
             ))}

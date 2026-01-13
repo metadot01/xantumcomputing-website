@@ -1,12 +1,10 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import TechnologySection from "@/components/TechnologySection";
 import CyxorLearningSection from "@/components/CyxorLearningSection";
-import HowItWorksSection from "@/components/HowItWorksSection";
+import DefantraPartnershipSection from "@/components/DefantraPartnershipSection";
 import CapabilitiesSection from "@/components/CapabilitiesSection";
-import UseCasesSection from "@/components/UseCasesSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import TechStackSection from "@/components/TechStackSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
 
@@ -16,13 +14,11 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <TechnologySection />
         <CyxorLearningSection />
-        <HowItWorksSection />
+        <DefantraPartnershipSection />
         <CapabilitiesSection />
-        <UseCasesSection />
+        <HowItWorksSection />
         <TestimonialsSection />
-        <TechStackSection />
         <FinalCTASection />
       </main>
       <Footer />
