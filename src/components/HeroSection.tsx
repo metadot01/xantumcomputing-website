@@ -115,18 +115,23 @@ const HeroSection = () => {
               </div>
 
               {/* CYXOR Learning Highlight */}
-              <div className="bg-background rounded-xl p-4 border border-border">
+              <a 
+                href="https://www.cyxorlearning.co.uk" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block bg-background rounded-xl p-4 border border-border hover:border-cta hover:shadow-md transition-all duration-300 group"
+              >
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cta to-secondary flex items-center justify-center">
                     <span className="text-white font-bold text-xs">CX</span>
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-foreground">CYXOR Learning</p>
+                    <p className="text-sm font-semibold text-foreground group-hover:text-cta transition-colors">CYXOR Learning</p>
                     <p className="text-xs text-muted-foreground">Our Platform</p>
                   </div>
                 </div>
                 <p className="text-xs text-muted-foreground">Blockchain-verified credentials</p>
-              </div>
+              </a>
             </div>
 
             {/* Floating Elements */}
