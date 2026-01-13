@@ -46,7 +46,7 @@ const Header = () => {
                 Xantum<span className="text-cta">™</span> Computing
               </span>
               <span className="text-[10px] text-muted-foreground uppercase tracking-widest hidden sm:block">
-                Enterprise Solutions
+                AI/ML & Blockchain Solutions
               </span>
             </div>
           </a>
