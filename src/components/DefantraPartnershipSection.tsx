@@ -136,21 +136,6 @@ const DefantraPartnershipSection = () => {
             </a>
           </div>
         </div>
-
-        {/* Trust Indicators */}
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 pt-8 border-t border-border">
-          {[
-            { label: "Years Partnership", value: "5+" },
-            { label: "Joint Projects", value: "50+" },
-            { label: "Client Satisfaction", value: "100%" },
-            { label: "Countries Served", value: "2" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="text-2xl md:text-3xl font-bold text-secondary">{stat.value}</p>
-              <p className="text-xs text-muted-foreground">{stat.label}</p>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
