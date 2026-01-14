@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Clock, Users, Heart, Rocket, Target, Briefcase, ArrowRight } from "lucide-react";
-
+import JobApplicationModal from "@/components/JobApplicationModal";
 const Careers = () => {
   const openRoles = [
     {
@@ -146,10 +146,12 @@ const Careers = () => {
                         </span>
                       </div>
                     </div>
-                    <Button className="w-full md:w-auto">
-                      Apply Now
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
+                    <JobApplicationModal jobTitle={role.title} location={role.location}>
+                      <Button className="w-full md:w-auto">
+                        Apply Now
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    </JobApplicationModal>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -178,9 +180,11 @@ const Careers = () => {
           <p className="text-primary-foreground/80 max-w-2xl mx-auto mb-8">
             We're always looking for talented individuals. Send us your resume and we'll keep you in mind for future opportunities.
           </p>
-          <Button variant="secondary" size="lg">
-            Send Your Resume
-          </Button>
+          <JobApplicationModal jobTitle="General Application" location="Madhugiri">
+            <Button variant="secondary" size="lg">
+              Send Your Resume
+            </Button>
+          </JobApplicationModal>
         </div>
       </section>
 
