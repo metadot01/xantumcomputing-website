@@ -67,7 +67,7 @@ const DefantraPartnershipSection = () => {
               </div>
               <div>
                 <h3 className="font-display font-bold text-xl md:text-2xl text-foreground">Defantra Ltd, UK</h3>
-                <p className="text-muted-foreground text-sm">Technology & Training Partner</p>
+                <p className="text-muted-foreground text-sm">AI Powered GRC Platform</p>
                 <div className="flex items-center gap-2 mt-1">
                   <span className="px-2 py-0.5 text-xs font-medium bg-defantra/10 text-defantra rounded-full">Strategic Partner</span>
                 </div>
