@@ -43,8 +43,7 @@ const HeroSection = () => {
             className="text-base sm:text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8 md:mb-10 opacity-0 animate-fade-in leading-relaxed"
             style={{ animationDelay: '0.3s' }}
           >
-            Xantum™ Computing delivers AI/ML and blockchain solutions in partnership with Defantra Ltd, UK. 
-            We also operate <span className="text-cyxor font-semibold">CYXOR Learning</span>, a digital skills platform offering technology and compliance courses.
+            Xantum™ Computing delivers AI, machine learning, and blockchain solutions for regulated financial and enterprise environments. Through our partnership with Defantra Ltd (UK), we provide secure, compliance-ready technology and operate <span className="text-cyxor font-semibold">CYXOR Learning</span>, our platform for AI, technology, and compliance education.
           </p>
 
           {/* CTA Buttons */}
