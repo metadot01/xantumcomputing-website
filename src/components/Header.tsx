@@ -28,7 +28,8 @@ const Header = () => {
 
   // Scroll to top on route change
   useEffect(() => {
-    scrollToTop("instant");
+    // Scroll to top on route change
+    window.scrollTo({ top: 0, behavior: "auto" });
   }, [location.pathname]);
 
   const handleSectionLink = (sectionId: string) => {
