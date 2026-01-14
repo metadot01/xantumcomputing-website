@@ -70,7 +70,7 @@ const Footer = () => {
             {/* Brand Column */}
             <div className="col-span-2">
               <h3 className="font-display font-bold text-2xl text-white mb-2">
-                Xantum<span className="text-secondary">™</span>
+                Xantum<span className="text-secondary">™</span> Computing
               </h3>
               <p className="text-sm text-slate-500 mb-6 leading-relaxed max-w-xs">
                 Enterprise AI & Blockchain solutions powering the next generation of business innovation.
