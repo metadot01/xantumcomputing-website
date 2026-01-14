@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { MapPin } from "lucide-react";
 import xantumLogo from "@/assets/xantum-logo.png";
 
 const Header = () => {
@@ -20,7 +21,7 @@ const Header = () => {
     { label: "About", href: "/about", isRoute: true },
     { label: "Solutions", href: "/solutions", isRoute: true },
     { label: "CYXOR Learning", href: "/#cyxor" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Contact", href: "/contact", isRoute: true },
   ];
 
   const handleNavClick = (href: string, isRoute?: boolean) => {
@@ -35,9 +36,24 @@ const Header = () => {
   };
 
   return (
-    <header 
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-sm py-2 border-b border-border"
-    >
+    <>
+      {/* Top bar with India office addresses */}
+      <div className="hidden lg:block bg-primary text-primary-foreground py-2 text-xs">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="flex items-center justify-center gap-8">
+            <div className="flex items-center gap-2">
+              <MapPin className="w-3 h-3" />
+              <span className="font-medium">India Offices:</span>
+            </div>
+            <span>KSRTC Bus Stand Road, Madhugiri 572132</span>
+            <span className="text-primary-foreground/50">|</span>
+            <span>1772, Judicial Layout, Near Kempegowda International Airport, Bangalore 560065</span>
+          </div>
+        </div>
+      </div>
+      <header 
+        className="fixed top-0 lg:top-8 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-sm py-2 border-b border-border"
+      >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo & Company Name */}
@@ -179,6 +195,7 @@ const Header = () => {
         </div>
       </div>
     </header>
+    </>
   );
 };
 
