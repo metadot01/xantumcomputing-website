@@ -5,6 +5,7 @@ import { ChevronDown, ArrowUpRight, Brain, Server, Link as LinkIcon, Database, G
 import xantumLogo from "@/assets/xantum-logo.png";
 import cyxorLogoIcon from "@/assets/cyxor-logo-icon.jpg";
 import defantraLogoIcon from "@/assets/defantra-logo-icon.jpg";
+import ContactSalesModal from "./ContactSalesModal";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +24,6 @@ const Header = () => {
 
   const navItems = [
     { label: "Company", href: "/about", isRoute: true },
-    { label: "Contact", href: "/contact", isRoute: true },
   ];
 
   const platformLinks = [
@@ -157,11 +157,11 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center">
-            <Link to="/contact">
+            <ContactSalesModal>
               <Button size="sm">
                 Contact Sales
               </Button>
-            </Link>
+            </ContactSalesModal>
           </div>
 
           {/* Mobile Menu Button */}
@@ -248,11 +248,11 @@ const Header = () => {
             ))}
             
             <div className="mt-4 pt-4 border-t border-border px-4">
-              <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                <Button className="w-full h-12">
+              <ContactSalesModal>
+                <Button className="w-full h-12" onClick={() => setIsMenuOpen(false)}>
                   Contact Sales
                 </Button>
-              </Link>
+              </ContactSalesModal>
             </div>
           </nav>
         </div>
