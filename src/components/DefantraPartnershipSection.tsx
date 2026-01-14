@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Building2, Users, Globe, Award, Briefcase, CheckCircle2, Brain, Link as LinkIcon, Shield, BarChart3 } from "lucide-react";
+import { ArrowRight, Building2, Users, Globe, Award, Briefcase, CheckCircle2, Brain, Link as LinkIcon, Shield, BarChart3, ExternalLink, Rocket } from "lucide-react";
 import defantraLogo from "@/assets/defantra-logo.jpg";
 
 const DefantraPartnershipSection = () => {
@@ -92,7 +92,9 @@ const DefantraPartnershipSection = () => {
             </div>
 
             <a href="https://www.defantra.com/" target="_blank" rel="noopener noreferrer" className="block">
-              <Button variant="defantra" size="lg" className="w-full group">
+              <Button variant="defantra" size="xl" className="w-full group relative overflow-hidden">
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                <ExternalLink className="w-5 h-5" />
                 Visit Defantra
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -129,7 +131,9 @@ const DefantraPartnershipSection = () => {
             </div>
 
             <a href="https://www.defantra.com/" target="_blank" rel="noopener noreferrer" className="block mt-6">
-              <Button variant="heroOutlineDark" size="lg" className="w-full group">
+              <Button size="xl" className="w-full group relative overflow-hidden bg-gradient-to-r from-secondary via-defantra to-secondary bg-[length:200%_100%] hover:bg-[position:100%_0] text-white font-semibold shadow-lg hover:shadow-xl hover:shadow-secondary/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-500">
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                <Rocket className="w-5 h-5" />
                 Explore VeriAgent Platform
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
