@@ -12,7 +12,7 @@ const Footer = () => {
     ],
     Platform: [
       { name: "VeriAgent", href: "https://www.defantra.com/", external: true },
-      { name: "CYXOR Learning", href: "https://www.cyxorlearning.co.uk", external: true },
+      { name: "Cyxor Learning", href: "https://www.cyxorlearning.co.uk", external: true },
     ],
     Solutions: [
       { name: "AI & ML", href: "/solutions", isRoute: true },

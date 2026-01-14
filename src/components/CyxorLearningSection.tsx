@@ -35,7 +35,7 @@ const CyxorLearningSection = () => {
         <div className="text-center mb-14 md:mb-20">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyxor/10 border border-cyxor/20 mb-6">
             <GraduationCap className="w-4 h-4 text-cyxor" />
-            <span className="text-sm font-medium text-cyxor">CYXOR Learning Platform</span>
+            <span className="text-sm font-medium text-cyxor">Cyxor Learning Platform</span>
           </span>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
             Technology & <span className="text-cyxor">Compliance Training</span>
@@ -71,10 +71,10 @@ const CyxorLearningSection = () => {
               {/* Logo & Info */}
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl overflow-hidden bg-white flex items-center justify-center shadow-lg border border-border">
-                  <img src={cyxorLogo} alt="CYXOR Learning" className="w-full h-full object-cover" />
+                  <img src={cyxorLogo} alt="Cyxor Learning" className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-xl md:text-2xl text-foreground">CYXOR Learning</h3>
+                  <h3 className="font-display font-bold text-xl md:text-2xl text-foreground">Cyxor Learning</h3>
                   <p className="text-muted-foreground text-sm">Verifiable Digital Skills</p>
                   <div className="flex items-center gap-2 mt-1">
                     <span className="inline-flex items-center gap-1 text-xs text-success">
