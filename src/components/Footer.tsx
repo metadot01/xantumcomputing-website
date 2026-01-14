@@ -2,6 +2,7 @@ import { Linkedin, Youtube, MapPin, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import cyxorLogo from "@/assets/cyxor-learning-logo.jpg";
 import defantraLogo from "@/assets/defantra-logo.jpg";
+import xantumLogo from "@/assets/xantum-logo.png";
 
 const Footer = () => {
   const footerLinks = {
@@ -48,9 +49,18 @@ const Footer = () => {
           <div className="grid grid-cols-2 md:grid-cols-6 gap-10 lg:gap-12">
             {/* Brand Column */}
             <div className="col-span-2">
-              <h3 className="font-display font-bold text-lg md:text-xl text-white leading-tight mb-3">
-                Xantum<span className="text-secondary">™</span> Computing
-              </h3>
+              <div className="flex items-center gap-3 mb-3">
+                <div className="bg-white/10 rounded-lg p-1.5">
+                  <img 
+                    src={xantumLogo} 
+                    alt="Xantum Computing Logo" 
+                    className="w-8 h-8 object-contain"
+                  />
+                </div>
+                <h3 className="font-display font-bold text-lg md:text-xl text-white leading-tight">
+                  Xantum<span className="text-secondary">™</span> Computing
+                </h3>
+              </div>
               <p className="text-sm text-surface-dark-foreground/60 mb-6 leading-relaxed">
                 Technology solutions and professional development in partnership with Defantra Ltd, UK.
               </p>
