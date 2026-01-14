@@ -9,7 +9,7 @@ const Footer = () => {
       { name: "Careers", href: "/contact", isRoute: true },
       { name: "Contact", href: "/contact", isRoute: true },
     ],
-    Products: [
+    Platform: [
       { name: "VeriAgent Platform", href: "https://www.defantra.com/", external: true },
       { name: "CYXOR Learning", href: "https://www.cyxorlearning.co.uk", external: true },
     ],
@@ -37,8 +37,8 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-16">
             {/* Brand Column */}
             <div className="lg:col-span-2">
-              <h3 className="font-display font-bold text-2xl text-white mb-4">
-                Xantum<span className="text-secondary">™</span>
+              <h3 className="font-display font-bold text-xl text-white mb-4">
+                Xantum<span className="text-secondary">™</span> Computing Private Limited
               </h3>
               <p className="text-slate-400 text-sm mb-8 leading-relaxed max-w-xs">
                 Enterprise AI & Blockchain solutions powering the next generation of business innovation.
@@ -112,7 +112,7 @@ const Footer = () => {
         <div className="border-t border-slate-800/60 py-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-slate-500">
-              © 2025 <span className="text-slate-400">Xantum™ Computing</span>
+              © 2025 <span className="text-slate-400">Xantum™ Computing Private Limited</span>
             </p>
             <div className="flex items-center gap-3 text-sm text-slate-500">
               <span className="flex items-center gap-2">
