@@ -56,9 +56,10 @@ const Footer = () => {
               </p>
             </div>
             <ContactSalesModal>
-              <Button size="lg" className="h-14 px-8 text-base font-semibold bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70">
+              <Button size="xl" className="h-14 px-8 text-base font-semibold bg-gradient-to-r from-primary via-primary/90 to-primary bg-[length:200%_100%] hover:bg-[position:100%_0] transition-all duration-500 relative overflow-hidden group">
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 Contact Sales
-                <ArrowUpRight className="w-5 h-5 ml-2" />
+                <ArrowUpRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Button>
             </ContactSalesModal>
           </div>
