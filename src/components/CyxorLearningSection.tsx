@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, BookOpen, Award, Users, CheckCircle2, GraduationCap, Brain, Code, Link as LinkIcon, FileCheck } from "lucide-react";
+import { ArrowRight, Shield, BookOpen, Award, FileCheck, GraduationCap } from "lucide-react";
 import cyxorLogo from "@/assets/cyxor-learning-logo.jpg";
 
 const CyxorLearningSection = () => {
@@ -23,33 +23,6 @@ const CyxorLearningSection = () => {
       icon: FileCheck,
       title: "UK-Focused Compliance Courses",
       description: "Specialized compliance and regulatory training aligned with UK standards and requirements.",
-    },
-  ];
-
-  const courses = [
-    { 
-      name: "AI Literacy", 
-      icon: Brain,
-      description: "Understand AI fundamentals, applications, and ethical considerations for business leaders.",
-      level: "Beginner"
-    },
-    { 
-      name: "Python Programming for AI/ML", 
-      icon: Code,
-      description: "Master Python programming with focus on AI and machine learning applications.",
-      level: "Intermediate"
-    },
-    { 
-      name: "Blockchain Fundamentals", 
-      icon: LinkIcon,
-      description: "Learn blockchain technology, smart contracts, and decentralized applications.",
-      level: "Beginner"
-    },
-    { 
-      name: "Compliance & RegTech", 
-      icon: Shield,
-      description: "UK-focused regulatory compliance training for financial services professionals.",
-      level: "All Levels"
     },
   ];
 
@@ -88,30 +61,6 @@ const CyxorLearningSection = () => {
           ))}
         </div>
 
-        {/* Course Cards */}
-        <div className="mb-14 md:mb-20">
-          <h3 className="text-center font-display text-xl md:text-2xl font-semibold text-foreground mb-8">
-            Featured Courses
-          </h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {courses.map((course, index) => (
-              <div 
-                key={course.name}
-                className="group bg-card rounded-xl p-5 md:p-6 border border-border hover:border-cyxor/50 hover:shadow-xl transition-all duration-300 opacity-0 animate-fade-in"
-                style={{ animationDelay: `${0.2 + index * 0.05}s` }}
-              >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyxor/20 to-cyxor/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <course.icon className="w-6 h-6 text-cyxor" />
-                </div>
-                <span className="inline-block px-2 py-0.5 text-xs font-medium bg-muted text-muted-foreground rounded mb-2">
-                  {course.level}
-                </span>
-                <h4 className="font-semibold text-foreground mb-2 group-hover:text-cyxor transition-colors">{course.name}</h4>
-                <p className="text-muted-foreground text-sm leading-relaxed">{course.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* Platform Preview Card */}
         <div className="max-w-4xl mx-auto">
