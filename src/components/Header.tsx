@@ -22,7 +22,7 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { label: "About", href: "/about", isRoute: true },
+    { label: "Company", href: "/about", isRoute: true },
     { label: "Contact", href: "/contact", isRoute: true },
   ];
 
