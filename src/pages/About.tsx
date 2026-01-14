@@ -72,7 +72,7 @@ const About = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed mb-10">
-              Xantum™ Computing is a UK-based technology solutions provider, partnered with Defantra Ltd, delivering AI, ML, and Blockchain systems for regulated financial environments. We also operate CYXOR Learning, an e-learning platform for technology and compliance courses.
+              Xantum™ Computing is an emerging technology solutions provider specializing in AI, machine learning, and blockchain software development. Through our partnership with Defantra Ltd (UK), we deliver secure, regulation-ready technology solutions for financial and enterprise environments. We also operate CYXOR Learning, an e-learning platform focused on technology, AI, and compliance education.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -138,14 +138,14 @@ const About = () => {
             {/* Bharath Shivaram */}
             <LeadershipCard
               name="Bharath Shivaram"
-              title="Director – Solutions Architecture & AI Platforms"
+              title="Director – AI Platforms"
               photo={bharathPhoto}
               linkedinUrl="https://www.linkedin.com/in/bharathshivaram/"
               accentColor="secondary"
               bio={[
                 <>Bharath Shivaram specializes in AI Agent Architecture, Development, and Implementation, with deep expertise in agentic AI systems, LLM optimization, AI security, and platform engineering. He holds a Master's in Artificial Intelligence from the University of Stirling, Scotland, UK, where his research focused on LLM security and interpretability, and an MS in Business Analytics and Project Management from the University of Connecticut, USA.</>,
                 <>His dissertation, <em className="text-foreground font-medium">"Analyzing Chain-of-Thought Vulnerabilities in LLMs using Interpretation and Quantization,"</em> examines structural and security vulnerabilities in large language models.</>,
-                <>He is the Founder and AI Platform Architect at Defantra Ltd, UK, a London-based startup building agent-driven, blockchain-enabled AI platforms. His industry background includes senior advisory and engineering roles at Dell Technologies, EMC, and healthcare analytics organizations across the United States and Canada.</>
+                <>He is the Founder and AI Platform Architect at Defantra Ltd, a UK-based startup building agent-driven, blockchain-enabled AI platforms. His industry background includes senior advisory and engineering roles at Dell Technologies, EMC, and healthcare analytics organizations across the United States and Canada.</>
               ]}
               expertise={[
                 "AI Agent Architecture",
@@ -164,7 +164,7 @@ const About = () => {
                 },
                 {
                   icon: GraduationCap,
-                  title: "MS Business Analytics",
+                  title: "MS Business Analytics & PM",
                   subtitle: "University of Connecticut"
                 },
                 {
