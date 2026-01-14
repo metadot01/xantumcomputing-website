@@ -1,27 +1,28 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Building2, Users, Globe, Award, Briefcase, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Building2, Users, Globe, Award, Briefcase, CheckCircle2, Brain, Link as LinkIcon, Shield, BarChart3 } from "lucide-react";
+import defantraLogo from "@/assets/defantra-logo.jpg";
 
 const DefantraPartnershipSection = () => {
-  const benefits = [
+  const capabilities = [
     {
-      icon: Building2,
-      title: "Enterprise Training Solutions",
-      description: "Comprehensive corporate training programs tailored to your organization's technology needs.",
+      icon: Brain,
+      title: "Technology Strategy & Consulting",
+      description: "Expert guidance on AI, blockchain, and digital transformation initiatives.",
     },
     {
-      icon: Users,
-      title: "Expert Consulting Team",
-      description: "Access to seasoned professionals with deep expertise in AI, blockchain, and digital transformation.",
+      icon: Brain,
+      title: "AI/ML Solution Development",
+      description: "Custom AI and machine learning solutions tailored to your business needs.",
     },
     {
-      icon: Globe,
-      title: "UK & USA Delivery",
-      description: "Seamless service delivery across both regions with local expertise and global standards.",
+      icon: LinkIcon,
+      title: "Blockchain Implementation",
+      description: "End-to-end blockchain development and integration services.",
     },
     {
-      icon: Award,
-      title: "Certified Programs",
-      description: "Industry-recognized certifications and credentials for professional development.",
+      icon: Shield,
+      title: "RegTech & FinTech Solutions",
+      description: "Specialized solutions for regulatory compliance and financial technology.",
     },
   ];
 
@@ -35,78 +36,109 @@ const DefantraPartnershipSection = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 lg:py-32 surface-dark relative overflow-hidden">
+    <section className="py-20 md:py-28 lg:py-36 bg-card relative overflow-hidden" id="veriagent">
       {/* Background */}
-      <div className="absolute inset-0 particle-bg opacity-30" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 tech-pattern opacity-30" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-defantra/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 mb-4 md:mb-6">
-            <Briefcase className="w-4 h-4 text-accent" />
-            <span className="text-sm font-medium text-surface-dark-foreground">Strategic Partnership</span>
+        <div className="text-center mb-14 md:mb-20">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-defantra/10 border border-defantra/20 mb-6">
+            <Briefcase className="w-4 h-4 text-defantra" />
+            <span className="text-sm font-medium text-defantra">Defantra Partnership</span>
           </span>
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-surface-dark-foreground mb-4 md:mb-6">
-            Partnered with <span className="text-accent">Defantra Ltd, UK</span>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
+            VeriAgent Platform &{" "}
+            <span className="text-defantra">Strategic Partnership</span>
           </h2>
-          <p className="text-base md:text-lg text-surface-dark-foreground/70 max-w-2xl mx-auto leading-relaxed">
-            Combining forces to deliver world-class training, consulting, and technology solutions across the USA and UK.
+          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Partnered with Defantra Ltd, UK to deliver world-class technology solutions, training, and consulting across the USA and UK.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-12">
-          {/* Benefits Grid */}
-          <div className="grid sm:grid-cols-2 gap-4">
-            {benefits.map((benefit, index) => (
-              <div
-                key={benefit.title}
-                className="bg-background/5 backdrop-blur-sm rounded-xl p-4 md:p-5 border border-border/10 hover:border-accent/30 hover:bg-background/10 transition-all duration-300 opacity-0 animate-fade-in"
-                style={{ animationDelay: `${0.1 + index * 0.1}s` }}
-              >
-                <div className="w-10 h-10 md:w-11 md:h-11 rounded-lg bg-accent/20 flex items-center justify-center mb-3">
-                  <benefit.icon className="w-5 h-5 text-accent" />
-                </div>
-                <h3 className="font-semibold text-surface-dark-foreground mb-2 text-sm md:text-base">{benefit.title}</h3>
-                <p className="text-surface-dark-foreground/60 text-xs md:text-sm leading-relaxed">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Services & CTA */}
-          <div className="bg-background/10 backdrop-blur-sm rounded-2xl p-5 md:p-6 lg:p-8 border border-border/10">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-white font-bold text-lg md:text-xl">DF</span>
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-14">
+          {/* Left Side - Partnership Info */}
+          <div className="bg-background rounded-2xl p-6 md:p-8 border border-border shadow-lg">
+            <div className="flex items-center gap-4 mb-6 pb-6 border-b border-border">
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl overflow-hidden bg-white flex items-center justify-center shadow-lg border border-border">
+                <img src={defantraLogo} alt="Defantra Ltd" className="w-full h-full object-cover" />
               </div>
               <div>
-                <h3 className="font-display font-bold text-lg md:text-xl text-surface-dark-foreground">Defantra Ltd, UK</h3>
-                <p className="text-sm text-surface-dark-foreground/60">Training & Consulting Partner</p>
+                <h3 className="font-display font-bold text-xl md:text-2xl text-foreground">Defantra Ltd, UK</h3>
+                <p className="text-muted-foreground text-sm">Technology & Training Partner</p>
+                <div className="flex items-center gap-2 mt-1">
+                  <span className="px-2 py-0.5 text-xs font-medium bg-defantra/10 text-defantra rounded-full">Strategic Partner</span>
+                </div>
               </div>
             </div>
 
-            <p className="text-xs font-semibold text-surface-dark-foreground/50 uppercase tracking-wider mb-4">Training Services</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
-              {services.map((service, i) => (
-                <div key={service} className="flex items-center gap-2 text-xs md:text-sm text-surface-dark-foreground/80">
-                  <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0" />
-                  <span>{service}</span>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              Through our strategic partnership with Defantra Ltd, UK, we combine deep technical expertise 
+              with proven delivery methodologies to serve enterprise clients across the United States and United Kingdom.
+            </p>
+
+            <div className="mb-6">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4">Training Services</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {services.map((service) => (
+                  <div key={service} className="flex items-center gap-2 text-sm text-foreground">
+                    <CheckCircle2 className="w-4 h-4 text-defantra flex-shrink-0" />
+                    <span>{service}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <a href="https://www.defantra.com/" target="_blank" rel="noopener noreferrer" className="block">
+              <Button variant="defantra" size="lg" className="w-full group">
+                Visit Defantra
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </a>
+          </div>
+
+          {/* Right Side - VeriAgent Capabilities */}
+          <div className="surface-dark rounded-2xl p-6 md:p-8 border border-border/10">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-secondary to-defantra flex items-center justify-center">
+                <BarChart3 className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h3 className="font-display font-bold text-xl text-surface-dark-foreground">VeriAgent Platform</h3>
+                <p className="text-surface-dark-foreground/60 text-sm">Technology Capabilities</p>
+              </div>
+            </div>
+
+            <div className="grid gap-4">
+              {capabilities.map((capability, index) => (
+                <div 
+                  key={capability.title}
+                  className="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                    <capability.icon className="w-5 h-5 text-secondary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-surface-dark-foreground text-sm mb-1">{capability.title}</h4>
+                    <p className="text-surface-dark-foreground/60 text-xs leading-relaxed">{capability.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
 
-            <a href="https://www.defantra.com/" target="_blank" rel="noopener noreferrer" className="block">
-              <Button variant="heroDark" size="lg" className="w-full group">
-                Visit Defantra
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
+            <a href="https://www.defantra.com/" target="_blank" rel="noopener noreferrer" className="block mt-6">
+              <Button variant="heroOutlineDark" size="lg" className="w-full group">
+                Explore VeriAgent Platform
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </a>
           </div>
         </div>
 
         {/* Trust Indicators */}
-        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 pt-8 border-t border-border/10">
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 pt-8 border-t border-border">
           {[
             { label: "Years Partnership", value: "5+" },
             { label: "Joint Projects", value: "50+" },
@@ -114,8 +146,8 @@ const DefantraPartnershipSection = () => {
             { label: "Countries Served", value: "2" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
-              <p className="text-xl md:text-2xl font-bold text-accent">{stat.value}</p>
-              <p className="text-xs text-surface-dark-foreground/50">{stat.label}</p>
+              <p className="text-2xl md:text-3xl font-bold text-secondary">{stat.value}</p>
+              <p className="text-xs text-muted-foreground">{stat.label}</p>
             </div>
           ))}
         </div>

@@ -14,11 +14,17 @@ const buttonVariants = cva(
         outline: "border-2 border-border bg-transparent text-foreground hover:bg-muted hover:border-muted-foreground/30",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "text-muted-foreground hover:bg-muted hover:text-foreground",
-        link: "text-accent underline-offset-4 hover:underline",
-        // Primary CTA with vibrant teal gradient
-        hero: "btn-gradient text-cta-foreground font-semibold shadow-lg hover:shadow-xl hover:shadow-cta/25 hover:scale-[1.03] active:scale-[0.98] transition-all duration-250",
+        link: "text-secondary underline-offset-4 hover:underline",
+        // Primary CTA with electric blue gradient
+        hero: "btn-gradient text-cta-foreground font-semibold shadow-lg hover:shadow-xl hover:shadow-secondary/25 hover:scale-[1.03] active:scale-[0.98] transition-all duration-250",
         // Secondary outline CTA
-        heroOutline: "border-2 border-cta/30 bg-transparent text-cta hover:bg-cta hover:text-cta-foreground font-semibold transition-all duration-250",
+        heroOutline: "border-2 border-secondary/30 bg-transparent text-secondary hover:bg-secondary hover:text-secondary-foreground font-semibold transition-all duration-250",
+        // CYXOR Orange button
+        cyxor: "btn-gradient-cyxor text-cyxor-foreground font-semibold shadow-lg hover:shadow-xl hover:shadow-cyxor/25 hover:scale-[1.03] active:scale-[0.98] transition-all duration-250",
+        // CYXOR Orange outline
+        cyxorOutline: "border-2 border-cyxor/30 bg-transparent text-cyxor hover:bg-cyxor hover:text-cyxor-foreground font-semibold transition-all duration-250",
+        // Defantra Teal button
+        defantra: "btn-gradient-defantra text-defantra-foreground font-semibold shadow-lg hover:shadow-xl hover:shadow-defantra/25 hover:scale-[1.03] active:scale-[0.98] transition-all duration-250",
         // On dark backgrounds
         heroDark: "bg-background text-foreground font-semibold shadow-lg hover:shadow-xl hover:scale-[1.03] active:scale-[0.98] transition-all duration-250",
         heroOutlineDark: "border-2 border-background/30 bg-transparent text-background hover:bg-background hover:text-foreground font-semibold transition-all duration-250",

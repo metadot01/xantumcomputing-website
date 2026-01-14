@@ -3,8 +3,6 @@ import HeroSection from "@/components/HeroSection";
 import CyxorLearningSection from "@/components/CyxorLearningSection";
 import DefantraPartnershipSection from "@/components/DefantraPartnershipSection";
 import CapabilitiesSection from "@/components/CapabilitiesSection";
-import HowItWorksSection from "@/components/HowItWorksSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
 
@@ -17,8 +15,6 @@ const Index = () => {
         <CyxorLearningSection />
         <DefantraPartnershipSection />
         <CapabilitiesSection />
-        <HowItWorksSection />
-        <TestimonialsSection />
         <FinalCTASection />
       </main>
       <Footer />

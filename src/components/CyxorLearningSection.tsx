@@ -1,157 +1,174 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, BookOpen, Award, Users, CheckCircle2, GraduationCap } from "lucide-react";
+import { ArrowRight, Shield, BookOpen, Award, Users, CheckCircle2, GraduationCap, Brain, Code, Link as LinkIcon, FileCheck } from "lucide-react";
+import cyxorLogo from "@/assets/cyxor-learning-logo.jpg";
 
 const CyxorLearningSection = () => {
   const features = [
     {
       icon: Shield,
-      title: "Blockchain-Based Verification",
+      title: "Blockchain-Verified Credentials",
       description: "Every credential is recorded on the blockchain, ensuring tamper-proof, instantly verifiable achievements.",
     },
     {
       icon: BookOpen,
-      title: "Comprehensive Digital Skills",
-      description: "From AI and blockchain development to platform engineering—learn the technologies shaping tomorrow.",
+      title: "Self-Paced Online Learning",
+      description: "Learn at your own pace with flexible, on-demand access to all course materials and resources.",
     },
     {
       icon: Award,
-      title: "Professional Credibility",
-      description: "Build a verifiable portfolio of skills that employers can instantly authenticate.",
+      title: "Industry-Relevant Curriculum",
+      description: "Courses designed with input from industry experts to ensure skills that employers actually need.",
+    },
+    {
+      icon: FileCheck,
+      title: "UK-Focused Compliance Courses",
+      description: "Specialized compliance and regulatory training aligned with UK standards and requirements.",
     },
   ];
 
   const courses = [
-    { name: "AI & Machine Learning", students: "2.5K+", level: "Beginner to Advanced" },
-    { name: "Blockchain Development", students: "1.8K+", level: "Intermediate" },
-    { name: "Platform Engineering", students: "1.2K+", level: "Advanced" },
-    { name: "Data Science & Analytics", students: "3K+", level: "All Levels" },
+    { 
+      name: "AI Literacy", 
+      icon: Brain,
+      description: "Understand AI fundamentals, applications, and ethical considerations for business leaders.",
+      level: "Beginner"
+    },
+    { 
+      name: "Python Programming for AI/ML", 
+      icon: Code,
+      description: "Master Python programming with focus on AI and machine learning applications.",
+      level: "Intermediate"
+    },
+    { 
+      name: "Blockchain Fundamentals", 
+      icon: LinkIcon,
+      description: "Learn blockchain technology, smart contracts, and decentralized applications.",
+      level: "Beginner"
+    },
+    { 
+      name: "Compliance & RegTech", 
+      icon: Shield,
+      description: "UK-focused regulatory compliance training for financial services professionals.",
+      level: "All Levels"
+    },
   ];
 
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-b from-background to-muted/30" id="cyxor">
+    <section className="py-20 md:py-28 lg:py-36 bg-gradient-to-b from-background via-cyxor/5 to-background" id="cyxor">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cta/10 border border-cta/20 mb-4 md:mb-6">
-            <GraduationCap className="w-4 h-4 text-cta" />
-            <span className="text-sm font-medium text-cta">Our Flagship Platform</span>
+        <div className="text-center mb-14 md:mb-20">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyxor/10 border border-cyxor/20 mb-6">
+            <GraduationCap className="w-4 h-4 text-cyxor" />
+            <span className="text-sm font-medium text-cyxor">CYXOR Learning Platform</span>
           </span>
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6">
-            <span className="text-gradient">CYXOR Learning</span>
-            <br className="hidden sm:block" />
-            <span className="text-foreground"> Digital Skills Platform</span>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
+            Technology & <span className="text-cyxor">Compliance Training</span>
           </h2>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Revolutionizing professional development through blockchain-verified digital credentials and industry-leading curriculum.
+          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Digital skills platform offering blockchain-verified credentials and industry-relevant curriculum. 
+            Learn from experts and earn credentials that employers can instantly authenticate.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-          {/* Left Content - Features */}
-          <div className="order-2 lg:order-1">
-            <div className="space-y-4 md:space-y-6 mb-8">
-              {features.map((feature, index) => (
-                <div 
-                  key={feature.title} 
-                  className="flex gap-4 p-4 md:p-5 rounded-xl bg-card border border-border hover:border-cta/30 hover:shadow-md transition-all duration-300 opacity-0 animate-fade-in"
-                  style={{ animationDelay: `${0.1 + index * 0.1}s` }}
-                >
-                  <div className="w-11 h-11 md:w-12 md:h-12 rounded-xl bg-cta/10 flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="w-5 h-5 md:w-6 md:h-6 text-cta" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1 text-sm md:text-base">{feature.title}</h3>
-                    <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">{feature.description}</p>
-                  </div>
-                </div>
-              ))}
+        {/* Features Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-14 md:mb-20">
+          {features.map((feature, index) => (
+            <div 
+              key={feature.title} 
+              className="bg-card rounded-xl p-5 md:p-6 border border-border hover:border-cyxor/30 hover:shadow-lg transition-all duration-300 opacity-0 animate-fade-in"
+              style={{ animationDelay: `${0.1 + index * 0.05}s` }}
+            >
+              <div className="w-12 h-12 rounded-xl bg-cyxor/10 flex items-center justify-center mb-4">
+                <feature.icon className="w-6 h-6 text-cyxor" />
+              </div>
+              <h3 className="font-semibold text-foreground mb-2">{feature.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
             </div>
+          ))}
+        </div>
 
-            {/* Key Benefits */}
-            <div className="grid grid-cols-2 gap-3 mb-8">
-              {['Industry-Relevant Curriculum', 'Instant Verification', 'Career-Focused Paths', 'Expert Instructors'].map((benefit, i) => (
-                <div key={benefit} className="flex items-center gap-2 text-xs md:text-sm text-muted-foreground">
-                  <CheckCircle2 className="w-4 h-4 text-cta flex-shrink-0" />
-                  <span>{benefit}</span>
+        {/* Course Cards */}
+        <div className="mb-14 md:mb-20">
+          <h3 className="text-center font-display text-xl md:text-2xl font-semibold text-foreground mb-8">
+            Featured Courses
+          </h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            {courses.map((course, index) => (
+              <div 
+                key={course.name}
+                className="group bg-card rounded-xl p-5 md:p-6 border border-border hover:border-cyxor/50 hover:shadow-xl transition-all duration-300 opacity-0 animate-fade-in"
+                style={{ animationDelay: `${0.2 + index * 0.05}s` }}
+              >
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyxor/20 to-cyxor/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <course.icon className="w-6 h-6 text-cyxor" />
                 </div>
-              ))}
-            </div>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-              <a href="https://www.cyxorlearning.co.uk" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                <Button variant="hero" size="lg" className="group w-full">
-                  Explore CYXOR Learning
-                  <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </a>
-              <a href="https://www.cyxorlearning.co.uk" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                <Button variant="heroOutline" size="lg" className="w-full">
-                  Browse Courses
-                </Button>
-              </a>
-            </div>
+                <span className="inline-block px-2 py-0.5 text-xs font-medium bg-muted text-muted-foreground rounded mb-2">
+                  {course.level}
+                </span>
+                <h4 className="font-semibold text-foreground mb-2 group-hover:text-cyxor transition-colors">{course.name}</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">{course.description}</p>
+              </div>
+            ))}
           </div>
+        </div>
 
-          {/* Right Visual - Platform Preview */}
-          <div className="order-1 lg:order-2 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="bg-card rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8 border border-border shadow-xl">
-              {/* Header */}
-              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-border">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-cta to-secondary flex items-center justify-center">
-                  <span className="text-white font-bold text-sm md:text-lg">CX</span>
+        {/* Platform Preview Card */}
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-card rounded-2xl md:rounded-3xl p-6 md:p-8 lg:p-10 border border-border shadow-xl">
+            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+              {/* Logo & Info */}
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl overflow-hidden bg-white flex items-center justify-center shadow-lg border border-border">
+                  <img src={cyxorLogo} alt="CYXOR Learning" className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-base md:text-xl text-foreground">CYXOR Learning</h3>
-                  <p className="text-xs md:text-sm text-muted-foreground">Blockchain-Verified Platform</p>
-                </div>
-                <div className="ml-auto">
-                  <span className="px-2 py-1 text-xs font-semibold bg-success/10 text-success rounded-full">Live</span>
+                  <h3 className="font-display font-bold text-xl md:text-2xl text-foreground">CYXOR Learning</h3>
+                  <p className="text-muted-foreground text-sm">Blockchain-Verified Platform</p>
+                  <div className="flex items-center gap-2 mt-1">
+                    <span className="inline-flex items-center gap-1 text-xs text-success">
+                      <span className="w-2 h-2 rounded-full bg-success animate-pulse"></span>
+                      Live
+                    </span>
+                  </div>
                 </div>
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-2 md:gap-4 mb-6">
-                <div className="bg-muted/50 rounded-xl p-3 md:p-4 text-center">
-                  <p className="text-lg md:text-2xl font-bold text-foreground">100+</p>
-                  <p className="text-[10px] md:text-xs text-muted-foreground">Courses</p>
+              <div className="flex gap-6 md:gap-8">
+                <div className="text-center">
+                  <p className="text-2xl md:text-3xl font-bold text-foreground">100+</p>
+                  <p className="text-xs text-muted-foreground">Courses</p>
                 </div>
-                <div className="bg-muted/50 rounded-xl p-3 md:p-4 text-center">
-                  <p className="text-lg md:text-2xl font-bold text-cta">8K+</p>
-                  <p className="text-[10px] md:text-xs text-muted-foreground">Learners</p>
+                <div className="text-center">
+                  <p className="text-2xl md:text-3xl font-bold text-cyxor">8K+</p>
+                  <p className="text-xs text-muted-foreground">Learners</p>
                 </div>
-                <div className="bg-muted/50 rounded-xl p-3 md:p-4 text-center">
-                  <div className="flex items-center justify-center gap-1">
-                    <Shield className="w-4 h-4 md:w-5 md:h-5 text-secondary" />
-                  </div>
-                  <p className="text-[10px] md:text-xs text-muted-foreground">Verified</p>
+                <div className="text-center">
+                  <p className="text-2xl md:text-3xl font-bold text-purple">✓</p>
+                  <p className="text-xs text-muted-foreground">Verified</p>
                 </div>
               </div>
 
-              {/* Course List */}
-              <div className="space-y-2 md:space-y-3">
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">Popular Courses</p>
-                {courses.map((course, i) => (
-                  <div key={course.name} className="flex items-center justify-between p-2.5 md:p-3 bg-background rounded-xl border border-border hover:border-cta/30 transition-colors">
-                    <div className="min-w-0">
-                      <span className="text-xs md:text-sm font-medium text-foreground block truncate">{course.name}</span>
-                      <span className="text-[10px] md:text-xs text-muted-foreground">{course.level}</span>
-                    </div>
-                    <div className="flex items-center gap-2 flex-shrink-0">
-                      <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                        <Users className="w-3 h-3" />
-                        <span className="hidden sm:inline">{course.students}</span>
-                      </div>
-                      <span className="text-xs text-cta font-medium">→</span>
-                    </div>
-                  </div>
-                ))}
+              {/* CTA */}
+              <div className="flex-shrink-0">
+                <a href="https://www.cyxorlearning.co.uk" target="_blank" rel="noopener noreferrer">
+                  <Button variant="cyxor" size="lg" className="group">
+                    Browse All Courses
+                    <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </a>
               </div>
             </div>
 
-            {/* Floating Badge */}
-            <div className="hidden md:block absolute -top-4 -right-4 bg-cta text-white px-4 py-2 rounded-xl shadow-lg animate-float">
-              <p className="text-sm font-semibold">✓ Blockchain Verified</p>
+            {/* Client Showcase */}
+            <div className="mt-8 pt-6 border-t border-border">
+              <p className="text-xs text-muted-foreground text-center mb-3">Trusted by</p>
+              <div className="flex flex-wrap justify-center gap-6">
+                {['Sri Ramakrishnan Engineering College', 'Solidarity Foundation'].map((client) => (
+                  <span key={client} className="text-sm font-medium text-muted-foreground/70">{client}</span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
