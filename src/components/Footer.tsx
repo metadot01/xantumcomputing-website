@@ -38,7 +38,7 @@ const Footer = () => {
             {/* Brand Column */}
             <div className="lg:col-span-2">
               <h3 className="font-display font-bold text-xl text-white mb-4">
-                Xantum<span className="text-secondary">™</span> Computing Private Limited
+                Xantum<span className="text-secondary">™</span> Computing
               </h3>
               <p className="text-slate-400 text-sm mb-8 leading-relaxed max-w-xs">
                 Enterprise AI & Blockchain solutions powering the next generation of business innovation.
@@ -112,7 +112,7 @@ const Footer = () => {
         <div className="border-t border-slate-800/60 py-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-slate-500">
-              © 2025 <span className="text-slate-400">Xantum™ Computing Private Limited</span>
+              © 2025 <span className="text-slate-400">Xantum™ Computing</span>
             </p>
             <div className="flex items-center gap-3 text-sm text-slate-500">
               <span className="flex items-center gap-2">
