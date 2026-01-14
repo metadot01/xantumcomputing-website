@@ -33,8 +33,9 @@ const HeroSection = () => {
             className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-white opacity-0 animate-fade-in leading-[1.1]"
             style={{ animationDelay: '0.2s' }}
           >
-            Technology Solutions &{" "}
-            <span className="text-cyxor">Professional Development</span>
+            Engineering{" "}
+            <span className="text-cyxor">AI & BLOCKCHAIN</span>{" "}
+            Solutions
           </h1>
 
           {/* Description */}

@@ -17,7 +17,7 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { label: "About", href: "/#about" },
+    { label: "About", href: "/about", isRoute: true },
     { label: "Solutions", href: "/solutions", isRoute: true },
     { label: "CYXOR Learning", href: "/#cyxor" },
     { label: "Contact", href: "/#contact" },
@@ -41,7 +41,7 @@ const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo & Company Name */}
-          <a href="#" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <div className="bg-primary/10 rounded-lg p-1.5">
               <img 
                 src={xantumLogo} 
@@ -54,10 +54,10 @@ const Header = () => {
                 Xantum<span className="text-secondary">™</span> Computing
               </span>
               <span className="text-[10px] text-muted-foreground uppercase tracking-widest hidden sm:block">
-                AI/ML & Blockchain Solutions
+                AI & BLOCKCHAIN SOLUTIONS
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
