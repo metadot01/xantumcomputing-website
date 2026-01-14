@@ -7,7 +7,8 @@ const Footer = () => {
   const footerLinks = {
     Company: [
       { name: "About", href: "/about", isRoute: true },
-      { name: "Careers", href: "/contact", isRoute: true },
+      { name: "Careers", href: "/careers", isRoute: true },
+      { name: "Contact", href: "/contact", isRoute: true },
     ],
     Platform: [
       { name: "VeriAgent", href: "https://www.defantra.com/", external: true },
