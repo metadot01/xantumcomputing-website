@@ -124,7 +124,7 @@ const CyxorLearningSection = () => {
                 </div>
                 <div>
                   <h3 className="font-display font-bold text-xl md:text-2xl text-foreground">CYXOR Learning</h3>
-                  <p className="text-muted-foreground text-sm">Blockchain-Verified Platform</p>
+                  <p className="text-muted-foreground text-sm">Verifiable Digital Skills</p>
                   <div className="flex items-center gap-2 mt-1">
                     <span className="inline-flex items-center gap-1 text-xs text-success">
                       <span className="w-2 h-2 rounded-full bg-success animate-pulse"></span>
