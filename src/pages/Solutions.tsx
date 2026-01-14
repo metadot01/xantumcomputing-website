@@ -8,7 +8,7 @@ import {
   Database, 
   Cpu, 
   Bot, 
-  Search, 
+  Search,
   GraduationCap,
   Shield,
   Users,
@@ -175,12 +175,6 @@ const solutions = [
   }
 ];
 
-const trainingCourses = [
-  { category: "AI & Machine Learning", courses: ["Enterprise GenAI & RAG", "LLM Fine-Tuning", "Multi-Agent Systems"] },
-  { category: "Cloud & MLOps", courses: ["MLOps Infrastructure", "Kubernetes", "Vector Databases"] },
-  { category: "Blockchain & Web3", courses: ["Smart Contracts", "DeFi Engineering", "Web3 Backend"] },
-  { category: "Compliance & Regulatory", courses: ["ISO 27001", "GDPR", "NIS2", "Cyber Essentials", "SOC 2"] }
-];
 
 const Solutions = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -217,7 +211,7 @@ const Solutions = () => {
               </h1>
               
               <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed mb-8">
-                We help banks, fintechs and trading firms design, build, and scale AI, ML, and Blockchain systems that operate reliably in regulated financial environments.
+                Xantum™ Computing delivers AI, machine learning, and blockchain solutions for regulated financial and enterprise environments. Through our partnership with Defantra Ltd (UK), we provide secure, compliance-ready technology for banks, fintechs, and trading firms.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -356,52 +350,6 @@ const Solutions = () => {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Training Courses Grid */}
-        <section className="py-16 md:py-24 bg-primary text-white">
-          <div className="container mx-auto px-4 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white/90 text-sm font-medium mb-4">
-                <GraduationCap className="w-4 h-4" />
-                CYXOR Learning
-              </div>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-white mb-4">
-                Training Courses
-              </h2>
-              <p className="text-lg text-white/70 max-w-2xl mx-auto">
-                Comprehensive training for teams in AI, cloud, blockchain, and compliance
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {trainingCourses.map((category, index) => (
-                <div 
-                  key={category.category}
-                  className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
-                >
-                  <h3 className="text-lg font-semibold text-white mb-4">{category.category}</h3>
-                  <ul className="space-y-2">
-                    {category.courses.map((course) => (
-                      <li key={course} className="flex items-center gap-2 text-sm text-white/70">
-                        <Award className="w-3 h-3 text-cyxor" />
-                        {course}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-            
-            <div className="text-center mt-10">
-              <a href="https://www.cyxorlearning.co.uk" target="_blank" rel="noopener noreferrer">
-                <Button variant="cyxor" size="xl">
-                  Browse All Courses
-                  <ArrowRight className="w-5 h-5" />
-                </Button>
-              </a>
             </div>
           </div>
         </section>
