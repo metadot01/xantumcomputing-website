@@ -15,19 +15,18 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { label: "Home", href: "/" },
-    { label: "Solutions", href: "/#solutions" },
-    { label: "Technology", href: "/#technology" },
-    { label: "Leadership", href: "/about/leadership" },
-    { label: "Contact", href: "/#contact" },
+    { label: "About", href: "#about" },
+    { label: "VeriAgent Platform", href: "#veriagent" },
+    { label: "CYXOR Learning", href: "#cyxor" },
+    { label: "Contact", href: "#contact" },
   ];
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? "shadow-md py-2 border-b border-border" 
-          : "py-4"
+          ? "bg-background/95 backdrop-blur-md shadow-md py-2 border-b border-border" 
+          : "bg-transparent py-4"
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
@@ -43,7 +42,7 @@ const Header = () => {
             </div>
             <div className="flex flex-col">
               <span className="font-display font-bold text-lg md:text-xl text-primary leading-tight">
-                Xantum<span className="text-cta">™</span> Computing
+                Xantum<span className="text-secondary">™</span> Computing
               </span>
               <span className="text-[10px] text-muted-foreground uppercase tracking-widest hidden sm:block">
                 AI/ML & Blockchain Solutions
@@ -66,19 +65,22 @@ const Header = () => {
 
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center gap-3">
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className="text-muted-foreground hover:text-primary"
-            >
-              Talk to Sales
-            </Button>
-            <Button 
-              size="default"
-              className="bg-cta hover:bg-cta/90 text-white font-semibold shadow-lg"
-            >
-              Get Started
-            </Button>
+            <a href="https://www.defantra.com/" target="_blank" rel="noopener noreferrer">
+              <Button 
+                variant="heroOutline" 
+                size="sm" 
+              >
+                Explore VeriAgent
+              </Button>
+            </a>
+            <a href="https://www.cyxorlearning.co.uk" target="_blank" rel="noopener noreferrer">
+              <Button 
+                variant="cyxor"
+                size="default"
+              >
+                Browse Courses
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -103,9 +105,9 @@ const Header = () => {
 
         {/* Mobile Menu */}
         <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-out ${
-          isMenuOpen ? "max-h-[400px] opacity-100 mt-4" : "max-h-0 opacity-0"
+          isMenuOpen ? "max-h-[500px] opacity-100 mt-4" : "max-h-0 opacity-0"
         }`}>
-          <nav className="py-4 flex flex-col gap-1 border-t border-border">
+          <nav className="py-4 flex flex-col gap-1 border-t border-border bg-background/95 backdrop-blur-md rounded-xl">
             {navItems.map((item) => (
               <a
                 key={item.label}
@@ -116,18 +118,23 @@ const Header = () => {
                 {item.label}
               </a>
             ))}
-            <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-border">
-              <Button 
-                variant="outline" 
-                className="w-full h-12"
-              >
-                Talk to Sales
-              </Button>
-              <Button 
-                className="w-full h-12 bg-cta hover:bg-cta/90 text-white font-semibold"
-              >
-                Get Started
-              </Button>
+            <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-border px-4">
+              <a href="https://www.defantra.com/" target="_blank" rel="noopener noreferrer">
+                <Button 
+                  variant="heroOutline" 
+                  className="w-full h-12"
+                >
+                  Explore VeriAgent
+                </Button>
+              </a>
+              <a href="https://www.cyxorlearning.co.uk" target="_blank" rel="noopener noreferrer">
+                <Button 
+                  variant="cyxor"
+                  className="w-full h-12"
+                >
+                  Browse Courses
+                </Button>
+              </a>
             </div>
           </nav>
         </div>

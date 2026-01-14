@@ -1,176 +1,158 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, ExternalLink } from "lucide-react";
+import { ArrowRight, Shield, BookOpen, GraduationCap, ExternalLink } from "lucide-react";
+import cyxorLogo from "@/assets/cyxor-learning-logo.jpg";
+import defantraLogo from "@/assets/defantra-logo.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
+    <section className="relative min-h-screen flex items-center overflow-hidden hero-gradient">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-50">
+      <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/20 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cta/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyxor/5 rounded-full blur-3xl" />
       </div>
 
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 grid-pattern opacity-40" />
+      {/* Geometric Pattern */}
+      <div className="absolute inset-0 geometric-pattern opacity-20" />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 lg:px-8 pt-24 md:pt-32 pb-16 md:pb-20">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Left Content */}
-          <div className="text-left">
-            {/* Badge */}
-            <div 
-              className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-secondary/10 border border-secondary/20 mb-6 md:mb-8 opacity-0 animate-fade-in"
-              style={{ animationDelay: '0.1s' }}
-            >
-              <span className="w-2 h-2 rounded-full bg-cta animate-pulse" />
-              <span className="text-xs md:text-sm text-foreground/70 font-medium">Strategic Partnership with Defantra Ltd, UK</span>
-            </div>
-
-            {/* Headline */}
-            <h1 
-              className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 text-foreground opacity-0 animate-fade-in leading-[1.15]"
-              style={{ animationDelay: '0.2s' }}
-            >
-              <span className="text-gradient">AI/ML & Blockchain</span>
-              <br />
-              <span className="text-foreground">Software for RegTech & FinTech</span>
-            </h1>
-
-            {/* Description */}
-            <p 
-              className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-xl mb-6 md:mb-8 opacity-0 animate-fade-in leading-relaxed"
-              style={{ animationDelay: '0.3s' }}
-            >
-              Xantum™ Computing delivers AI/ML and blockchain software for RegTech and FinTech, in partnership with Defantra Ltd, UK, across the USA and UK.
-            </p>
-
-            {/* CTA Buttons */}
-            <div 
-              className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-8 md:mb-10 opacity-0 animate-fade-in"
-              style={{ animationDelay: '0.4s' }}
-            >
-              <Button variant="hero" size="lg" className="group w-full sm:w-auto">
-                Request Demo
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <a href="https://www.defantra.com/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                <Button variant="heroOutline" size="lg" className="group w-full">
-                  <ExternalLink className="w-4 h-4" />
-                  Defantra Partnership
-                </Button>
-              </a>
-            </div>
-
-            {/* Trust Points - Mobile optimized */}
-            <div 
-              className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 md:gap-6 opacity-0 animate-fade-in"
-              style={{ animationDelay: '0.5s' }}
-            >
-              {['Expert Development Teams', 'AI/Blockchain Specialists', '24/7 Support'].map((point) => (
-                <div key={point} className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
-                  <CheckCircle2 className="w-4 h-4 text-cta flex-shrink-0" />
-                  <span>{point}</span>
-                </div>
-              ))}
-            </div>
+      <div className="relative z-10 container mx-auto px-4 lg:px-8 pt-28 md:pt-36 pb-16 md:pb-24">
+        <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
+          {/* Badge */}
+          <div 
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6 md:mb-8 opacity-0 animate-fade-in"
+            style={{ animationDelay: '0.1s' }}
+          >
+            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <span className="text-xs md:text-sm text-white/90 font-medium">Partnership with Defantra Ltd, UK</span>
           </div>
 
-          {/* Right Visual - Partnership Cards */}
-          <div 
-            className="relative opacity-0 animate-fade-in mt-8 lg:mt-0"
+          {/* Headline */}
+          <h1 
+            className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-white opacity-0 animate-fade-in leading-[1.1]"
+            style={{ animationDelay: '0.2s' }}
+          >
+            Technology Solutions &{" "}
+            <span className="text-cyxor">Professional Development</span>
+          </h1>
+
+          {/* Description */}
+          <p 
+            className="text-base sm:text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-8 md:mb-10 opacity-0 animate-fade-in leading-relaxed"
             style={{ animationDelay: '0.3s' }}
           >
-            <div className="space-y-4">
-              {/* CYXOR Learning Card - Primary Focus */}
-              <a 
-                href="https://www.cyxorlearning.co.uk" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="block bg-gradient-to-br from-cta/10 to-secondary/10 rounded-2xl p-5 md:p-6 border-2 border-cta/30 hover:border-cta hover:shadow-xl transition-all duration-300 group"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-cta to-secondary flex items-center justify-center flex-shrink-0">
-                    <span className="text-white font-bold text-lg md:text-xl">CX</span>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-1">
-                      <h3 className="font-display font-bold text-lg md:text-xl text-foreground group-hover:text-cta transition-colors">CYXOR Learning</h3>
-                      <span className="px-2 py-0.5 text-xs font-semibold bg-cta text-white rounded-full">FEATURED</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground mb-3">Blockchain-verified digital skills platform</p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-2 py-1 text-xs bg-background rounded-lg border border-border">100+ Courses</span>
-                      <span className="px-2 py-1 text-xs bg-background rounded-lg border border-border">Verified Credentials</span>
-                      <span className="px-2 py-1 text-xs bg-background rounded-lg border border-border">Career Paths</span>
-                    </div>
-                  </div>
-                  <ArrowRight className="w-5 h-5 text-cta opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-                </div>
-              </a>
+            Xantum™ Computing delivers AI/ML and blockchain solutions in partnership with Defantra Ltd, UK. 
+            We also operate <span className="text-cyxor font-semibold">CYXOR Learning</span>, a digital skills platform offering technology and compliance courses.
+          </p>
 
-              {/* Defantra Partnership Card */}
-              <a 
-                href="https://www.defantra.com/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="block bg-card rounded-2xl p-5 md:p-6 border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300 group"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
-                    <span className="text-white font-bold text-lg md:text-xl">DF</span>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-1">
-                      <h3 className="font-display font-bold text-lg md:text-xl text-foreground group-hover:text-primary transition-colors">Defantra Ltd, UK</h3>
-                      <span className="px-2 py-0.5 text-xs font-semibold bg-primary/10 text-primary rounded-full">PARTNER</span>
-                    </div>
-                    <p className="text-sm text-muted-foreground mb-3">Strategic training & development partner</p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-2 py-1 text-xs bg-background rounded-lg border border-border">UK Based</span>
-                      <span className="px-2 py-1 text-xs bg-background rounded-lg border border-border">Enterprise Training</span>
-                      <span className="px-2 py-1 text-xs bg-background rounded-lg border border-border">Consulting</span>
-                    </div>
-                  </div>
-                  <ArrowRight className="w-5 h-5 text-primary opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-                </div>
-              </a>
-
-              {/* Stats Row */}
-              <div className="grid grid-cols-3 gap-3 mt-4">
-                <div className="bg-card rounded-xl p-3 md:p-4 text-center border border-border">
-                  <p className="text-xl md:text-2xl font-bold text-foreground">50+</p>
-                  <p className="text-xs text-muted-foreground">Experts</p>
-                </div>
-                <div className="bg-card rounded-xl p-3 md:p-4 text-center border border-border">
-                  <p className="text-xl md:text-2xl font-bold text-cta">15+</p>
-                  <p className="text-xs text-muted-foreground">Years</p>
-                </div>
-                <div className="bg-card rounded-xl p-3 md:p-4 text-center border border-border">
-                  <p className="text-xl md:text-2xl font-bold text-secondary">USA & UK</p>
-                  <p className="text-xs text-muted-foreground">Delivery</p>
-                </div>
-              </div>
-            </div>
+          {/* CTA Buttons */}
+          <div 
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-10 md:mb-12 opacity-0 animate-fade-in"
+            style={{ animationDelay: '0.4s' }}
+          >
+            <a href="https://www.defantra.com/" target="_blank" rel="noopener noreferrer">
+              <Button variant="hero" size="xl" className="group w-full sm:w-auto">
+                <ExternalLink className="w-5 h-5" />
+                Explore VeriAgent Platform
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </a>
+            <a href="https://www.cyxorlearning.co.uk" target="_blank" rel="noopener noreferrer">
+              <Button variant="cyxor" size="xl" className="group w-full sm:w-auto">
+                <GraduationCap className="w-5 h-5" />
+                Browse Courses
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </a>
           </div>
         </div>
 
-        {/* Industries */}
+        {/* Two Feature Cards */}
         <div 
-          className="mt-12 md:mt-20 pt-8 md:pt-12 border-t border-border opacity-0 animate-fade-in"
+          className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto opacity-0 animate-fade-in"
+          style={{ animationDelay: '0.5s' }}
+        >
+          {/* CYXOR Learning Card */}
+          <a 
+            href="https://www.cyxorlearning.co.uk" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="group block bg-white/10 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-cyxor/30 hover:border-cyxor hover:bg-white/15 hover:shadow-2xl transition-all duration-300"
+          >
+            <div className="flex items-start gap-4 mb-4">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl overflow-hidden bg-white flex items-center justify-center flex-shrink-0 shadow-lg">
+                <img src={cyxorLogo} alt="CYXOR Learning" className="w-full h-full object-cover" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <h3 className="font-display font-bold text-xl md:text-2xl text-white group-hover:text-cyxor transition-colors">CYXOR Learning</h3>
+                </div>
+                <p className="text-sm text-white/70">Technology & Compliance Training</p>
+              </div>
+              <span className="px-3 py-1 text-xs font-semibold bg-cyxor text-white rounded-full animate-pulse-glow">FEATURED</span>
+            </div>
+            <p className="text-white/80 text-sm md:text-base mb-4 leading-relaxed">
+              Digital skills platform offering blockchain-verified credentials. Learn AI, Python, blockchain, and compliance from industry experts.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs bg-white/10 rounded-lg text-white/90 border border-white/10">
+                <Shield className="w-3.5 h-3.5 text-purple" /> Blockchain Verified
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs bg-white/10 rounded-lg text-white/90 border border-white/10">
+                <BookOpen className="w-3.5 h-3.5 text-cyxor" /> Self-Paced
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs bg-white/10 rounded-lg text-white/90 border border-white/10">
+                <GraduationCap className="w-3.5 h-3.5 text-accent" /> UK Focused
+              </span>
+            </div>
+          </a>
+
+          {/* Defantra Partnership Card */}
+          <a 
+            href="https://www.defantra.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="group block bg-white/10 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-defantra/30 hover:border-defantra hover:bg-white/15 hover:shadow-2xl transition-all duration-300"
+          >
+            <div className="flex items-start gap-4 mb-4">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl overflow-hidden bg-white flex items-center justify-center flex-shrink-0 shadow-lg">
+                <img src={defantraLogo} alt="Defantra Ltd" className="w-full h-full object-cover" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <h3 className="font-display font-bold text-xl md:text-2xl text-white group-hover:text-defantra transition-colors">VeriAgent Platform</h3>
+                </div>
+                <p className="text-sm text-white/70">Defantra Ltd, UK Partnership</p>
+              </div>
+              <span className="px-3 py-1 text-xs font-semibold bg-defantra/20 text-defantra border border-defantra/30 rounded-full">PARTNER</span>
+            </div>
+            <p className="text-white/80 text-sm md:text-base mb-4 leading-relaxed">
+              Strategic technology and consulting partnership delivering AI/ML solutions, blockchain implementation, and RegTech expertise across UK and USA.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1.5 text-xs bg-white/10 rounded-lg text-white/90 border border-white/10">AI/ML Solutions</span>
+              <span className="px-3 py-1.5 text-xs bg-white/10 rounded-lg text-white/90 border border-white/10">Blockchain</span>
+              <span className="px-3 py-1.5 text-xs bg-white/10 rounded-lg text-white/90 border border-white/10">RegTech</span>
+            </div>
+          </a>
+        </div>
+
+        {/* Trust Indicators */}
+        <div 
+          className="mt-12 md:mt-16 pt-8 border-t border-white/10 opacity-0 animate-fade-in"
           style={{ animationDelay: '0.6s' }}
         >
-          <p className="text-xs md:text-sm text-muted-foreground text-center mb-6 md:mb-8 uppercase tracking-wider">
-            Serving Clients Across Industries
+          <p className="text-xs md:text-sm text-white/50 text-center mb-6 uppercase tracking-wider">
+            Trusted by Educational Institutions & Organizations
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 lg:gap-12">
-            {['Financial Services', 'Healthcare', 'E-Commerce', 'Manufacturing', 'Education'].map((industry) => (
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+            {['Sri Ramakrishnan Engineering College', 'Solidarity Foundation'].map((client) => (
               <div 
-                key={industry} 
-                className="text-muted-foreground/40 font-display font-bold text-sm md:text-base lg:text-lg hover:text-muted-foreground/60 transition-colors cursor-default"
+                key={client} 
+                className="text-white/40 font-display font-semibold text-sm md:text-base hover:text-white/60 transition-colors"
               >
-                {industry}
+                {client}
               </div>
             ))}
           </div>

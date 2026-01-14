@@ -15,7 +15,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['Inter', 'Poppins', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       fontSize: {
         'hero': ['3.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
@@ -53,6 +54,18 @@ export default {
           DEFAULT: "hsl(var(--cta))",
           foreground: "hsl(var(--cta-foreground))",
         },
+        cyxor: {
+          DEFAULT: "hsl(var(--cyxor))",
+          foreground: "hsl(var(--cyxor-foreground))",
+        },
+        defantra: {
+          DEFAULT: "hsl(var(--defantra))",
+          foreground: "hsl(var(--defantra-foreground))",
+        },
+        purple: {
+          DEFAULT: "hsl(var(--purple))",
+          foreground: "hsl(var(--purple-foreground))",
+        },
         success: {
           DEFAULT: "hsl(var(--success))",
           foreground: "hsl(var(--success-foreground))",
@@ -69,6 +82,7 @@ export default {
           dark: "hsl(var(--surface-dark))",
           "dark-foreground": "hsl(var(--surface-dark-foreground))",
         },
+        charcoal: "hsl(var(--charcoal))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -123,8 +137,8 @@ export default {
           to: { opacity: "1", transform: "translateY(0)" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(162 47% 53% / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(162 47% 53% / 0.5)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(25 95% 53% / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(25 95% 53% / 0.5)" },
         },
         "float": {
           "0%, 100%": { transform: "translateY(0)" },
