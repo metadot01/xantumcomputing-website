@@ -253,7 +253,7 @@ const About = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-white mb-4">
-              Ready to Work Together?
+              Ready for Digital Transformation?
             </h2>
             <p className="text-lg text-white/80 mb-8">
               Let's discuss how we can help your organization with AI, blockchain, and compliance solutions.
