@@ -1,9 +1,29 @@
 import { memo } from "react";
-import { Shield, BookOpen, GraduationCap } from "lucide-react";
+import { Shield, BookOpen, GraduationCap, LucideIcon } from "lucide-react";
 import cyxorLogo from "@/assets/cyxor-learning-logo.jpg";
 import defantraLogo from "@/assets/defantra-logo.jpg";
 
-const featureCards = [
+interface Tag {
+  icon?: LucideIcon;
+  text: string;
+  color?: string;
+}
+
+interface FeatureCardData {
+  id: string;
+  href: string;
+  logo: string;
+  logoAlt: string;
+  title: string;
+  subtitle: string;
+  badge: { text: string; variant: "featured" | "partner" };
+  description: string;
+  tags: Tag[];
+  borderColor: string;
+  hoverTitleColor: string;
+}
+
+const featureCards: FeatureCardData[] = [
   {
     id: "cyxor",
     href: "https://www.cyxorlearning.co.uk",
@@ -11,7 +31,7 @@ const featureCards = [
     logoAlt: "CYXOR Learning",
     title: "CYXOR Learning",
     subtitle: "Technology & Compliance Training",
-    badge: { text: "FEATURED", variant: "featured" as const },
+    badge: { text: "FEATURED", variant: "featured" },
     description: "Digital skills platform offering verifiable credentials. Learn AI, Python, blockchain, and compliance from industry experts.",
     tags: [
       { icon: Shield, text: "Verifiable Credentials", color: "text-purple" },
@@ -28,7 +48,7 @@ const featureCards = [
     logoAlt: "Defantra Ltd",
     title: "VeriAgent Platform",
     subtitle: "Defantra Ltd, UK Partnership",
-    badge: { text: "PARTNER", variant: "partner" as const },
+    badge: { text: "PARTNER", variant: "partner" },
     description: "Strategic technology and consulting partnership delivering AI/ML solutions, blockchain implementation, and RegTech expertise across UK and USA.",
     tags: [
       { text: "AI/ML Solutions" },
@@ -40,7 +60,7 @@ const featureCards = [
   },
 ];
 
-const FeatureCard = memo(({ card }: { card: typeof featureCards[0] }) => (
+const FeatureCard = memo(({ card }: { card: FeatureCardData }) => (
   <a
     href={card.href}
     target="_blank"
@@ -76,15 +96,18 @@ const FeatureCard = memo(({ card }: { card: typeof featureCards[0] }) => (
       {card.description}
     </p>
     <div className="flex flex-wrap gap-2">
-      {card.tags.map((tag) => (
-        <span
-          key={tag.text}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs bg-white/10 rounded-lg text-white/90 border border-white/10"
-        >
-          {tag.icon && <tag.icon className={`w-3.5 h-3.5 ${tag.color}`} />}
-          {tag.text}
-        </span>
-      ))}
+      {card.tags.map((tag) => {
+        const TagIcon = tag.icon;
+        return (
+          <span
+            key={tag.text}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs bg-white/10 rounded-lg text-white/90 border border-white/10"
+          >
+            {TagIcon && <TagIcon className={`w-3.5 h-3.5 ${tag.color || ''}`} />}
+            {tag.text}
+          </span>
+        );
+      })}
     </div>
   </a>
 ));
