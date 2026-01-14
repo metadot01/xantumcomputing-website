@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import xantumLogo from "@/assets/xantum-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,19 +17,26 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { label: "About", href: "#about" },
-    { label: "VeriAgent Platform", href: "#veriagent" },
-    { label: "CYXOR Learning", href: "#cyxor" },
-    { label: "Contact", href: "#contact" },
+    { label: "About", href: "/#about" },
+    { label: "Solutions", href: "/solutions", isRoute: true },
+    { label: "CYXOR Learning", href: "/#cyxor" },
+    { label: "Contact", href: "/#contact" },
   ];
+
+  const handleNavClick = (href: string, isRoute?: boolean) => {
+    setIsMenuOpen(false);
+    if (!isRoute && href.startsWith("/#")) {
+      const id = href.replace("/#", "");
+      if (location.pathname === "/") {
+        const element = document.getElementById(id);
+        element?.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? "bg-background/95 backdrop-blur-md shadow-md py-2 border-b border-border" 
-          : "bg-transparent py-4"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-sm py-2 border-b border-border"
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
@@ -53,13 +62,28 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
-              >
-                {item.label}
-              </a>
+              item.isRoute ? (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                    location.pathname === item.href 
+                      ? "text-primary bg-primary/10" 
+                      : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => handleNavClick(item.href)}
+                  className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
+                >
+                  {item.label}
+                </a>
+              )
             ))}
           </nav>
 
@@ -107,16 +131,31 @@ const Header = () => {
         <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-out ${
           isMenuOpen ? "max-h-[500px] opacity-100 mt-4" : "max-h-0 opacity-0"
         }`}>
-          <nav className="py-4 flex flex-col gap-1 border-t border-border bg-background/95 backdrop-blur-md rounded-xl">
+          <nav className="py-4 flex flex-col gap-1 border-t border-border bg-white rounded-xl">
             {navItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={() => setIsMenuOpen(false)}
-                className="flex items-center px-4 py-3 text-base font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-xl transition-colors"
-              >
-                {item.label}
-              </a>
+              item.isRoute ? (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`flex items-center px-4 py-3 text-base font-medium rounded-xl transition-colors ${
+                    location.pathname === item.href 
+                      ? "text-primary bg-primary/10" 
+                      : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => handleNavClick(item.href)}
+                  className="flex items-center px-4 py-3 text-base font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-xl transition-colors"
+                >
+                  {item.label}
+                </a>
+              )
             ))}
             <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-border px-4">
               <a href="https://www.defantra.com/" target="_blank" rel="noopener noreferrer">
