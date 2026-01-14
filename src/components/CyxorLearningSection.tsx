@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, BookOpen, Award, FileCheck, GraduationCap } from "lucide-react";
 import cyxorLogo from "@/assets/cyxor-learning-logo.jpg";
+import srecLogo from "@/assets/srec-logo.png";
+import solidarityLogo from "@/assets/solidarity-foundation-logo.png";
 
 const CyxorLearningSection = () => {
   const features = [
@@ -114,11 +116,20 @@ const CyxorLearningSection = () => {
 
             {/* Client Showcase */}
             <div className="mt-8 pt-6 border-t border-border">
-              <p className="text-xs text-muted-foreground text-center mb-3">Trusted by</p>
-              <div className="flex flex-wrap justify-center gap-6">
-                {['Sri Ramakrishnan Engineering College', 'Solidarity Foundation'].map((client) => (
-                  <span key={client} className="text-sm font-medium text-muted-foreground/70">{client}</span>
-                ))}
+              <p className="text-xs text-muted-foreground text-center mb-4">Trusted by</p>
+              <div className="flex flex-wrap justify-center items-center gap-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg overflow-hidden bg-white flex items-center justify-center shadow border border-border">
+                    <img src={srecLogo} alt="SREC Logo" className="w-full h-full object-contain p-1" loading="lazy" />
+                  </div>
+                  <span className="text-sm font-medium text-muted-foreground">Sri Ramakrishnan Engineering College</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg overflow-hidden bg-white flex items-center justify-center shadow border border-border">
+                    <img src={solidarityLogo} alt="Solidarity Foundation Logo" className="w-full h-full object-contain p-1" loading="lazy" />
+                  </div>
+                  <span className="text-sm font-medium text-muted-foreground">Solidarity Foundation</span>
+                </div>
               </div>
             </div>
           </div>
