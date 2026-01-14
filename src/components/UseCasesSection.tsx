@@ -30,7 +30,7 @@ const UseCasesSection = () => {
     { 
       icon: GraduationCap, 
       title: "Education & Training", 
-      description: "Digital learning platforms with blockchain-verified credential systems like CYXOR Learning." 
+      description: "Digital learning platforms with verifiable credential systems like CYXOR Learning." 
     },
   ];
 

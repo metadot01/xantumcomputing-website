@@ -6,7 +6,7 @@ const FeaturedSolutionsSection = () => {
     {
       icon: GraduationCap,
       title: "CYXOR Learning Platform",
-      description: "Our flagship digital skills platform featuring blockchain-verified credentials, comprehensive tech courses, and career-focused learning paths.",
+      description: "Our flagship digital skills platform featuring verifiable credentials, comprehensive tech courses, and career-focused learning paths.",
       highlight: true,
     },
     {

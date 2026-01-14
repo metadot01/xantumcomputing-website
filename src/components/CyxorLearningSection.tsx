@@ -6,8 +6,8 @@ const CyxorLearningSection = () => {
   const features = [
     {
       icon: Shield,
-      title: "Blockchain-Verified Credentials",
-      description: "Every credential is recorded on the blockchain, ensuring tamper-proof, instantly verifiable achievements.",
+      title: "Verifiable Credentials",
+      description: "Every credential is securely recorded, ensuring tamper-proof, instantly verifiable achievements.",
     },
     {
       icon: BookOpen,
@@ -66,7 +66,7 @@ const CyxorLearningSection = () => {
             Technology & <span className="text-cyxor">Compliance Training</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Digital skills platform offering blockchain-verified credentials and industry-relevant curriculum. 
+            Digital skills platform offering verifiable credentials and industry-relevant curriculum. 
             Learn from experts and earn credentials that employers can instantly authenticate.
           </p>
         </div>
