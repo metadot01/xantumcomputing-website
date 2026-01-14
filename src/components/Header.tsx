@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, ArrowUpRight, Brain, Server, Link as LinkIcon, Database, GraduationCap } from "lucide-react";
+import { ChevronDown, ArrowUpRight, Brain, Server, Link as LinkIcon, Database, GraduationCap, Building2, Briefcase } from "lucide-react";
 import xantumLogo from "@/assets/xantum-logo.png";
 import cyxorLogoIcon from "@/assets/cyxor-logo-icon.jpg";
 import defantraLogoIcon from "@/assets/defantra-logo-icon.jpg";
@@ -11,6 +11,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPlatformsOpen, setIsPlatformsOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
+  const [isCompanyOpen, setIsCompanyOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
@@ -22,8 +23,9 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = [
-    { label: "Company", href: "/about", isRoute: true },
+  const companyLinks = [
+    { name: "About", href: "/about", icon: Building2, description: "Learn about our mission" },
+    { name: "Careers", href: "/contact", icon: Briefcase, description: "Join our growing team" },
   ];
 
   const platformLinks = [
@@ -140,19 +142,40 @@ const Header = () => {
               </div>
             </div>
 
-            {navItems.map((item) => (
-              <Link
-                key={item.label}
-                to={item.href}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                  location.pathname === item.href 
-                    ? "text-primary bg-primary/10" 
-                    : "text-muted-foreground hover:text-primary hover:bg-primary/5"
-                }`}
+            {/* Company Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsCompanyOpen(true)}
+              onMouseLeave={() => setIsCompanyOpen(false)}
+            >
+              <button
+                className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
               >
-                {item.label}
-              </Link>
-            ))}
+                Company
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isCompanyOpen ? "rotate-180" : ""}`} />
+              </button>
+              
+              {/* Company Dropdown Menu */}
+              <div className={`absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-lg border border-border overflow-hidden transition-all duration-200 z-50 ${
+                isCompanyOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
+              }`}>
+                {companyLinks.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="flex items-center gap-3 px-4 py-3 hover:bg-primary/5 transition-colors group"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                      <item.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">{item.name}</p>
+                      <p className="text-xs text-muted-foreground">{item.description}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </nav>
 
           {/* Desktop CTA */}
@@ -232,21 +255,25 @@ const Header = () => {
               </div>
             </div>
 
-            {navItems.map((item) => (
-              <Link
-                key={item.label}
-                to={item.href}
-                onClick={() => setIsMenuOpen(false)}
-                className={`flex items-center px-4 py-3 text-base font-medium rounded-xl transition-colors ${
-                  location.pathname === item.href 
-                    ? "text-primary bg-primary/10" 
-                    : "text-muted-foreground hover:text-primary hover:bg-primary/5"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-            
+            {/* Mobile Company Section */}
+            <div className="px-4 py-2">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Company</p>
+              <div className="space-y-1">
+                {companyLinks.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 transition-colors"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <item.icon className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="text-sm font-medium text-foreground">{item.name}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
             <div className="mt-4 pt-4 border-t border-border px-4">
               <ContactSalesModal>
                 <Button className="w-full h-12" onClick={() => setIsMenuOpen(false)}>
