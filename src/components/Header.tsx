@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, ArrowUpRight } from "lucide-react";
+import { ChevronDown, ArrowUpRight, Brain, Server, Link as LinkIcon, Database, GraduationCap } from "lucide-react";
 import xantumLogo from "@/assets/xantum-logo.png";
+import cyxorLogoIcon from "@/assets/cyxor-logo-icon.jpg";
+import defantraLogoIcon from "@/assets/defantra-logo-icon.jpg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPlatformsOpen, setIsPlatformsOpen] = useState(false);
+  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
@@ -20,25 +23,21 @@ const Header = () => {
 
   const navItems = [
     { label: "About", href: "/about", isRoute: true },
-    { label: "Solutions", href: "/solutions", isRoute: true },
     { label: "Contact", href: "/contact", isRoute: true },
   ];
 
   const platformLinks = [
-    { name: "CYXOR Learning", href: "https://www.cyxorlearning.co.uk", description: "Digital & Compliance Courses" },
-    { name: "VeriAgent Platform", href: "https://www.defantra.com", description: "AI-powered GRC solutions" },
+    { name: "CYXOR Learning", href: "https://www.cyxorlearning.co.uk", description: "Digital & Compliance Courses", logo: cyxorLogoIcon },
+    { name: "VeriAgent Platform", href: "https://www.defantra.com", description: "AI-powered GRC solutions", logo: defantraLogoIcon },
   ];
 
-  const handleNavClick = (href: string, isRoute?: boolean) => {
-    setIsMenuOpen(false);
-    if (!isRoute && href.startsWith("/#")) {
-      const id = href.replace("/#", "");
-      if (location.pathname === "/") {
-        const element = document.getElementById(id);
-        element?.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
+  const solutionLinks = [
+    { name: "AI & ML", href: "/solutions", icon: Brain, description: "Intelligent automation & analytics" },
+    { name: "Infrastructure", href: "/solutions", icon: Server, description: "Scalable cloud solutions" },
+    { name: "Blockchain", href: "/solutions", icon: LinkIcon, description: "Distributed ledger technology" },
+    { name: "Data Engineering", href: "/solutions", icon: Database, description: "Data pipelines & warehousing" },
+    { name: "Learning & Development", href: "/solutions", icon: GraduationCap, description: "Professional training programs" },
+  ];
 
   return (
     <>
@@ -68,6 +67,79 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
+            {/* Platforms Dropdown - First */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsPlatformsOpen(true)}
+              onMouseLeave={() => setIsPlatformsOpen(false)}
+            >
+              <button
+                className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
+              >
+                Platforms
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isPlatformsOpen ? "rotate-180" : ""}`} />
+              </button>
+              
+              {/* Platforms Dropdown Menu */}
+              <div className={`absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-lg border border-border overflow-hidden transition-all duration-200 z-50 ${
+                isPlatformsOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
+              }`}>
+                {platformLinks.map((platform) => (
+                  <a
+                    key={platform.name}
+                    href={platform.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-4 py-3 hover:bg-primary/5 transition-colors group"
+                  >
+                    <div className="w-10 h-10 rounded-lg overflow-hidden bg-white border border-border flex-shrink-0">
+                      <img src={platform.logo} alt={platform.name} className="w-full h-full object-cover" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">{platform.name}</p>
+                      <p className="text-xs text-muted-foreground">{platform.description}</p>
+                    </div>
+                    <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Solutions Dropdown - Second */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsSolutionsOpen(true)}
+              onMouseLeave={() => setIsSolutionsOpen(false)}
+            >
+              <button
+                className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
+              >
+                Solutions
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isSolutionsOpen ? "rotate-180" : ""}`} />
+              </button>
+              
+              {/* Solutions Dropdown Menu */}
+              <div className={`absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-lg border border-border overflow-hidden transition-all duration-200 z-50 ${
+                isSolutionsOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
+              }`}>
+                {solutionLinks.map((solution) => (
+                  <Link
+                    key={solution.name}
+                    to={solution.href}
+                    className="flex items-center gap-3 px-4 py-3 hover:bg-primary/5 transition-colors group"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                      <solution.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">{solution.name}</p>
+                      <p className="text-xs text-muted-foreground">{solution.description}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             {navItems.map((item) => (
               <Link
                 key={item.label}
@@ -81,41 +153,6 @@ const Header = () => {
                 {item.label}
               </Link>
             ))}
-            
-            {/* Platforms Dropdown */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setIsPlatformsOpen(true)}
-              onMouseLeave={() => setIsPlatformsOpen(false)}
-            >
-              <button
-                className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
-              >
-                Platforms
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isPlatformsOpen ? "rotate-180" : ""}`} />
-              </button>
-              
-              {/* Dropdown Menu */}
-              <div className={`absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-lg border border-border overflow-hidden transition-all duration-200 ${
-                isPlatformsOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
-              }`}>
-                {platformLinks.map((platform) => (
-                  <a
-                    key={platform.name}
-                    href={platform.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between px-4 py-3 hover:bg-primary/5 transition-colors group"
-                  >
-                    <div>
-                      <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">{platform.name}</p>
-                      <p className="text-xs text-muted-foreground">{platform.description}</p>
-                    </div>
-                    <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                  </a>
-                ))}
-              </div>
-            </div>
           </nav>
 
           {/* Desktop CTAs */}
@@ -160,9 +197,52 @@ const Header = () => {
 
         {/* Mobile Menu */}
         <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-out ${
-          isMenuOpen ? "max-h-[600px] opacity-100 mt-4" : "max-h-0 opacity-0"
+          isMenuOpen ? "max-h-[800px] opacity-100 mt-4" : "max-h-0 opacity-0"
         }`}>
           <nav className="py-4 flex flex-col gap-1 border-t border-border bg-white rounded-xl">
+            {/* Mobile Platforms Section */}
+            <div className="px-4 py-2">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Platforms</p>
+              <div className="space-y-1">
+                {platformLinks.map((platform) => (
+                  <a
+                    key={platform.name}
+                    href={platform.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 transition-colors"
+                  >
+                    <div className="w-8 h-8 rounded-lg overflow-hidden bg-white border border-border flex-shrink-0">
+                      <img src={platform.logo} alt={platform.name} className="w-full h-full object-cover" />
+                    </div>
+                    <span className="text-sm font-medium text-foreground">{platform.name}</span>
+                    <ArrowUpRight className="w-4 h-4 text-muted-foreground ml-auto" />
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile Solutions Section */}
+            <div className="px-4 py-2">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Solutions</p>
+              <div className="space-y-1">
+                {solutionLinks.map((solution) => (
+                  <Link
+                    key={solution.name}
+                    to={solution.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 transition-colors"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <solution.icon className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="text-sm font-medium text-foreground">{solution.name}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             {navItems.map((item) => (
               <Link
                 key={item.label}
@@ -177,26 +257,6 @@ const Header = () => {
                 {item.label}
               </Link>
             ))}
-            
-            {/* Mobile Platforms Section */}
-            <div className="px-4 py-2">
-              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Platforms</p>
-              <div className="space-y-1">
-                {platformLinks.map((platform) => (
-                  <a
-                    key={platform.name}
-                    href={platform.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setIsMenuOpen(false)}
-                    className="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-primary/5 transition-colors"
-                  >
-                    <span className="text-sm font-medium text-foreground">{platform.name}</span>
-                    <ArrowUpRight className="w-4 h-4 text-muted-foreground" />
-                  </a>
-                ))}
-              </div>
-            </div>
             
             <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-border px-4">
               <a href="https://www.defantra.com/" target="_blank" rel="noopener noreferrer">
