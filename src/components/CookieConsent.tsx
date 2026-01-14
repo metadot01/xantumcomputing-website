@@ -47,18 +47,18 @@ const CookieConsent = () => {
 
   return (
     <div className="fixed bottom-4 left-4 z-50 max-w-sm animate-fade-in">
-      <div className="bg-background/95 backdrop-blur-sm border border-border rounded-lg shadow-lg p-4">
+      <div className="hero-gradient border border-white/10 rounded-lg shadow-xl p-4">
         <div className="flex items-center gap-3 mb-3">
-          <Cookie className="w-4 h-4 text-primary flex-shrink-0" />
-          <p className="text-xs text-muted-foreground">
+          <Cookie className="w-4 h-4 text-white/80 flex-shrink-0" />
+          <p className="text-xs text-white/80">
             We use cookies for a better experience.{" "}
-            <Link to="/cookie-policy" className="text-primary hover:underline">
+            <Link to="/cookie-policy" className="text-white hover:underline font-medium">
               Learn more
             </Link>
           </p>
           <button
             onClick={handleClose}
-            className="text-muted-foreground hover:text-foreground transition-colors ml-auto"
+            className="text-white/60 hover:text-white transition-colors ml-auto"
             aria-label="Close"
           >
             <X className="w-4 h-4" />
@@ -66,14 +66,18 @@ const CookieConsent = () => {
         </div>
         
         <div className="flex gap-2">
-          <Button onClick={handleAcceptAll} size="sm" className="flex-1 h-8 text-xs">
+          <Button 
+            onClick={handleAcceptAll} 
+            size="sm" 
+            className="flex-1 h-8 text-xs bg-white text-primary hover:bg-white/90 font-semibold"
+          >
             Accept
           </Button>
           <Button 
             onClick={handleAcceptEssential} 
             variant="outline" 
             size="sm"
-            className="flex-1 h-8 text-xs"
+            className="flex-1 h-8 text-xs border-white/30 text-white hover:bg-white/10 hover:text-white font-semibold"
           >
             Decline
           </Button>
