@@ -25,7 +25,7 @@ const Header = () => {
 
   const companyLinks = [
     { name: "About", href: "/about", icon: Building2, description: "Learn about our mission" },
-    { name: "Careers", href: "/contact", icon: Briefcase, description: "Join our growing team" },
+    { name: "Careers", href: "/careers", icon: Briefcase, description: "Join our growing team" },
     { name: "Contact", href: "/contact", icon: Mail, description: "Get in touch with us" },
   ];
 
