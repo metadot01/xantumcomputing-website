@@ -155,24 +155,13 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Desktop CTAs */}
-          <div className="hidden lg:flex items-center gap-3">
-            <a href="https://www.defantra.com/" target="_blank" rel="noopener noreferrer">
-              <Button 
-                variant="heroOutline" 
-                size="sm" 
-              >
-                Explore VeriAgent
+          {/* Desktop CTA */}
+          <div className="hidden lg:flex items-center">
+            <Link to="/contact">
+              <Button size="sm">
+                Contact Sales
               </Button>
-            </a>
-            <a href="https://www.cyxorlearning.co.uk" target="_blank" rel="noopener noreferrer">
-              <Button 
-                variant="cyxor"
-                size="default"
-              >
-                Browse Courses
-              </Button>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -258,23 +247,12 @@ const Header = () => {
               </Link>
             ))}
             
-            <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-border px-4">
-              <a href="https://www.defantra.com/" target="_blank" rel="noopener noreferrer">
-                <Button 
-                  variant="heroOutline" 
-                  className="w-full h-12"
-                >
-                  Explore VeriAgent
+            <div className="mt-4 pt-4 border-t border-border px-4">
+              <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+                <Button className="w-full h-12">
+                  Contact Sales
                 </Button>
-              </a>
-              <a href="https://www.cyxorlearning.co.uk" target="_blank" rel="noopener noreferrer">
-                <Button 
-                  variant="cyxor"
-                  className="w-full h-12"
-                >
-                  Browse Courses
-                </Button>
-              </a>
+              </Link>
             </div>
           </nav>
         </div>
