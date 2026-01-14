@@ -93,11 +93,11 @@ const HeroSection = () => {
               <span className="px-3 py-1 text-xs font-semibold bg-cyxor text-white rounded-full animate-pulse-glow">FEATURED</span>
             </div>
             <p className="text-white/80 text-sm md:text-base mb-4 leading-relaxed">
-              Digital skills platform offering blockchain-verified credentials. Learn AI, Python, blockchain, and compliance from industry experts.
+              Digital skills platform offering verifiable credentials. Learn AI, Python, blockchain, and compliance from industry experts.
             </p>
             <div className="flex flex-wrap gap-2">
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs bg-white/10 rounded-lg text-white/90 border border-white/10">
-                <Shield className="w-3.5 h-3.5 text-purple" /> Blockchain Verified
+                <Shield className="w-3.5 h-3.5 text-purple" /> Verifiable Credentials
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs bg-white/10 rounded-lg text-white/90 border border-white/10">
                 <BookOpen className="w-3.5 h-3.5 text-cyxor" /> Self-Paced

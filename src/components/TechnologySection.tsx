@@ -24,7 +24,7 @@ const TechnologySection = () => {
       icon: Sparkles,
       value: "CYXOR",
       label: "Learning Platform",
-      description: "Blockchain-verified credentials",
+      description: "Verifiable digital credentials",
     },
   ];
 
