@@ -11,14 +11,14 @@ const Contact = () => {
     {
       name: "Madhugiri Office",
       address: "KSRTC Bus Stand Road, Madhugiri 572132",
-      country: "India",
       type: "Headquarters",
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3867.4!2d77.2!3d13.66!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDM5JzM2LjAiTiA3N8KwMTInMDAuMCJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin",
     },
     {
       name: "Bangalore Office",
       address: "1772, Judicial Layout, Near Kempegowda International Airport, Bangalore 560065",
-      country: "India",
       type: "Branch Office",
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.5!2d77.7!3d13.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDEyJzAwLjAiTiA3N8KwNDInMDAuMCJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin",
     },
   ];
 
@@ -39,47 +39,16 @@ const Contact = () => {
               <span className="text-sm font-medium text-primary">Enterprise Solutions Partner</span>
             </div>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Let's Build the <span className="text-gradient">Future Together</span>
+              Connect With <span className="text-gradient">Our Team</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Partner with us to transform your business with cutting-edge AI and blockchain solutions. 
-              Our team of experts is ready to help you innovate.
+              Ready to transform your business with AI and blockchain solutions? 
+              Reach out and let's discuss your next project.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Quick Contact Bar */}
-      <section className="py-6 bg-primary/5 border-y border-border">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            <a href="mailto:contact@xantumcomputing.com" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <Mail className="w-5 h-5 text-primary" />
-              </div>
-              <span className="font-medium text-foreground group-hover:text-primary transition-colors">
-                contact@xantumcomputing.com
-              </span>
-            </a>
-            <a href="tel:+919741263932" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <Phone className="w-5 h-5 text-primary" />
-              </div>
-              <span className="font-medium text-foreground group-hover:text-primary transition-colors">
-                +91-9741263932
-              </span>
-            </a>
-            <a href="tel:08137200387" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <Phone className="w-5 h-5 text-primary" />
-              </div>
-              <span className="font-medium text-foreground group-hover:text-primary transition-colors">
-                08137-200387
-              </span>
-            </a>
-          </div>
-        </div>
-      </section>
 
       {/* Contact Content */}
       <section className="py-16 md:py-24">
@@ -179,7 +148,7 @@ const Contact = () => {
 
             {/* Contact Info - Takes 2 columns */}
             <div className="lg:col-span-2 space-y-6">
-              {/* Office Locations */}
+              {/* Office Locations with Maps */}
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center">
@@ -193,27 +162,32 @@ const Contact = () => {
                   {offices.map((office) => (
                     <div 
                       key={office.name}
-                      className="bg-card rounded-xl p-6 border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 group"
+                      className="bg-card rounded-xl border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300 group overflow-hidden"
                     >
-                      <div className="flex gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center flex-shrink-0 group-hover:from-primary/30 group-hover:to-secondary/30 transition-colors">
-                          <MapPin className="w-6 h-6 text-primary" />
-                        </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-1">
-                            <h3 className="font-semibold text-foreground">{office.name}</h3>
-                            <span className="text-xs font-medium text-secondary bg-secondary/10 px-2 py-0.5 rounded-full">
-                              {office.type}
-                            </span>
-                          </div>
-                          <p className="text-muted-foreground text-sm leading-relaxed mb-2">
-                            {office.address}
-                          </p>
-                          <span className="inline-flex items-center gap-1 text-xs font-medium text-primary">
-                            <MapPin className="w-3 h-3" />
-                            {office.country}
+                      {/* Map Embed */}
+                      <div className="h-32 w-full">
+                        <iframe
+                          src={office.mapUrl}
+                          width="100%"
+                          height="100%"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                          title={`${office.name} Location`}
+                        />
+                      </div>
+                      <div className="p-5">
+                        <div className="flex items-center gap-2 mb-2">
+                          <h3 className="font-semibold text-foreground">{office.name}</h3>
+                          <span className="text-xs font-medium text-secondary bg-secondary/10 px-2 py-0.5 rounded-full">
+                            {office.type}
                           </span>
                         </div>
+                        <p className="text-muted-foreground text-sm leading-relaxed flex items-start gap-2">
+                          <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                          {office.address}, India
+                        </p>
                       </div>
                     </div>
                   ))}
