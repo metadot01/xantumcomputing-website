@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Github, Youtube, MapPin, ArrowUpRight, GraduationCap, Briefcase } from "lucide-react";
+import { Linkedin, Youtube, MapPin, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import cyxorLogo from "@/assets/cyxor-learning-logo.jpg";
 import defantraLogo from "@/assets/defantra-logo.jpg";
@@ -34,8 +34,6 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Github, href: "#", label: "GitHub" },
     { icon: Youtube, href: "#", label: "YouTube" },
   ];
 
@@ -62,15 +60,15 @@ const Footer = () => {
                 <div className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="text-sm font-medium text-surface-dark-foreground">USA Office</p>
-                    <p className="text-xs text-surface-dark-foreground/50">United States</p>
+                    <p className="text-sm font-medium text-surface-dark-foreground">Madhugiri Office</p>
+                    <p className="text-xs text-surface-dark-foreground/50">KSRTC Bus Stand Road, Madhugiri 572132, India</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="text-sm font-medium text-surface-dark-foreground">UK Office</p>
-                    <p className="text-xs text-surface-dark-foreground/50">United Kingdom</p>
+                    <p className="text-sm font-medium text-surface-dark-foreground">Bangalore Office</p>
+                    <p className="text-xs text-surface-dark-foreground/50">1772, Judicial Layout, Near Kempegowda International Airport, Bangalore 560065, India</p>
                   </div>
                 </div>
               </div>
