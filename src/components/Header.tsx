@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ArrowUpRight, Brain, Server, Link as LinkIcon, Database, GraduationCap, Building2, Briefcase, Mail } from "lucide-react";
 import xantumLogo from "@/assets/xantum-logo.png";
 import cyxorLogoIcon from "@/assets/cyxor-logo-icon.jpg";
 import defantraLogoIcon from "@/assets/defantra-logo-icon.jpg";
 import ContactSalesModal from "./ContactSalesModal";
+import { useSmoothScroll } from "@/hooks/use-smooth-scroll";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,6 +15,8 @@ const Header = () => {
   const [isCompanyOpen, setIsCompanyOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const { scrollToSection, scrollToTop } = useSmoothScroll();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +26,21 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Scroll to top on route change
+  useEffect(() => {
+    scrollToTop("instant");
+  }, [location.pathname]);
+
+  const handleSectionLink = (sectionId: string) => {
+    if (location.pathname === "/") {
+      scrollToSection(sectionId);
+    } else {
+      navigate("/");
+      setTimeout(() => scrollToSection(sectionId), 150);
+    }
+    setIsMenuOpen(false);
+  };
+
   const companyLinks = [
     { name: "About", href: "/about", icon: Building2, description: "Learn about our mission" },
     { name: "Careers", href: "/careers", icon: Briefcase, description: "Join our growing team" },
@@ -30,8 +48,8 @@ const Header = () => {
   ];
 
   const platformLinks = [
-    { name: "CYXOR Learning", href: "https://www.cyxorlearning.co.uk", description: "Digital & Compliance Courses", logo: cyxorLogoIcon },
-    { name: "VeriAgent Platform", href: "https://www.defantra.com", description: "AI-powered GRC solutions", logo: defantraLogoIcon },
+    { name: "CYXOR Learning", href: "https://www.cyxorlearning.co.uk", description: "Digital & Compliance Courses", logo: cyxorLogoIcon, sectionId: "cyxor" },
+    { name: "VeriAgent Platform", href: "https://www.defantra.com", description: "AI-powered GRC solutions", logo: defantraLogoIcon, sectionId: "veriagent" },
   ];
 
   const solutionLinks = [
@@ -88,22 +106,29 @@ const Header = () => {
                 isPlatformsOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
               }`}>
                 {platformLinks.map((platform) => (
-                  <a
-                    key={platform.name}
-                    href={platform.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-4 py-3 hover:bg-primary/5 transition-colors group"
-                  >
-                    <div className="w-10 h-10 rounded-lg overflow-hidden bg-white border border-border flex-shrink-0">
-                      <img src={platform.logo} alt={platform.name} className="w-full h-full object-cover" />
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">{platform.name}</p>
-                      <p className="text-xs text-muted-foreground">{platform.description}</p>
-                    </div>
-                    <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                  </a>
+                  <div key={platform.name} className="flex flex-col">
+                    <a
+                      href={platform.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-primary/5 transition-colors group"
+                    >
+                      <div className="w-10 h-10 rounded-lg overflow-hidden bg-white border border-border flex-shrink-0">
+                        <img src={platform.logo} alt={platform.name} className="w-full h-full object-cover" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">{platform.name}</p>
+                        <p className="text-xs text-muted-foreground">{platform.description}</p>
+                      </div>
+                      <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                    </a>
+                    <button
+                      onClick={() => handleSectionLink(platform.sectionId)}
+                      className="text-xs text-muted-foreground hover:text-primary px-4 pb-2 text-left transition-colors"
+                    >
+                      → View on this page
+                    </button>
+                  </div>
                 ))}
               </div>
             </div>
@@ -129,6 +154,7 @@ const Header = () => {
                   <Link
                     key={solution.name}
                     to={solution.href}
+                    onClick={() => scrollToTop()}
                     className="flex items-center gap-3 px-4 py-3 hover:bg-primary/5 transition-colors group"
                   >
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
@@ -164,6 +190,7 @@ const Header = () => {
                   <Link
                     key={item.name}
                     to={item.href}
+                    onClick={() => scrollToTop()}
                     className="flex items-center gap-3 px-4 py-3 hover:bg-primary/5 transition-colors group"
                   >
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
@@ -218,20 +245,27 @@ const Header = () => {
               <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Platforms</p>
               <div className="space-y-1">
                 {platformLinks.map((platform) => (
-                  <a
-                    key={platform.name}
-                    href={platform.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setIsMenuOpen(false)}
-                    className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 transition-colors"
-                  >
-                    <div className="w-8 h-8 rounded-lg overflow-hidden bg-white border border-border flex-shrink-0">
-                      <img src={platform.logo} alt={platform.name} className="w-full h-full object-cover" />
-                    </div>
-                    <span className="text-sm font-medium text-foreground">{platform.name}</span>
-                    <ArrowUpRight className="w-4 h-4 text-muted-foreground ml-auto" />
-                  </a>
+                  <div key={platform.name} className="space-y-1">
+                    <a
+                      href={platform.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 transition-colors"
+                    >
+                      <div className="w-8 h-8 rounded-lg overflow-hidden bg-white border border-border flex-shrink-0">
+                        <img src={platform.logo} alt={platform.name} className="w-full h-full object-cover" />
+                      </div>
+                      <span className="text-sm font-medium text-foreground">{platform.name}</span>
+                      <ArrowUpRight className="w-4 h-4 text-muted-foreground ml-auto" />
+                    </a>
+                    <button
+                      onClick={() => handleSectionLink(platform.sectionId)}
+                      className="text-xs text-muted-foreground hover:text-primary px-3 ml-11 transition-colors"
+                    >
+                      → View on this page
+                    </button>
+                  </div>
                 ))}
               </div>
             </div>
@@ -244,7 +278,10 @@ const Header = () => {
                   <Link
                     key={solution.name}
                     to={solution.href}
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      scrollToTop();
+                    }}
                     className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 transition-colors"
                   >
                     <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -264,7 +301,10 @@ const Header = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      scrollToTop();
+                    }}
                     className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/5 transition-colors"
                   >
                     <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
