@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, ArrowUpRight, Brain, Server, Link as LinkIcon, Database, GraduationCap, Building2, Briefcase } from "lucide-react";
+import { ChevronDown, ArrowUpRight, Brain, Server, Link as LinkIcon, Database, GraduationCap, Building2, Briefcase, Mail } from "lucide-react";
 import xantumLogo from "@/assets/xantum-logo.png";
 import cyxorLogoIcon from "@/assets/cyxor-logo-icon.jpg";
 import defantraLogoIcon from "@/assets/defantra-logo-icon.jpg";
@@ -26,6 +26,7 @@ const Header = () => {
   const companyLinks = [
     { name: "About", href: "/about", icon: Building2, description: "Learn about our mission" },
     { name: "Careers", href: "/contact", icon: Briefcase, description: "Join our growing team" },
+    { name: "Contact", href: "/contact", icon: Mail, description: "Get in touch with us" },
   ];
 
   const platformLinks = [
