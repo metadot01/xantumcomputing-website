@@ -1,8 +1,8 @@
-import { Linkedin, Youtube, MapPin, ArrowUpRight } from "lucide-react";
+import { Linkedin, Youtube, MapPin, ArrowUpRight, Briefcase, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import cyxorLogo from "@/assets/cyxor-learning-logo.jpg";
 import defantraLogo from "@/assets/defantra-logo.jpg";
-import xantumLogo from "@/assets/xantum-logo.png";
 
 const Footer = () => {
   const footerLinks = {
@@ -49,18 +49,9 @@ const Footer = () => {
           <div className="grid grid-cols-2 md:grid-cols-6 gap-10 lg:gap-12">
             {/* Brand Column */}
             <div className="col-span-2">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="bg-white/10 rounded-lg p-1.5">
-                  <img 
-                    src={xantumLogo} 
-                    alt="Xantum Computing Logo" 
-                    className="w-8 h-8 object-contain"
-                  />
-                </div>
-                <h3 className="font-display font-bold text-lg md:text-xl text-white leading-tight">
-                  Xantum<span className="text-secondary">™</span> Computing
-                </h3>
-              </div>
+              <h3 className="font-display font-bold text-lg md:text-xl text-white leading-tight mb-3">
+                Xantum<span className="text-secondary">™</span> Computing
+              </h3>
               <p className="text-sm text-surface-dark-foreground/60 mb-6 leading-relaxed">
                 Technology solutions and professional development in partnership with Defantra Ltd, UK.
               </p>
@@ -127,13 +118,47 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Partner Highlights */}
+        {/* Careers Form & Partner Highlights */}
         <div className="container mx-auto px-4 lg:px-8 pb-8">
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-3 gap-4">
+            {/* Careers Form */}
+            <div className="rounded-xl p-6 bg-gradient-to-br from-primary/20 to-secondary/10 border border-primary/20">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                  <Briefcase className="w-5 h-5 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-surface-dark-foreground">Join Our Team</h4>
+                  <p className="text-xs text-surface-dark-foreground/60">We're hiring!</p>
+                </div>
+              </div>
+              <form className="space-y-3">
+                <Input 
+                  type="text" 
+                  placeholder="Your Name" 
+                  className="h-10 bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-primary"
+                />
+                <Input 
+                  type="email" 
+                  placeholder="Email Address" 
+                  className="h-10 bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-primary"
+                />
+                <Input 
+                  type="text" 
+                  placeholder="Position Interested In" 
+                  className="h-10 bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-primary"
+                />
+                <Button type="submit" className="w-full h-10" size="sm">
+                  <Send className="w-4 h-4 mr-2" />
+                  Submit Application
+                </Button>
+              </form>
+            </div>
+
             {/* CYXOR */}
-            <a href="https://www.cyxorlearning.co.uk" target="_blank" rel="noopener noreferrer" className="group relative rounded-xl overflow-hidden p-5 bg-gradient-to-r from-cyxor/20 to-cyxor/10 border border-cyxor/20 hover:border-cyxor/40 transition-all">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl overflow-hidden bg-white shadow-lg">
+            <a href="https://www.cyxorlearning.co.uk" target="_blank" rel="noopener noreferrer" className="group relative rounded-xl overflow-hidden p-5 bg-gradient-to-r from-cyxor/20 to-cyxor/10 border border-cyxor/20 hover:border-cyxor/40 transition-all flex items-center">
+              <div className="flex items-center gap-4 w-full">
+                <div className="w-12 h-12 rounded-xl overflow-hidden bg-white shadow-lg flex-shrink-0">
                   <img src={cyxorLogo} alt="CYXOR Learning" className="w-full h-full object-cover" />
                 </div>
                 <div className="flex-1">
@@ -145,9 +170,9 @@ const Footer = () => {
             </a>
 
             {/* Defantra */}
-            <a href="https://www.defantra.com/" target="_blank" rel="noopener noreferrer" className="group relative rounded-xl overflow-hidden p-5 bg-gradient-to-r from-defantra/20 to-defantra/10 border border-defantra/20 hover:border-defantra/40 transition-all">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl overflow-hidden bg-white shadow-lg">
+            <a href="https://www.defantra.com/" target="_blank" rel="noopener noreferrer" className="group relative rounded-xl overflow-hidden p-5 bg-gradient-to-r from-defantra/20 to-defantra/10 border border-defantra/20 hover:border-defantra/40 transition-all flex items-center">
+              <div className="flex items-center gap-4 w-full">
+                <div className="w-12 h-12 rounded-xl overflow-hidden bg-white shadow-lg flex-shrink-0">
                   <img src={defantraLogo} alt="Defantra Ltd" className="w-full h-full object-cover" />
                 </div>
                 <div className="flex-1">
