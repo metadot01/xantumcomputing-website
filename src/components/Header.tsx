@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { ChevronDown, ArrowUpRight } from "lucide-react";
 import xantumLogo from "@/assets/xantum-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isPlatformsOpen, setIsPlatformsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
@@ -19,8 +21,12 @@ const Header = () => {
   const navItems = [
     { label: "About", href: "/about", isRoute: true },
     { label: "Solutions", href: "/solutions", isRoute: true },
-    { label: "CYXOR Learning", href: "/#cyxor" },
     { label: "Contact", href: "/contact", isRoute: true },
+  ];
+
+  const platformLinks = [
+    { name: "CYXOR Learning", href: "https://www.cyxorlearning.co.uk", description: "Professional development courses" },
+    { name: "VeriAgent Platform", href: "https://www.defantra.com", description: "AI-powered GRC solutions" },
   ];
 
   const handleNavClick = (href: string, isRoute?: boolean) => {
@@ -63,29 +69,53 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
-              item.isRoute ? (
-                <Link
-                  key={item.label}
-                  to={item.href}
-                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
-                    location.pathname === item.href 
-                      ? "text-primary bg-primary/10" 
-                      : "text-muted-foreground hover:text-primary hover:bg-primary/5"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ) : (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => handleNavClick(item.href)}
-                  className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
-                >
-                  {item.label}
-                </a>
-              )
+              <Link
+                key={item.label}
+                to={item.href}
+                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                  location.pathname === item.href 
+                    ? "text-primary bg-primary/10" 
+                    : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                }`}
+              >
+                {item.label}
+              </Link>
             ))}
+            
+            {/* Platforms Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsPlatformsOpen(true)}
+              onMouseLeave={() => setIsPlatformsOpen(false)}
+            >
+              <button
+                className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200"
+              >
+                Platforms
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isPlatformsOpen ? "rotate-180" : ""}`} />
+              </button>
+              
+              {/* Dropdown Menu */}
+              <div className={`absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-lg border border-border overflow-hidden transition-all duration-200 ${
+                isPlatformsOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
+              }`}>
+                {platformLinks.map((platform) => (
+                  <a
+                    key={platform.name}
+                    href={platform.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between px-4 py-3 hover:bg-primary/5 transition-colors group"
+                  >
+                    <div>
+                      <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">{platform.name}</p>
+                      <p className="text-xs text-muted-foreground">{platform.description}</p>
+                    </div>
+                    <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                  </a>
+                ))}
+              </div>
+            </div>
           </nav>
 
           {/* Desktop CTAs */}
@@ -130,34 +160,44 @@ const Header = () => {
 
         {/* Mobile Menu */}
         <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-out ${
-          isMenuOpen ? "max-h-[500px] opacity-100 mt-4" : "max-h-0 opacity-0"
+          isMenuOpen ? "max-h-[600px] opacity-100 mt-4" : "max-h-0 opacity-0"
         }`}>
           <nav className="py-4 flex flex-col gap-1 border-t border-border bg-white rounded-xl">
             {navItems.map((item) => (
-              item.isRoute ? (
-                <Link
-                  key={item.label}
-                  to={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`flex items-center px-4 py-3 text-base font-medium rounded-xl transition-colors ${
-                    location.pathname === item.href 
-                      ? "text-primary bg-primary/10" 
-                      : "text-muted-foreground hover:text-primary hover:bg-primary/5"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ) : (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => handleNavClick(item.href)}
-                  className="flex items-center px-4 py-3 text-base font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 rounded-xl transition-colors"
-                >
-                  {item.label}
-                </a>
-              )
+              <Link
+                key={item.label}
+                to={item.href}
+                onClick={() => setIsMenuOpen(false)}
+                className={`flex items-center px-4 py-3 text-base font-medium rounded-xl transition-colors ${
+                  location.pathname === item.href 
+                    ? "text-primary bg-primary/10" 
+                    : "text-muted-foreground hover:text-primary hover:bg-primary/5"
+                }`}
+              >
+                {item.label}
+              </Link>
             ))}
+            
+            {/* Mobile Platforms Section */}
+            <div className="px-4 py-2">
+              <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Platforms</p>
+              <div className="space-y-1">
+                {platformLinks.map((platform) => (
+                  <a
+                    key={platform.name}
+                    href={platform.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-primary/5 transition-colors"
+                  >
+                    <span className="text-sm font-medium text-foreground">{platform.name}</span>
+                    <ArrowUpRight className="w-4 h-4 text-muted-foreground" />
+                  </a>
+                ))}
+              </div>
+            </div>
+            
             <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-border px-4">
               <a href="https://www.defantra.com/" target="_blank" rel="noopener noreferrer">
                 <Button 
