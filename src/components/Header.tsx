@@ -25,7 +25,7 @@ const Header = () => {
   ];
 
   const platformLinks = [
-    { name: "CYXOR Learning", href: "https://www.cyxorlearning.co.uk", description: "Professional development courses" },
+    { name: "CYXOR Learning", href: "https://www.cyxorlearning.co.uk", description: "Digital & Compliance Courses" },
     { name: "VeriAgent Platform", href: "https://www.defantra.com", description: "AI-powered GRC solutions" },
   ];
 
