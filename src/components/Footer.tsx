@@ -47,7 +47,7 @@ const Footer = () => {
                 Ready to innovate?
               </div>
               <h3 className="text-2xl lg:text-3xl font-display font-bold text-white mb-2">
-                Enterprise Solutions
+                Enterprise AI & Blockchain Solutions
               </h3>
               <p className="text-slate-400 max-w-md">
                 Get in touch to discuss your AI, blockchain, or enterprise technology needs.
