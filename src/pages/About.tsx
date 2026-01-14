@@ -1,43 +1,39 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LeadershipCard from "@/components/about/LeadershipCard";
-import CompanyHighlight from "@/components/about/CompanyHighlight";
 import { Button } from "@/components/ui/button";
 import { 
-  Building2, 
-  Target, 
-  Lightbulb, 
-  Globe, 
   GraduationCap, 
   Briefcase, 
   Scale, 
   Users,
   ArrowRight,
-  Sparkles
+  Sparkles,
+  Handshake,
+  ShieldCheck,
+  Cpu
 } from "lucide-react";
 import bharathPhoto from "@/assets/bharath-shivaram.jpeg";
 import roopaPhoto from "@/assets/roopa-kiran.png";
 
-const companyHighlights = [
+const trustPillars = [
   {
-    icon: Building2,
-    title: "UK-Based",
-    description: "Strategic partnership with Defantra Ltd, UK for enterprise-grade solutions"
+    icon: Handshake,
+    title: "Strategic Partnerships",
+    description: "We work in close partnership with Defantra Ltd to deliver enterprise-grade solutions designed for real-world, high-stakes environments.",
+    gradient: "from-secondary to-emerald"
   },
   {
-    icon: Target,
-    title: "Regulated Finance",
-    description: "Specialized in RegTech & FinTech solutions for compliance-first environments"
+    icon: ShieldCheck,
+    title: "Compliance-First by Design",
+    description: "Our solutions are purpose-built for RegTech and FinTech, embedding compliance, auditability, and governance into every layer of the system.",
+    gradient: "from-cyxor to-orange-400"
   },
   {
-    icon: Lightbulb,
-    title: "AI & Blockchain",
-    description: "Cutting-edge technology solutions built for production at scale"
-  },
-  {
-    icon: Globe,
-    title: "CYXOR Learning",
-    description: "Digital skills & compliance training platform with blockchain credentials"
+    icon: Cpu,
+    title: "Advanced AI & Blockchain",
+    description: "We develop production-ready AI, machine learning, and blockchain solutions engineered for security, resilience, and scalability.",
+    gradient: "from-purple to-secondary"
   }
 ];
 
@@ -92,31 +88,65 @@ const About = () => {
         </div>
       </section>
 
-      {/* Company Highlights */}
-      <section className="py-16 md:py-20 bg-muted/30">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
-              What Defines Us
+      {/* Trust Pillars Section */}
+      <section className="py-20 md:py-28 bg-muted/30 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyxor/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+        
+        <div className="container relative mx-auto px-4 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-6">
+              Built for Trust.{" "}
+              <span className="bg-gradient-to-r from-secondary to-emerald bg-clip-text text-transparent">
+                Engineered for Scale.
+              </span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Built on expertise, partnerships, and a commitment to regulated excellence
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              We combine deep technical expertise, strong strategic partnerships, and a relentless focus on regulated excellence to deliver systems that perform where it matters most.
             </p>
           </div>
           
-          <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {companyHighlights.map((highlight, index) => (
-              <CompanyHighlight
-                key={highlight.title}
-                icon={highlight.icon}
-                title={highlight.title}
-                description={highlight.description}
-                index={index}
-              />
+          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+            {trustPillars.map((pillar, index) => (
+              <div 
+                key={pillar.title}
+                className="group relative"
+              >
+                {/* Card */}
+                <div className="relative h-full p-8 bg-background rounded-3xl border border-border hover:border-secondary/40 transition-all duration-500 hover:shadow-2xl hover:shadow-secondary/10 overflow-hidden">
+                  {/* Gradient bar at top */}
+                  <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${pillar.gradient}`} />
+                  
+                  {/* Hover glow effect */}
+                  <div className={`absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br ${pillar.gradient} rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
+                  
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${pillar.gradient} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      <pillar.icon className="w-8 h-8 text-white" />
+                    </div>
+                    
+                    {/* Content */}
+                    <h3 className="text-xl font-display font-bold text-foreground mb-4 group-hover:text-secondary transition-colors">
+                      {pillar.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {pillar.description}
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Number indicator */}
+                <div className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-background border-2 border-border flex items-center justify-center text-sm font-bold text-muted-foreground shadow-lg">
+                  {String(index + 1).padStart(2, '0')}
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* Leadership Section */}
       <section className="py-16 md:py-24 bg-background">
