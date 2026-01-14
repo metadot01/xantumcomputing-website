@@ -181,7 +181,8 @@ const Careers = () => {
             We're always looking for talented individuals. Send us your resume and we'll keep you in mind for future opportunities.
           </p>
           <JobApplicationModal jobTitle="General Application" location="Madhugiri">
-            <Button variant="secondary" size="lg">
+            <Button variant="secondary" size="xl" className="relative overflow-hidden group">
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               Send Your Resume
             </Button>
           </JobApplicationModal>
