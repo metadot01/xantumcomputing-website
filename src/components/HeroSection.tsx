@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, BookOpen, GraduationCap, ExternalLink } from "lucide-react";
+import { ArrowRight, Shield, BookOpen, GraduationCap } from "lucide-react";
 import cyxorLogo from "@/assets/cyxor-learning-logo.jpg";
 import defantraLogo from "@/assets/defantra-logo.jpg";
 
@@ -53,7 +53,6 @@ const HeroSection = () => {
           >
             <a href="https://www.defantra.com/" target="_blank" rel="noopener noreferrer">
               <Button variant="hero" size="xl" className="group w-full sm:w-auto">
-                <ExternalLink className="w-5 h-5" />
                 Explore VeriAgent Platform
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
