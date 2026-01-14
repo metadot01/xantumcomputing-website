@@ -21,8 +21,9 @@ const Footer = () => {
       { name: "Data Engineering", href: "/solutions", isRoute: true },
     ],
     Legal: [
-      { name: "Privacy Policy", href: "#" },
-      { name: "Terms of Service", href: "#" },
+      { name: "Privacy Policy", href: "/privacy-policy", isRoute: true },
+      { name: "Terms of Service", href: "/terms-of-service", isRoute: true },
+      { name: "Cookie Policy", href: "/cookie-policy", isRoute: true },
     ],
   };
 
