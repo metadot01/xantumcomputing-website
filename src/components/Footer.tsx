@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 const Footer = () => {
   const footerLinks = {
     Company: [
-      { name: "About Us", href: "/about", isRoute: true },
+      { name: "About", href: "/about", isRoute: true },
       { name: "Careers", href: "/contact", isRoute: true },
     ],
     Platform: [

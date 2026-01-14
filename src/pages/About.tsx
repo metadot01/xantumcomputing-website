@@ -60,11 +60,11 @@ const About = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white/90 text-sm font-medium mb-6">
               <Sparkles className="w-4 h-4" />
-              About Us
+              About
             </div>
             
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
-              About Xantum™ Computing
+              About Xantum<span className="text-secondary">™</span> Computing
             </h1>
             
             <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed mb-10">
