@@ -140,8 +140,8 @@ const Careers = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight">
-              <span className="text-foreground">Build the Future </span>
-              <span className="text-gradient-primary">With Us</span>
+              <span className="text-foreground">AI-Powered Innovation </span>
+              <span className="text-gradient-primary">Starts Here</span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-10">
