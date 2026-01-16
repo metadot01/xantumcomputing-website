@@ -1,19 +1,47 @@
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 import HeroCTAButtons from "./HeroCTAButtons";
 import HeroFeatureCards from "./HeroFeatureCards";
 import HeroTrustedBy from "./HeroTrustedBy";
 
-// Memoized background component to prevent re-renders
-const HeroBackground = memo(() => (
+// Hook for parallax scroll effect
+const useParallax = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return scrollY;
+};
+
+// Memoized background component with parallax
+const HeroBackground = memo(({ scrollY }: { scrollY: number }) => (
   <>
-    {/* Background Pattern */}
+    {/* Background Pattern with Parallax */}
     <div className="absolute inset-0 opacity-30">
-      <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyxor/5 rounded-full blur-3xl" />
+      <div 
+        className="absolute top-20 left-10 w-72 h-72 bg-secondary/20 rounded-full blur-3xl transition-transform duration-100"
+        style={{ transform: `translateY(${scrollY * 0.15}px)` }}
+      />
+      <div 
+        className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl transition-transform duration-100"
+        style={{ transform: `translateY(${scrollY * 0.1}px)` }}
+      />
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyxor/5 rounded-full blur-3xl transition-transform duration-100"
+        style={{ transform: `translate(-50%, calc(-50% + ${scrollY * 0.08}px))` }}
+      />
     </div>
-    {/* Geometric Pattern */}
-    <div className="absolute inset-0 geometric-pattern opacity-20" />
+    {/* Geometric Pattern with subtle parallax */}
+    <div 
+      className="absolute inset-0 geometric-pattern opacity-20 transition-transform duration-100"
+      style={{ transform: `translateY(${scrollY * 0.05}px)` }}
+    />
   </>
 ));
 
@@ -65,9 +93,11 @@ const HeroHeader = memo(() => (
 HeroHeader.displayName = "HeroHeader";
 
 const HeroSection = memo(() => {
+  const scrollY = useParallax();
+  
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden hero-gradient">
-      <HeroBackground />
+      <HeroBackground scrollY={scrollY} />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 lg:px-8 pt-28 md:pt-36 pb-16 md:pb-24">
