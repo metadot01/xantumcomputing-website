@@ -4,6 +4,9 @@ import defantraLogo from "@/assets/defantra-logo.jpg";
 import CountdownTimer from "./CountdownTimer";
 
 const DefantraPartnershipSection = () => {
+  // Next upcoming module launch date (Q2 2026 - Vendor Risk Module)
+  const nextLaunchDate = new Date("2026-04-01T00:00:00");
+
   const modules = [
     {
       icon: Shield,
@@ -11,7 +14,6 @@ const DefantraPartnershipSection = () => {
       status: "live",
       statusLabel: "Available Now",
       description: "UK contractor compliance with automated risk scoring and HMRC-ready documentation",
-      targetDate: null,
     },
     {
       icon: BarChart3,
@@ -19,7 +21,6 @@ const DefantraPartnershipSection = () => {
       status: "coming",
       statusLabel: "Q2 2026",
       description: "Streamlined onboarding, continuous monitoring, and comprehensive risk scoring",
-      targetDate: new Date("2026-04-01T00:00:00"),
     },
     {
       icon: Globe,
@@ -27,7 +28,6 @@ const DefantraPartnershipSection = () => {
       status: "coming",
       statusLabel: "Q3 2026",
       description: "Regulatory monitoring and restricted party screening for global operations",
-      targetDate: new Date("2026-07-01T00:00:00"),
     },
     {
       icon: Brain,
@@ -35,7 +35,6 @@ const DefantraPartnershipSection = () => {
       status: "coming",
       statusLabel: "Q4 2026",
       description: "Model risk assessment, bias detection, and policy compliance management",
-      targetDate: new Date("2026-10-01T00:00:00"),
     },
   ];
 
@@ -130,15 +129,21 @@ const DefantraPartnershipSection = () => {
               Start with IR35 today, expand as your compliance needs grow. Each module shares the same AI + blockchain foundation.
             </p>
 
-            {/* Status Legend */}
-            <div className="flex items-center gap-4 mb-5">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-xs text-surface-dark-foreground/60">Live now</span>
+            {/* Status Legend & Countdown */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-5 p-4 rounded-xl bg-secondary/10 border border-secondary/20">
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                  <span className="text-xs text-surface-dark-foreground/70">Live now</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-secondary" />
+                  <span className="text-xs text-surface-dark-foreground/70">Coming soon</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-secondary/60" />
-                <span className="text-xs text-surface-dark-foreground/60">Coming soon</span>
+              <div className="flex items-center gap-3">
+                <span className="text-xs text-surface-dark-foreground/60">Next module in:</span>
+                <CountdownTimer targetDate={nextLaunchDate} />
               </div>
             </div>
 
@@ -146,47 +151,35 @@ const DefantraPartnershipSection = () => {
               {modules.map((module) => (
                 <div 
                   key={module.title}
-                  className={`p-4 rounded-xl border transition-colors ${
+                  className={`flex gap-4 p-4 rounded-xl border transition-colors ${
                     module.status === 'live' 
                       ? 'bg-green-500/10 border-green-500/30 hover:bg-green-500/15' 
                       : 'bg-white/5 border-white/10 hover:bg-white/10'
                   }`}
                 >
-                  <div className="flex gap-4">
-                    <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                      module.status === 'live' ? 'bg-green-500/20' : 'bg-secondary/20'
-                    }`}>
-                      <module.icon className={`w-5 h-5 ${module.status === 'live' ? 'text-green-400' : 'text-secondary'}`} />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-1 flex-wrap">
-                        <h4 className="font-semibold text-surface-dark-foreground text-sm">{module.title}</h4>
-                        <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium ${
-                          module.status === 'live' 
-                            ? 'bg-green-500/20 text-green-400' 
-                            : 'bg-secondary/20 text-secondary'
-                        }`}>
-                          {module.status === 'live' ? (
-                            <CheckCircle2 className="w-3 h-3" />
-                          ) : (
-                            <Calendar className="w-3 h-3" />
-                          )}
-                          {module.statusLabel}
-                        </span>
-                      </div>
-                      <p className="text-surface-dark-foreground/60 text-xs leading-relaxed">{module.description}</p>
-                    </div>
+                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                    module.status === 'live' ? 'bg-green-500/20' : 'bg-secondary/20'
+                  }`}>
+                    <module.icon className={`w-5 h-5 ${module.status === 'live' ? 'text-green-400' : 'text-secondary'}`} />
                   </div>
-                  
-                  {/* Countdown Timer for upcoming modules */}
-                  {module.status === 'coming' && module.targetDate && (
-                    <div className="mt-3 pt-3 border-t border-white/10">
-                      <div className="flex items-center justify-between">
-                        <span className="text-[10px] text-surface-dark-foreground/50 uppercase tracking-wider">Launching in</span>
-                        <CountdownTimer targetDate={module.targetDate} />
-                      </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1 flex-wrap">
+                      <h4 className="font-semibold text-surface-dark-foreground text-sm">{module.title}</h4>
+                      <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium ${
+                        module.status === 'live' 
+                          ? 'bg-green-500/20 text-green-400' 
+                          : 'bg-secondary/20 text-secondary'
+                      }`}>
+                        {module.status === 'live' ? (
+                          <CheckCircle2 className="w-3 h-3" />
+                        ) : (
+                          <Calendar className="w-3 h-3" />
+                        )}
+                        {module.statusLabel}
+                      </span>
                     </div>
-                  )}
+                    <p className="text-surface-dark-foreground/60 text-xs leading-relaxed">{module.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
