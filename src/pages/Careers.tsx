@@ -22,6 +22,7 @@ const Careers = () => {
         "Basic understanding of Scrum / Agile methodologies",
         "Strong research and market analysis skills",
         "Good communication and presentation skills",
+        "AI fluency, with the ability to effectively use tools such as ChatGPT, Claude, Gemini, or similar AI assistants for analysis and productivity",
       ],
     },
     {
