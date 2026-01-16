@@ -173,9 +173,9 @@ const About = () => {
               linkedinUrl="https://www.linkedin.com/in/bharathshivaram/"
               accentColor="secondary"
               bio={[
-                <>Bharath Shivaram specializes in AI Agent Architecture, Development, and Implementation, with deep expertise in agentic AI systems, LLM optimization, AI security, and platform engineering. He holds a Master's in Artificial Intelligence from the University of Stirling, Scotland, UK, where his research focused on LLM security and interpretability, and an MS in Business Analytics and Project Management from the University of Connecticut, USA.</>,
-                <>His dissertation, <em className="text-foreground font-medium">"Analyzing Chain-of-Thought Vulnerabilities in LLMs using Interpretation and Quantization,"</em> examines structural and security vulnerabilities in large language models.</>,
-                <>He is the Founder and AI Platform Architect at Defantra Ltd, a UK-based startup building agent-driven, blockchain-enabled AI platforms. His industry background includes senior advisory and engineering roles at Dell Technologies, EMC, and healthcare analytics organizations across the United States and Canada.</>
+                <>Bharath Shivaram is an AI Engineer and Entrepreneur specializing in agentic AI systems, LLM optimization, AI security, and platform engineering. He is the Founder and AI Platform Architect of Defantra Ltd, a UK-based startup building agent-driven, blockchain-enabled AI platforms.</>,
+                <>He holds a Master's in Artificial Intelligence from the University of Stirling, UK, with research focused on LLM security and interpretability, and an MS in Business Analytics and Project Management from the University of Connecticut, USA. His dissertation explored Chain-of-Thought vulnerabilities in large language models.</>,
+                <>Bharath has extensive industry experience from Dell Technologies, EMC, and Express Scripts across the US and Canada, blending technical expertise, research insight, and entrepreneurial leadership in AI innovation.</>
               ]}
               expertise={[
                 "AI Agent Architecture",
