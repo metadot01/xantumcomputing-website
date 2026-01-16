@@ -3,8 +3,20 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Clock, Users, Heart, Rocket, Target, Briefcase, ArrowRight, CheckCircle2, Sparkles, Building2, Star, Mail } from "lucide-react";
+import { MapPin, Clock, Users, Heart, Rocket, Target, Briefcase, ArrowRight, CheckCircle2, Sparkles, Building2, Star, Mail, Share2, Linkedin, Facebook, MessageCircle } from "lucide-react";
 import JobApplicationModal from "@/components/JobApplicationModal";
+
+const getShareUrls = (title: string, location: string) => {
+  const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://xantumcomputing.com';
+  const jobUrl = `${baseUrl}/careers`;
+  const shareText = `🚀 Exciting opportunity at Xantum™ Computing! We're hiring for ${title} in ${location}. Join our team and be part of the AI & Blockchain revolution!`;
+  
+  return {
+    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(jobUrl)}&title=${encodeURIComponent(`${title} at Xantum Computing`)}&summary=${encodeURIComponent(shareText)}`,
+    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(jobUrl)}&quote=${encodeURIComponent(shareText)}`,
+    whatsapp: `https://wa.me/?text=${encodeURIComponent(`${shareText}\n\nApply now: ${jobUrl}`)}`
+  };
+};
 
 const Careers = () => {
   const openRoles = [
@@ -275,14 +287,49 @@ const Careers = () => {
                       </div>
                     </div>
                     
-                    {/* Apply button */}
-                    <div className="lg:self-center lg:ml-8">
+                    {/* Apply button and Share */}
+                    <div className="lg:self-center lg:ml-8 flex flex-col gap-4">
                       <JobApplicationModal jobTitle={role.title} location={role.location}>
                         <Button variant="hero" size="xl" className="w-full lg:w-auto">
                           Apply Now
                           <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                         </Button>
                       </JobApplicationModal>
+                      
+                      {/* Share buttons */}
+                      <div className="flex items-center justify-center gap-2">
+                        <span className="text-xs text-muted-foreground mr-1 flex items-center gap-1">
+                          <Share2 className="w-3 h-3" />
+                          Share:
+                        </span>
+                        <a
+                          href={getShareUrls(role.title, role.location).linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-9 h-9 rounded-full bg-[#0A66C2]/10 hover:bg-[#0A66C2] flex items-center justify-center transition-all duration-300 group/share"
+                          title="Share on LinkedIn"
+                        >
+                          <Linkedin className="w-4 h-4 text-[#0A66C2] group-hover/share:text-white transition-colors" />
+                        </a>
+                        <a
+                          href={getShareUrls(role.title, role.location).facebook}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-9 h-9 rounded-full bg-[#1877F2]/10 hover:bg-[#1877F2] flex items-center justify-center transition-all duration-300 group/share"
+                          title="Share on Facebook"
+                        >
+                          <Facebook className="w-4 h-4 text-[#1877F2] group-hover/share:text-white transition-colors" />
+                        </a>
+                        <a
+                          href={getShareUrls(role.title, role.location).whatsapp}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-9 h-9 rounded-full bg-[#25D366]/10 hover:bg-[#25D366] flex items-center justify-center transition-all duration-300 group/share"
+                          title="Share on WhatsApp"
+                        >
+                          <MessageCircle className="w-4 h-4 text-[#25D366] group-hover/share:text-white transition-colors" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
