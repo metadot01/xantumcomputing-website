@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, GraduationCap, Briefcase, Rocket, ExternalLink } from "lucide-react";
+import { ArrowRight, MessageSquare } from "lucide-react";
+import ContactSalesModal from "./ContactSalesModal";
 
 const FinalCTASection = () => {
   return (
@@ -14,23 +15,15 @@ const FinalCTASection = () => {
           Whether you're looking for technology solutions or professional training, we're here to help you succeed.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-          <a href="https://www.defantra.com/" target="_blank" rel="noopener noreferrer" className="group">
-            <Button variant="heroDark" size="xl" className="w-full sm:w-auto relative overflow-hidden">
+        <div className="flex justify-center mb-8">
+          <ContactSalesModal>
+            <Button variant="heroDark" size="xl" className="relative overflow-hidden group">
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-              <Rocket className="w-5 h-5" />
-              Explore VeriAgent Platform
+              <MessageSquare className="w-5 h-5" />
+              Contact Sales
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Button>
-          </a>
-          <a href="https://www.cyxorlearning.co.uk" target="_blank" rel="noopener noreferrer" className="group">
-            <Button variant="cyxor" size="xl" className="w-full sm:w-auto relative overflow-hidden">
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-              <GraduationCap className="w-5 h-5" />
-              Browse Courses
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </Button>
-          </a>
+          </ContactSalesModal>
         </div>
         
         <p className="text-sm text-white/60">
