@@ -115,7 +115,7 @@ const DefantraPartnershipSection = () => {
                   <Rocket className="w-4.5 h-4.5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-base text-surface-dark-foreground">Compliance Modules</h3>
+                  <h3 className="font-display font-bold text-base text-surface-dark-foreground">GRC Modules</h3>
                   <p className="text-surface-dark-foreground/50 text-[10px]">AI + blockchain foundation</p>
                 </div>
               </div>
