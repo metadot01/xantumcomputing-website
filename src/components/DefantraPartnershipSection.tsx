@@ -132,19 +132,19 @@ const DefantraPartnershipSection = () => {
               {modules.map((module) => (
                 <div 
                   key={module.title}
-                  className={`p-3 rounded-xl border transition-colors ${
+                  className={`p-3 rounded-xl border transition-all duration-300 cursor-pointer group/card ${
                     module.status === 'live' 
-                      ? 'bg-green-500/10 border-green-500/30' 
-                      : 'bg-white/5 border-white/10'
+                      ? 'bg-green-500/10 border-green-500/30 hover:bg-green-500/20 hover:border-green-500/50 hover:shadow-lg hover:shadow-green-500/10 hover:scale-[1.02]' 
+                      : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-secondary/30 hover:shadow-lg hover:shadow-secondary/10 hover:scale-[1.02]'
                   }`}
                 >
                   <div className="flex items-center gap-2 mb-1.5">
-                    <div className={`w-7 h-7 rounded-md flex items-center justify-center ${
+                    <div className={`w-7 h-7 rounded-md flex items-center justify-center transition-transform duration-300 group-hover/card:scale-110 ${
                       module.status === 'live' ? 'bg-green-500/20' : 'bg-secondary/20'
                     }`}>
-                      <module.icon className={`w-3.5 h-3.5 ${module.status === 'live' ? 'text-green-400' : 'text-secondary'}`} />
+                      <module.icon className={`w-3.5 h-3.5 transition-colors duration-300 ${module.status === 'live' ? 'text-green-400 group-hover/card:text-green-300' : 'text-secondary group-hover/card:text-secondary'}`} />
                     </div>
-                    <span className={`px-1.5 py-0.5 rounded text-[9px] font-medium ${
+                    <span className={`px-1.5 py-0.5 rounded text-[9px] font-medium transition-all duration-300 ${
                       module.status === 'live' 
                         ? 'bg-green-500/20 text-green-400' 
                         : 'bg-secondary/20 text-secondary'
@@ -152,8 +152,8 @@ const DefantraPartnershipSection = () => {
                       {module.statusLabel}
                     </span>
                   </div>
-                  <h4 className="font-semibold text-surface-dark-foreground text-xs mb-0.5">{module.title}</h4>
-                  <p className="text-surface-dark-foreground/50 text-[10px] leading-tight">{module.description}</p>
+                  <h4 className="font-semibold text-surface-dark-foreground text-xs mb-0.5 transition-colors duration-300 group-hover/card:text-white">{module.title}</h4>
+                  <p className="text-surface-dark-foreground/50 text-[10px] leading-tight transition-colors duration-300 group-hover/card:text-surface-dark-foreground/70">{module.description}</p>
                 </div>
               ))}
             </div>
