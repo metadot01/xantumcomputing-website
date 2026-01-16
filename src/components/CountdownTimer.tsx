@@ -48,19 +48,19 @@ const CountdownTimer = memo(({ targetDate, className = "" }: CountdownTimerProps
   ];
 
   return (
-    <div className={`flex items-center gap-1.5 ${className}`}>
+    <div className={`flex items-center justify-center gap-2 ${className}`}>
       {timeUnits.map((unit, index) => (
-        <div key={unit.label} className="flex items-center gap-1.5">
+        <div key={unit.label} className="flex items-center gap-2">
           <div className="flex flex-col items-center">
-            <span className="text-sm font-bold text-secondary tabular-nums min-w-[24px] text-center">
+            <span className="text-lg font-bold text-white tabular-nums min-w-[28px] text-center">
               {unit.value.toString().padStart(2, '0')}
             </span>
-            <span className="text-[9px] text-surface-dark-foreground/50 uppercase tracking-wider">
+            <span className="text-[8px] text-white/60 uppercase tracking-wider">
               {unit.label}
             </span>
           </div>
           {index < timeUnits.length - 1 && (
-            <span className="text-secondary/40 text-xs font-light self-start mt-0.5">:</span>
+            <span className="text-white/30 text-sm font-light self-start mt-1">:</span>
           )}
         </div>
       ))}
