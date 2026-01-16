@@ -38,7 +38,7 @@ const CyxorLearningSection = () => {
             <span className="text-sm font-medium text-cyxor">Cyxor Learning Platform</span>
           </span>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Technology & <span className="text-cyxor">Compliance Training</span>
+            <span className="text-cyxor">Technology</span> & <span className="text-cyxor">Compliance Training</span>
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Digital skills platform offering verifiable credentials and industry-relevant curriculum. 

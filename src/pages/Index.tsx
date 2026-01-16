@@ -13,8 +13,8 @@ const Index = memo(() => {
       <Header />
       <main>
         <HeroSection />
-        <CyxorLearningSection />
         <DefantraPartnershipSection />
+        <CyxorLearningSection />
         <CapabilitiesSection />
         <FinalCTASection />
       </main>
