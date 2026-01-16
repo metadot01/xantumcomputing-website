@@ -233,17 +233,17 @@ const About = () => {
                 {
                   icon: GraduationCap,
                   title: "Ph.D. in Law",
-                  subtitle: "Bangalore University, 2020"
+                  subtitle: "Bangalore University"
                 },
                 {
                   icon: Scale,
                   title: "LL.M in Business Law",
-                  subtitle: ""
+                  subtitle: "Legal Scholar"
                 },
                 {
                   icon: Users,
                   title: "Best Paper Presenter",
-                  subtitle: "International Conference"
+                  subtitle: "International Conference Award"
                 }
               ]}
             />
