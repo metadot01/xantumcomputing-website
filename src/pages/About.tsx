@@ -11,7 +11,10 @@ import {
   Sparkles,
   Handshake,
   ShieldCheck,
-  Cpu
+  Cpu,
+  TrendingUp,
+  Mail,
+  Building2
 } from "lucide-react";
 import bharathPhoto from "@/assets/bharath-shivaram.jpeg";
 import roopaPhoto from "@/assets/roopa-kiran.png";
@@ -248,29 +251,82 @@ const About = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-r from-secondary to-emerald">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-white mb-4">
-              Ready for Digital Transformation?
-            </h2>
-            <p className="text-lg text-white/80 mb-8">
-              Let's discuss how we can help your organization with AI, blockchain, and compliance solutions.
-            </p>
+      {/* Investor Relations Section */}
+      <section className="py-24 md:py-32 relative overflow-hidden">
+        {/* Premium gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-secondary/90" />
+        
+        {/* Decorative patterns */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.3'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }} />
+        </div>
+        
+        {/* Floating elements */}
+        <div className="absolute top-10 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />
+        
+        <div className="container relative mx-auto px-4 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-semibold mb-6 border border-white/20">
+                <TrendingUp className="w-4 h-4" />
+                Investor Relations
+              </div>
+              
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6 leading-tight">
+                Partner With Us in{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-cyxor">
+                  Shaping the Future
+                </span>
+              </h2>
+              
+              <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+                We're building the next generation of AI and blockchain solutions for regulated industries. 
+                Join us in transforming enterprise technology.
+              </p>
+            </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://www.defantra.com/" target="_blank" rel="noopener noreferrer">
-                <Button variant="heroDark" size="xl" className="w-full sm:w-auto">
-                  Explore VeriAgent Platform
-                  <ArrowRight className="w-5 h-5" />
+            {/* Investment highlights */}
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              {[
+                { icon: Cpu, label: "AI & Blockchain", desc: "Cutting-edge technology" },
+                { icon: ShieldCheck, label: "RegTech Focus", desc: "Compliance-first solutions" },
+                { icon: Building2, label: "Enterprise Ready", desc: "Production-grade platforms" }
+              ].map((item, index) => (
+                <div key={index} className="text-center p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent to-cyxor flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <item.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-white font-semibold mb-1">{item.label}</h3>
+                  <p className="text-white/60 text-sm">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+            
+            {/* CTA Card */}
+            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-10 border border-white/20 text-center">
+              <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
+                Interested in Investment Opportunities?
+              </h3>
+              <p className="text-white/70 mb-8 max-w-2xl mx-auto">
+                We welcome conversations with investors who share our vision for secure, 
+                compliant AI and blockchain solutions in regulated markets.
+              </p>
+              
+              <a href="mailto:investor@xantumcomputing.com">
+                <Button variant="heroDark" size="xl" className="shadow-2xl hover:shadow-white/20">
+                  <Mail className="w-5 h-5 mr-2" />
+                  Contact Investor Relations
+                  <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </a>
-              <a href="/solutions">
-                <Button variant="heroOutlineDark" size="xl" className="w-full sm:w-auto">
-                  View Solutions
-                </Button>
-              </a>
+              
+              <p className="text-white/50 text-sm mt-6">
+                investor@xantumcomputing.com
+              </p>
             </div>
           </div>
         </div>
