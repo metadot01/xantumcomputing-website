@@ -9,7 +9,7 @@ const FinalCTASection = () => {
       
       <div className="container mx-auto px-4 lg:px-8 relative z-10 text-center">
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
-          Ready for <span className="bg-gradient-to-r from-secondary via-cyxor to-secondary bg-clip-text text-transparent">Digital Transformation</span>?
+          Ready for <span className="bg-gradient-to-r from-secondary via-cyxor to-secondary bg-clip-text text-transparent">AI Transformation</span>?
         </h2>
         <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto mb-10">
           Whether you're looking for technology solutions or professional training, we're here to help you succeed.
