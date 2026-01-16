@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -5,6 +6,55 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Clock, Users, Heart, Rocket, Target, Briefcase, ArrowRight, CheckCircle2, Sparkles, Building2, Star, Mail, Share2, Linkedin, Facebook, MessageCircle } from "lucide-react";
 import JobApplicationModal from "@/components/JobApplicationModal";
+
+// Typing animation hook
+const useTypingEffect = (text: string, speed: number = 50, delay: number = 500) => {
+  const [displayedText, setDisplayedText] = useState("");
+  const [isComplete, setIsComplete] = useState(false);
+
+  useEffect(() => {
+    setDisplayedText("");
+    setIsComplete(false);
+    
+    const timeout = setTimeout(() => {
+      let currentIndex = 0;
+      const interval = setInterval(() => {
+        if (currentIndex < text.length) {
+          setDisplayedText(text.slice(0, currentIndex + 1));
+          currentIndex++;
+        } else {
+          setIsComplete(true);
+          clearInterval(interval);
+        }
+      }, speed);
+
+      return () => clearInterval(interval);
+    }, delay);
+
+    return () => clearTimeout(timeout);
+  }, [text, speed, delay]);
+
+  return { displayedText, isComplete };
+};
+
+// Hero headline component with typing effect
+const HeroHeadline = () => {
+  const { displayedText, isComplete } = useTypingEffect("AI-Powered Innovation", 60, 300);
+  
+  return (
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight min-h-[1.2em]">
+      <span className="text-foreground">
+        {displayedText}
+        {!isComplete && (
+          <span className="inline-block w-[3px] h-[1em] bg-primary ml-1 animate-pulse" />
+        )}
+      </span>
+      {isComplete && (
+        <span className="text-gradient-primary animate-fade-in"> Starts Here</span>
+      )}
+    </h1>
+  );
+};
 
 const getShareUrls = (title: string, location: string) => {
   const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://xantumcomputing.com';
@@ -139,13 +189,10 @@ const Careers = () => {
               <Star className="w-4 h-4 text-cyxor fill-cyxor" />
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight">
-              <span className="text-foreground">AI-Powered Innovation </span>
-              <span className="text-gradient-primary">Starts Here</span>
-            </h1>
+            <HeroHeadline />
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-10">
-              At Xantum™ Computing, we foster a high-performance, inclusive culture that empowers people, drives innovation, and creates meaningful impact.
+              Empowering people, driving innovation, and making a real impact.
             </p>
             
             <div className="flex flex-wrap justify-center gap-4">
