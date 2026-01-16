@@ -213,9 +213,9 @@ const About = () => {
               photo={roopaPhoto}
               accentColor="cyxor"
               bio={[
-                <>Dr. Roopa Kiran is a legal academic and governance leader with extensive expertise in consumer protection law, business law, employment law, and human rights. She completed her Ph.D. in Law from Bangalore University in 2020, with a doctoral thesis titled <em className="text-foreground font-medium">"Consumer Protection Laws and Tourism – A Comparative Study with Special Reference to India, the UK, and Australia."</em></>,
-                <>She is K-SET qualified and holds an LL.M in Business Law, securing Fifth Rank. She has presented and published research at state, national, and international forums and was awarded the Best Paper Presenter at an international conference for her work on legislative and policy frameworks.</>,
-                <>As Director – Legal & Human Resources, Dr. Roopa Kiran oversees legal compliance, governance frameworks, HR policy, workplace ethics, and regulatory risk, ensuring the organisation operates with integrity, accountability, and strong people governance.</>
+                <>Dr. Roopa Kiran is a legal academic and governance leader with expertise in consumer protection law, business law, employment law, and human rights. She earned her Ph.D. in Law from Bangalore University in 2020, with a thesis on <em className="text-foreground font-medium">"Consumer Protection Laws and Tourism – A Comparative Study of India, the UK, and Australia."</em></>,
+                <>She holds an LL.M in Business Law and has presented and published research at national and international forums, including recognition as Best Paper Presenter at an international conference.</>,
+                <>As Director – Legal & Human Resources, she leads legal compliance, governance frameworks, HR policy, workplace ethics, and regulatory risk, ensuring the organisation operates with integrity, accountability, and strong people governance.</>
               ]}
               expertise={[
                 "Consumer Protection Law",
