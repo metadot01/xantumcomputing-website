@@ -1,28 +1,36 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Building2, Users, Globe, Award, Briefcase, CheckCircle2, Brain, Link as LinkIcon, Shield, BarChart3, ExternalLink, Rocket } from "lucide-react";
+import { ArrowRight, Briefcase, CheckCircle2, ExternalLink, Rocket, Clock, Calendar, Shield, Brain, Globe, BarChart3 } from "lucide-react";
 import defantraLogo from "@/assets/defantra-logo.jpg";
 
 const DefantraPartnershipSection = () => {
-  const capabilities = [
-    {
-      icon: Brain,
-      title: "Technology Strategy & Consulting",
-      description: "Expert guidance on AI, blockchain, and digital transformation initiatives.",
-    },
-    {
-      icon: Brain,
-      title: "AI/ML Solution Development",
-      description: "Custom AI and machine learning solutions tailored to your business needs.",
-    },
-    {
-      icon: LinkIcon,
-      title: "Blockchain Implementation",
-      description: "End-to-end blockchain development and integration services.",
-    },
+  const modules = [
     {
       icon: Shield,
-      title: "RegTech & FinTech Solutions",
-      description: "Specialized solutions for regulatory compliance and financial technology.",
+      title: "IR35 Risk Module",
+      status: "live",
+      statusLabel: "Available Now",
+      description: "UK contractor compliance with automated risk scoring and HMRC-ready documentation",
+    },
+    {
+      icon: BarChart3,
+      title: "Vendor Risk Module",
+      status: "coming",
+      statusLabel: "Q2 2026",
+      description: "Streamlined onboarding, continuous monitoring, and comprehensive risk scoring",
+    },
+    {
+      icon: Globe,
+      title: "International Trade Compliance Module",
+      status: "coming",
+      statusLabel: "Q3 2026",
+      description: "Regulatory monitoring and restricted party screening for global operations",
+    },
+    {
+      icon: Brain,
+      title: "AI Model Governance Module",
+      status: "coming",
+      statusLabel: "Q4 2026",
+      description: "Model risk assessment, bias detection, and policy compliance management",
     },
   ];
 
@@ -101,30 +109,66 @@ const DefantraPartnershipSection = () => {
             </a>
           </div>
 
-          {/* Right Side - VeriAgent Capabilities */}
+          {/* Right Side - VeriAgent Modules Roadmap */}
           <div className="surface-dark rounded-2xl p-6 md:p-8 border border-border/10">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-secondary to-defantra flex items-center justify-center">
-                <BarChart3 className="w-6 h-6 text-white" />
+                <Rocket className="w-6 h-6 text-white" />
               </div>
               <div>
                 <h3 className="font-display font-bold text-xl text-surface-dark-foreground">VeriAgent Platform</h3>
-                <p className="text-surface-dark-foreground/60 text-sm">Technology Capabilities</p>
+                <p className="text-surface-dark-foreground/60 text-sm">Compliance Modules</p>
               </div>
             </div>
 
-            <div className="grid gap-4">
-              {capabilities.map((capability, index) => (
+            <p className="text-surface-dark-foreground/70 text-sm mb-6 leading-relaxed">
+              Start with IR35 today, expand as your compliance needs grow. Each module shares the same AI + blockchain foundation.
+            </p>
+
+            {/* Status Legend */}
+            <div className="flex items-center gap-4 mb-5">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-xs text-surface-dark-foreground/60">Live now</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-secondary/60" />
+                <span className="text-xs text-surface-dark-foreground/60">Coming soon</span>
+              </div>
+            </div>
+
+            <div className="grid gap-3">
+              {modules.map((module) => (
                 <div 
-                  key={capability.title}
-                  className="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                  key={module.title}
+                  className={`flex gap-4 p-4 rounded-xl border transition-colors ${
+                    module.status === 'live' 
+                      ? 'bg-green-500/10 border-green-500/30 hover:bg-green-500/15' 
+                      : 'bg-white/5 border-white/10 hover:bg-white/10'
+                  }`}
                 >
-                  <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center flex-shrink-0">
-                    <capability.icon className="w-5 h-5 text-secondary" />
+                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                    module.status === 'live' ? 'bg-green-500/20' : 'bg-secondary/20'
+                  }`}>
+                    <module.icon className={`w-5 h-5 ${module.status === 'live' ? 'text-green-400' : 'text-secondary'}`} />
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-surface-dark-foreground text-sm mb-1">{capability.title}</h4>
-                    <p className="text-surface-dark-foreground/60 text-xs leading-relaxed">{capability.description}</p>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1 flex-wrap">
+                      <h4 className="font-semibold text-surface-dark-foreground text-sm">{module.title}</h4>
+                      <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium ${
+                        module.status === 'live' 
+                          ? 'bg-green-500/20 text-green-400' 
+                          : 'bg-secondary/20 text-secondary'
+                      }`}>
+                        {module.status === 'live' ? (
+                          <CheckCircle2 className="w-3 h-3" />
+                        ) : (
+                          <Calendar className="w-3 h-3" />
+                        )}
+                        {module.statusLabel}
+                      </span>
+                    </div>
+                    <p className="text-surface-dark-foreground/60 text-xs leading-relaxed">{module.description}</p>
                   </div>
                 </div>
               ))}
