@@ -55,11 +55,11 @@ const CyxorLearningSection = () => {
               <span className="text-xs font-medium text-cyxor">Cyxor Learning</span>
             </span>
             <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">
-              Enterprise <span className="text-cyxor">Skills</span>
+              Workforce <span className="text-cyxor">Learning</span>
             </h2>
           </div>
           <p className="text-sm text-muted-foreground max-w-md">
-            Workforce expertise in technology and compliance with verifiable credentials.
+            Workforce development in AI and compliance skills with verifiable credentials.
           </p>
         </div>
 
