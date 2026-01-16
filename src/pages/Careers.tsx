@@ -32,10 +32,11 @@ const Careers = () => {
       department: "Data & Analytics",
       description: "We're looking for an experienced Data Analyst to join our team and help transform complex data into actionable insights. You'll work with cutting-edge AI and analytics tools to drive business decisions.",
       requirements: [
-        "5+ years of experience in data analysis",
-        "Proficiency in SQL, Python, and visualization tools",
-        "Experience with machine learning concepts",
-        "Strong communication and presentation skills",
+        "0–1 years of experience (fresh graduates welcome); Master's degree candidates only (completed or pursuing)",
+        "Strong proficiency in Microsoft Excel and MS Office, especially PowerPoint",
+        "Basic understanding of Scrum / Agile ways of working",
+        "Strong research, market analysis, communication, and presentation skills",
+        "AI fluency, with the ability to effectively use tools such as ChatGPT, Claude, Gemini, or similar AI assistants for analysis and productivity",
       ],
     },
     {
