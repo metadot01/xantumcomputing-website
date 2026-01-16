@@ -26,6 +26,23 @@ const Careers = () => {
       ],
     },
     {
+      title: "Data Analyst - Intern",
+      location: "Madhugiri",
+      type: "Internship (3 months)",
+      workMode: "Onsite - 5 days in office",
+      department: "Data & Analytics",
+      description: "We're looking for a Data Analyst Intern to join our team and support business decision-making through data analysis and research. You'll work closely with teams in an Agile environment, using Excel and MS Office tools to analyse market data and present insights clearly.",
+      requirements: [
+        "0–1 years of experience (fresh graduates welcome)",
+        "Strong proficiency in Microsoft Excel (formulas, pivot tables, basic analysis)",
+        "Good working knowledge of MS Office, especially PowerPoint",
+        "Basic understanding of Scrum / Agile methodologies",
+        "Strong research and market analysis skills",
+        "Good communication and presentation skills",
+        "AI fluency, with the ability to effectively use tools such as ChatGPT, Claude, Gemini, or similar AI assistants for analysis and productivity",
+      ],
+    },
+    {
       title: "Senior Data Analyst",
       location: "Madhugiri",
       type: "Full-time",
