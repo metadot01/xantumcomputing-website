@@ -60,35 +60,52 @@ const Header = () => {
     { name: "Learning & Development", href: "/solutions", icon: GraduationCap, description: "Professional training programs" },
   ];
 
+  // Close menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
   return (
     <>
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled 
             ? "bg-white/95 backdrop-blur-xl shadow-lg shadow-primary/5 py-2 border-b border-border/50" 
-            : "bg-white/80 backdrop-blur-md py-3 border-b border-transparent"
+            : "bg-white/80 backdrop-blur-md py-2 md:py-3 border-b border-transparent"
         }`}
       >
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* Logo & Company Name - Enhanced */}
-            <Link to="/" className="flex items-center gap-3 group">
-              <div className={`relative rounded-xl p-2 transition-all duration-300 ${
+            {/* Logo & Company Name - Mobile Optimized */}
+            <Link to="/" className="flex items-center gap-2 md:gap-3 group" onClick={() => setIsMenuOpen(false)}>
+              <div className={`relative rounded-lg md:rounded-xl p-1.5 md:p-2 transition-all duration-300 ${
                 isScrolled ? "bg-primary/10" : "bg-gradient-to-br from-primary/15 to-secondary/15"
               }`}>
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 rounded-lg md:rounded-xl bg-gradient-to-br from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <img 
                   src={xantumLogo} 
                   alt="Xantum Computing Logo" 
-                  className="relative w-8 h-8 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                  className="relative w-7 h-7 md:w-8 md:h-8 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300"
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-display font-bold text-lg md:text-xl text-primary leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-secondary transition-all duration-300">
-                  Xantum<span className="text-secondary">™</span> Computing
+                <span className="font-display font-bold text-base md:text-xl text-primary leading-tight">
+                  Xantum<span className="text-secondary">™</span>
                 </span>
-                <span className="text-[10px] text-muted-foreground uppercase tracking-[0.2em] hidden sm:block font-medium">
-                  AI & BLOCKCHAIN SOLUTIONS
+                <span className="text-[9px] md:text-[10px] text-muted-foreground uppercase tracking-[0.15em] md:tracking-[0.2em] font-medium hidden xs:block">
+                  AI & BLOCKCHAIN
                 </span>
               </div>
             </Link>
@@ -170,7 +187,7 @@ const Header = () => {
                   isSolutionsOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-4 pointer-events-none"
                 }`}>
                   <div className="p-2">
-                    {solutionLinks.map((solution, index) => (
+                    {solutionLinks.map((solution) => (
                       <Link
                         key={solution.name}
                         to={solution.href}
@@ -255,11 +272,12 @@ const Header = () => {
               </ContactSalesModal>
             </div>
 
-            {/* Mobile Menu Button - Enhanced */}
+            {/* Mobile Menu Button - Larger Touch Target */}
             <button
-              className="lg:hidden p-2.5 text-foreground hover:bg-primary/5 rounded-xl transition-all duration-300 active:scale-95"
+              className="lg:hidden p-3 -mr-1 text-foreground hover:bg-primary/5 rounded-xl transition-all duration-300 active:scale-95 touch-manipulation"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
             >
               <div className="relative w-6 h-5 flex flex-col justify-between">
                 <span className={`block h-0.5 w-6 bg-current rounded-full transform transition-all duration-300 origin-center ${
@@ -274,118 +292,135 @@ const Header = () => {
               </div>
             </button>
           </div>
-
-          {/* Mobile Menu - Enhanced */}
-          <div className={`lg:hidden overflow-hidden transition-all duration-500 ease-out ${
-            isMenuOpen ? "max-h-[800px] opacity-100 mt-4" : "max-h-0 opacity-0"
-          }`}>
-            <nav className="py-4 flex flex-col gap-2 bg-white/95 backdrop-blur-xl rounded-2xl border border-border/50 shadow-xl">
-              {/* Mobile Platforms Section */}
-              <div className="px-4 py-2">
-                <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-secondary" />
-                  Platforms
-                </p>
-                <div className="space-y-1">
-                  {platformLinks.map((platform) => (
-                    <div key={platform.name} className="space-y-1">
-                      <a
-                        href={platform.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => setIsMenuOpen(false)}
-                        className="flex items-center gap-3 px-3 py-3 rounded-xl bg-muted/30 hover:bg-primary/5 transition-all duration-300"
-                      >
-                        <div className="w-10 h-10 rounded-xl overflow-hidden bg-white border-2 border-border/50 flex-shrink-0 shadow-sm">
-                          <img src={platform.logo} alt={platform.name} className="w-full h-full object-cover" />
-                        </div>
-                        <div className="flex-1">
-                          <span className="text-sm font-semibold text-foreground">{platform.name}</span>
-                          <p className="text-xs text-muted-foreground">{platform.description}</p>
-                        </div>
-                        <ArrowUpRight className="w-4 h-4 text-muted-foreground" />
-                      </a>
-                      <button
-                        onClick={() => handleSectionLink(platform.sectionId)}
-                        className="text-xs text-muted-foreground hover:text-primary px-3 ml-13 transition-colors flex items-center gap-1"
-                      >
-                        <span className="w-1 h-1 rounded-full bg-current" />
-                        View on this page
-                      </button>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="h-px bg-border/50 mx-4" />
-
-              {/* Mobile Solutions Section */}
-              <div className="px-4 py-2">
-                <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-gradient-to-r from-secondary to-accent" />
-                  Solutions
-                </p>
-                <div className="grid grid-cols-2 gap-2">
-                  {solutionLinks.map((solution) => (
-                    <Link
-                      key={solution.name}
-                      to={solution.href}
-                      onClick={() => {
-                        setIsMenuOpen(false);
-                        scrollToTop();
-                      }}
-                      className="flex flex-col items-center gap-2 p-4 rounded-xl bg-muted/30 hover:bg-primary/5 transition-all duration-300 text-center"
-                    >
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                        <solution.icon className="w-5 h-5 text-primary" />
-                      </div>
-                      <span className="text-xs font-medium text-foreground">{solution.name}</span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              <div className="h-px bg-border/50 mx-4" />
-
-              {/* Mobile Company Section */}
-              <div className="px-4 py-2">
-                <p className="text-xs font-bold text-primary uppercase tracking-widest mb-3 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-gradient-to-r from-cyxor to-orange-400" />
-                  Company
-                </p>
-                <div className="flex gap-2">
-                  {companyLinks.map((item) => (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      onClick={() => {
-                        setIsMenuOpen(false);
-                        scrollToTop();
-                      }}
-                      className="flex-1 flex flex-col items-center gap-2 p-4 rounded-xl bg-muted/30 hover:bg-primary/5 transition-all duration-300 text-center"
-                    >
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                        <item.icon className="w-5 h-5 text-primary" />
-                      </div>
-                      <span className="text-xs font-medium text-foreground">{item.name}</span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              {/* Mobile CTA */}
-              <div className="mt-2 pt-4 border-t border-border/50 px-4">
-                <ContactSalesModal>
-                  <Button variant="hero" className="w-full h-12" onClick={() => setIsMenuOpen(false)}>
-                    <Sparkles className="w-4 h-4 mr-2" />
-                    Contact Sales
-                  </Button>
-                </ContactSalesModal>
-              </div>
-            </nav>
-          </div>
         </div>
       </header>
+
+      {/* Mobile Menu - Full Screen Overlay */}
+      <div 
+        className={`lg:hidden fixed inset-0 z-40 transition-all duration-300 ${
+          isMenuOpen ? "visible" : "invisible pointer-events-none"
+        }`}
+      >
+        {/* Backdrop */}
+        <div 
+          className={`absolute inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300 ${
+            isMenuOpen ? "opacity-100" : "opacity-0"
+          }`}
+          onClick={() => setIsMenuOpen(false)}
+        />
+        
+        {/* Menu Panel */}
+        <div 
+          className={`absolute top-[60px] left-0 right-0 max-h-[calc(100vh-70px)] overflow-y-auto bg-white border-b border-border shadow-2xl transition-all duration-300 ease-out ${
+            isMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0"
+          }`}
+        >
+          <nav className="py-4 flex flex-col safe-area-inset-bottom">
+            {/* Mobile Platforms Section */}
+            <div className="px-5 py-3">
+              <p className="text-xs font-bold text-primary uppercase tracking-widest mb-4 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-secondary" />
+                Platforms
+              </p>
+              <div className="space-y-2">
+                {platformLinks.map((platform) => (
+                  <a
+                    key={platform.name}
+                    href={platform.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center gap-4 p-4 rounded-2xl bg-muted/40 active:bg-primary/10 transition-all duration-200 touch-manipulation"
+                  >
+                    <div className="w-12 h-12 rounded-xl overflow-hidden bg-white border-2 border-border/50 flex-shrink-0 shadow-sm">
+                      <img src={platform.logo} alt={platform.name} className="w-full h-full object-cover" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <span className="text-base font-semibold text-foreground block">{platform.name}</span>
+                      <p className="text-sm text-muted-foreground truncate">{platform.description}</p>
+                    </div>
+                    <ArrowUpRight className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="h-px bg-border/50 mx-5 my-2" />
+
+            {/* Mobile Solutions Section - Scrollable Horizontal */}
+            <div className="px-5 py-3">
+              <p className="text-xs font-bold text-primary uppercase tracking-widest mb-4 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-gradient-to-r from-secondary to-accent" />
+                Solutions
+              </p>
+              <div className="flex gap-3 overflow-x-auto pb-2 -mx-5 px-5 scrollbar-hide">
+                {solutionLinks.map((solution) => (
+                  <Link
+                    key={solution.name}
+                    to={solution.href}
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      scrollToTop();
+                    }}
+                    className="flex-shrink-0 flex flex-col items-center gap-3 p-4 w-24 rounded-2xl bg-muted/40 active:bg-primary/10 transition-all duration-200 touch-manipulation"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
+                      <solution.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <span className="text-xs font-medium text-foreground text-center leading-tight">{solution.name}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="h-px bg-border/50 mx-5 my-2" />
+
+            {/* Mobile Company Section - Large Touch Targets */}
+            <div className="px-5 py-3">
+              <p className="text-xs font-bold text-primary uppercase tracking-widest mb-4 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-gradient-to-r from-cyxor to-orange-400" />
+                Company
+              </p>
+              <div className="space-y-2">
+                {companyLinks.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      scrollToTop();
+                    }}
+                    className="flex items-center gap-4 p-4 rounded-2xl bg-muted/40 active:bg-primary/10 transition-all duration-200 touch-manipulation"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center flex-shrink-0">
+                      <item.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <span className="text-base font-semibold text-foreground">{item.name}</span>
+                      <p className="text-sm text-muted-foreground">{item.description}</p>
+                    </div>
+                    <ChevronDown className="w-5 h-5 text-muted-foreground -rotate-90" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile CTA - Sticky at Bottom */}
+            <div className="mt-4 pt-4 border-t border-border/50 px-5 pb-4">
+              <ContactSalesModal>
+                <Button 
+                  variant="hero" 
+                  className="w-full h-14 text-base touch-manipulation" 
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <Sparkles className="w-5 h-5 mr-2" />
+                  Contact Sales
+                </Button>
+              </ContactSalesModal>
+            </div>
+          </nav>
+        </div>
+      </div>
     </>
   );
 };
