@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Clock, Users, Heart, Rocket, Target, Briefcase, ArrowRight, CheckCircle2, Sparkles, Building2, Star } from "lucide-react";
+import { MapPin, Clock, Users, Heart, Rocket, Target, Briefcase, ArrowRight, CheckCircle2, Sparkles, Building2, Star, Mail } from "lucide-react";
 import JobApplicationModal from "@/components/JobApplicationModal";
 
 const Careers = () => {
@@ -288,6 +288,40 @@ const Careers = () => {
                 </div>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-16 bg-gradient-to-b from-muted/30 to-background relative">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full bg-primary/5 border border-primary/20">
+              <Mail className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-primary">Get in Touch</span>
+            </div>
+            
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-4">
+              Have Questions?
+            </h3>
+            <p className="text-muted-foreground mb-6">
+              Reach out to our HR team for any career-related inquiries.
+            </p>
+            
+            <a 
+              href="mailto:contact@xantumcomputing.com" 
+              className="inline-flex items-center gap-3 px-6 py-4 rounded-xl bg-card border border-border/50 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group"
+            >
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                <Mail className="w-5 h-5 text-white" />
+              </div>
+              <div className="text-left">
+                <p className="text-sm text-muted-foreground">Email us at</p>
+                <p className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                  contact@xantumcomputing.com
+                </p>
+              </div>
+            </a>
           </div>
         </div>
       </section>
