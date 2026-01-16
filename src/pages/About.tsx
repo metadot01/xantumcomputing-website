@@ -238,7 +238,7 @@ const About = () => {
                 {
                   icon: Scale,
                   title: "LL.M in Business Law",
-                  subtitle: "Fifth Rank, K-SET Qualified"
+                  subtitle: ""
                 },
                 {
                   icon: Users,
