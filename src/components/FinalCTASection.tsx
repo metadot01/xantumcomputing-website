@@ -17,11 +17,11 @@ const FinalCTASection = () => {
         
         <div className="flex justify-center mb-8">
           <ContactSalesModal>
-            <Button variant="heroDark" size="xl" className="relative overflow-hidden group">
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+            <Button variant="heroDark" size="xl">
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               <MessageSquare className="w-5 h-5" />
               Contact Sales
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
           </ContactSalesModal>
         </div>
