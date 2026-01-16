@@ -68,7 +68,7 @@ const About = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed mb-10">
-              Xantum™ Computing delivers AI, machine learning, and blockchain solutions for regulated financial and enterprise environments. Through our partnership with Defantra Ltd (UK), we provide secure, compliance-ready technology and operate Cyxor Learning, our platform for AI, technology, and compliance education.
+              Xantum™ Computing delivers AI, machine learning, and blockchain solutions for regulated financial and enterprise environments. Through our partnership with Defantra Ltd (UK), we provide secure, compliance-ready technology and operate CYXOR Learning, our platform for AI, technology, and compliance education.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

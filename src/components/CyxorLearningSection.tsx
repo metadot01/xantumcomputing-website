@@ -52,7 +52,7 @@ const CyxorLearningSection = () => {
           <div className="flex items-center gap-4">
             <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyxor/10 border border-cyxor/20">
               <GraduationCap className="w-3.5 h-3.5 text-cyxor" />
-              <span className="text-xs font-medium text-cyxor">Cyxor Learning</span>
+              <span className="text-xs font-medium text-cyxor">CYXOR Learning</span>
             </span>
             <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">
               Workforce <span className="text-cyxor">Learning</span>
@@ -70,10 +70,10 @@ const CyxorLearningSection = () => {
           <div className="lg:col-span-4 bg-card rounded-2xl p-5 border border-border shadow-lg flex flex-col">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-14 h-14 rounded-xl overflow-hidden bg-white flex items-center justify-center shadow-md border border-border">
-                <img src={cyxorLogo} alt="Cyxor Learning" className="w-full h-full object-cover" />
+                <img src={cyxorLogo} alt="CYXOR Learning" className="w-full h-full object-cover" />
               </div>
               <div>
-                <h3 className="font-display font-bold text-lg text-foreground">Cyxor Learning</h3>
+                <h3 className="font-display font-bold text-lg text-foreground">CYXOR Learning</h3>
                 <div className="flex items-center gap-2">
                   <p className="text-muted-foreground text-xs">Verifiable Skills</p>
                   <span className="inline-flex items-center gap-1 text-[10px] text-green-500">
