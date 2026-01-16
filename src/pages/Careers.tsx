@@ -292,47 +292,6 @@ const Careers = () => {
         </div>
       </section>
 
-      {/* CTA Section - Enhanced */}
-      <section className="py-24 relative overflow-hidden">
-        {/* Rich gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-secondary" />
-        
-        {/* Decorative patterns */}
-        <div className="absolute inset-0 tech-pattern opacity-10" />
-        
-        {/* Floating elements */}
-        <div className="absolute top-10 left-10 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-10 right-10 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-secondary/20 rounded-full blur-3xl" />
-        
-        <div className="container relative mx-auto px-4 lg:px-8 text-center">
-          <div className="max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
-              <Sparkles className="w-4 h-4 text-white" />
-              <span className="text-sm font-medium text-white/90">Open to All Talent</span>
-            </div>
-            
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6 leading-tight">
-              Don't See the Right Role?
-            </h2>
-            <p className="text-white/80 text-lg md:text-xl mb-10 leading-relaxed max-w-2xl mx-auto">
-              We're always looking for talented individuals who share our passion for innovation. Send us your resume and we'll keep you in mind for future opportunities.
-            </p>
-            
-            <JobApplicationModal jobTitle="General Application" location="Madhugiri">
-              <Button 
-                variant="heroDark" 
-                size="xl" 
-                className="shadow-2xl hover:shadow-white/20"
-              >
-                Send Your Resume
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </JobApplicationModal>
-          </div>
-        </div>
-      </section>
-
       <Footer />
     </div>
   );
