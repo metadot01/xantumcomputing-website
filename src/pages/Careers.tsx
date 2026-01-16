@@ -88,7 +88,7 @@ const Careers = () => {
       ],
     },
     {
-      title: "Data Analyst - Intern",
+      title: "Data Analyst - Internship",
       location: "Madhugiri",
       type: "Internship (3 months)",
       workMode: "Onsite - 5 days in office",
