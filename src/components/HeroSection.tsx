@@ -37,7 +37,10 @@ const HeroHeader = memo(() => (
       style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
     >
       Engineering{" "}
-      <span className="text-cyxor">AI & Blockchain</span>{" "}
+      <span className="relative inline-block">
+        <span className="bg-gradient-to-r from-cyxor via-secondary to-cyxor bg-[length:200%_100%] bg-clip-text text-transparent animate-[gradient-shift_3s_ease-in-out_infinite]">AI & Blockchain</span>
+        <span className="absolute -inset-1 bg-gradient-to-r from-cyxor/20 to-secondary/20 blur-xl rounded-lg -z-10" />
+      </span>{" "}
       Solutions
     </h1>
 
