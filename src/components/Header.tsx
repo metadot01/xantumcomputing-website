@@ -102,10 +102,10 @@ const Header = () => {
               </div>
               <div className="flex flex-col">
                 <span className="font-display font-bold text-base md:text-xl text-primary leading-tight">
-                  Xantum<span className="text-secondary">™</span>
+                  Xantum<span className="text-secondary">™</span> Computing
                 </span>
-                <span className="text-[9px] md:text-[10px] text-muted-foreground uppercase tracking-[0.15em] md:tracking-[0.2em] font-medium hidden xs:block">
-                  AI & BLOCKCHAIN
+                <span className="text-[9px] md:text-[10px] text-muted-foreground uppercase tracking-[0.15em] md:tracking-[0.2em] font-medium hidden sm:block">
+                  AI & BLOCKCHAIN SOLUTIONS
                 </span>
               </div>
             </Link>
