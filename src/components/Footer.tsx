@@ -39,32 +39,6 @@ const Footer = () => {
       <div className="absolute top-0 left-1/3 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px]" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[150px]" />
 
-      {/* CTA Banner */}
-      <div className="relative border-b border-slate-800/50">
-        <div className="container mx-auto px-4 lg:px-8 py-12 lg:py-16">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-medium mb-4">
-                <Sparkles className="w-3 h-3" />
-                Ready to innovate?
-              </div>
-              <h3 className="text-2xl lg:text-3xl font-display font-bold text-white mb-2">
-                Enterprise AI & Blockchain Solutions
-              </h3>
-              <p className="text-slate-400 max-w-md">
-                Get in touch to discuss your AI, blockchain, or enterprise technology needs.
-              </p>
-            </div>
-            <ContactSalesModal>
-              <Button size="xl" className="h-14 px-8 text-base font-semibold bg-gradient-to-r from-primary via-primary/90 to-primary bg-[length:200%_100%] hover:bg-[position:100%_0] transition-all duration-500 relative overflow-hidden group">
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-                Contact Sales
-                <ArrowUpRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </Button>
-            </ContactSalesModal>
-          </div>
-        </div>
-      </div>
 
       <div className="relative z-10">
         {/* Main Footer Content */}
