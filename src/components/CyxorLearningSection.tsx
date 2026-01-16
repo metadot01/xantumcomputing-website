@@ -102,12 +102,12 @@ const CyxorLearningSection = () => {
 
               {/* CTA */}
               <div className="flex-shrink-0">
-                <a href="https://www.cyxorlearning.co.uk" target="_blank" rel="noopener noreferrer" className="group">
-                  <Button variant="cyxor" size="xl" className="relative overflow-hidden">
-                    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                <a href="https://www.cyxorlearning.co.uk" target="_blank" rel="noopener noreferrer">
+                  <Button variant="cyxor" size="xl">
+                    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                     <GraduationCap className="w-5 h-5" />
                     Browse Courses
-                    <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
                   </Button>
                 </a>
               </div>
