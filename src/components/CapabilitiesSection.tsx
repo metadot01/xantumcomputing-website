@@ -30,10 +30,10 @@ const CapabilitiesSection = () => {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-14 md:mb-20">
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-surface-dark-foreground mb-6">
-            Technology <span className="text-secondary">Capabilities</span>
+            Digital <span className="text-secondary">Transformation</span>
           </h2>
           <p className="text-base md:text-lg text-surface-dark-foreground/70 max-w-2xl mx-auto">
-            Comprehensive technology solutions powered by our strategic partnership with Defantra Ltd, UK.
+            Consulting and technology solutions that drive secure, compliance-ready transformation for regulated enterprises.
           </p>
         </div>
 
