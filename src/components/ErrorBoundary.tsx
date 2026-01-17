@@ -27,15 +27,19 @@ export default class ErrorBoundary extends React.Component<Props, State> {
   };
 
   render() {
+    const isDevelopment = import.meta.env.DEV;
+    
     if (this.state.hasError) {
       return (
         <div className="min-h-screen bg-background flex items-center justify-center p-6">
           <div className="max-w-xl w-full border border-border rounded-xl p-6 bg-card">
             <h1 className="font-display text-2xl font-bold text-foreground mb-2">Something went wrong</h1>
             <p className="text-muted-foreground mb-4">
-              A component failed to render. Try reloading the page.
+              {isDevelopment 
+                ? "A component failed to render. Try reloading the page."
+                : "An unexpected error occurred. Please try again or return to the home page."}
             </p>
-            {this.state.error?.message ? (
+            {isDevelopment && this.state.error?.message ? (
               <pre className="text-xs bg-muted/50 border border-border rounded-lg p-3 overflow-auto mb-4">
                 {this.state.error.message}
               </pre>
