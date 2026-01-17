@@ -19,12 +19,14 @@ const buttonVariants = cva(
         hero: "bg-secondary text-secondary-foreground font-semibold shadow-lg shadow-secondary/20 hover:bg-accent hover:shadow-2xl hover:shadow-accent/40 hover:scale-[1.03] active:scale-[0.98]",
         // Secondary outline CTA - White with Deep Navy border
         heroOutline: "border-2 border-primary bg-white text-primary hover:bg-accent hover:text-accent-foreground hover:border-accent font-semibold hover:shadow-lg hover:shadow-accent/20 hover:scale-[1.02] active:scale-[0.98]",
-        // CYXOR Blue button
-        cyxor: "btn-gradient-cyxor text-cyxor-foreground font-semibold shadow-lg shadow-cyxor/20 hover:shadow-2xl hover:shadow-cyxor/40 hover:scale-[1.03] active:scale-[0.98] border border-white/10",
+        // CYXOR Teal button - matches brand teal #2DD4BF
+        cyxor: "bg-cyxor text-cyxor-foreground font-semibold shadow-lg shadow-cyxor/20 hover:brightness-110 hover:shadow-2xl hover:shadow-cyxor/40 hover:scale-[1.03] active:scale-[0.98]",
         // CYXOR outline
-        cyxorOutline: "border-2 border-cyxor/40 bg-cyxor/5 backdrop-blur-sm text-cyxor hover:bg-cyxor hover:text-cyxor-foreground font-semibold hover:shadow-lg hover:shadow-cyxor/20 hover:scale-[1.02] active:scale-[0.98]",
-        // Defantra with Mint Tech Green
-        defantra: "bg-accent text-accent-foreground font-semibold shadow-lg shadow-accent/20 hover:bg-secondary hover:text-secondary-foreground hover:shadow-2xl hover:shadow-secondary/40 hover:scale-[1.03] active:scale-[0.98]",
+        cyxorOutline: "border-2 border-cyxor/50 bg-cyxor/5 backdrop-blur-sm text-cyxor hover:bg-cyxor hover:text-cyxor-foreground font-semibold hover:shadow-lg hover:shadow-cyxor/20 hover:scale-[1.02] active:scale-[0.98]",
+        // Defantra Cyan button - matches brand cyan #00B4E6
+        defantra: "bg-defantra text-defantra-foreground font-semibold shadow-lg shadow-defantra/20 hover:brightness-110 hover:shadow-2xl hover:shadow-defantra/40 hover:scale-[1.03] active:scale-[0.98]",
+        // Defantra outline
+        defantraOutline: "border-2 border-defantra/50 bg-defantra/5 backdrop-blur-sm text-defantra hover:bg-defantra hover:text-defantra-foreground font-semibold hover:shadow-lg hover:shadow-defantra/20 hover:scale-[1.02] active:scale-[0.98]",
         // On dark backgrounds
         heroDark: "bg-white text-primary font-semibold shadow-lg shadow-white/20 hover:bg-accent hover:text-accent-foreground hover:shadow-2xl hover:shadow-accent/30 hover:scale-[1.03] active:scale-[0.98]",
         heroOutlineDark: "border-2 border-white/30 bg-white/5 backdrop-blur-sm text-white hover:bg-white hover:text-primary font-semibold hover:shadow-lg hover:shadow-white/20 hover:scale-[1.02] active:scale-[0.98]",
