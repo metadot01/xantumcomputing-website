@@ -59,7 +59,7 @@ const CyxorLearningSection = () => {
             </h2>
           </div>
           <p className="text-sm text-muted-foreground max-w-md">
-            Workforce development in AI and compliance skills with verifiable credentials.
+            AI and compliance skills with verifiable credentials.
           </p>
         </div>
 
