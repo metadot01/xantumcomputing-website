@@ -89,15 +89,12 @@ const Header = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo & Company Name - Mobile Optimized */}
-            <Link to="/" className="flex items-center gap-2 md:gap-3 group" onClick={() => setIsMenuOpen(false)}>
-              <div className={`relative rounded-lg md:rounded-xl p-1.5 md:p-2 transition-all duration-300 ${
-                isScrolled ? "bg-primary/10" : "bg-gradient-to-br from-primary/15 to-secondary/15"
-              }`}>
-                <div className="absolute inset-0 rounded-lg md:rounded-xl bg-gradient-to-br from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <Link to="/" className="flex items-center gap-2 md:gap-3" onClick={() => setIsMenuOpen(false)}>
+              <div className="rounded-lg md:rounded-xl p-1.5 md:p-2 bg-primary/10">
                 <img 
                   src={xantumLogo} 
                   alt="Xantum Computing Logo" 
-                  className="relative w-7 h-7 md:w-8 md:h-8 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                  className="w-7 h-7 md:w-8 md:h-8 object-contain"
                 />
               </div>
               <div className="flex flex-col">
