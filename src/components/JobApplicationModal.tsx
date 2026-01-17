@@ -13,6 +13,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Send, Upload, FileText } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { jobApplicationSchema, JobApplicationFormData, sanitizeForMailto } from "@/lib/form-validation";
 
 interface JobApplicationModalProps {
   children: React.ReactNode;
@@ -24,20 +27,23 @@ const JobApplicationModal = ({ children, jobTitle, location }: JobApplicationMod
   const [open, setOpen] = useState(false);
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const { toast } = useToast();
-  
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    linkedIn: "",
-    coverLetter: "",
-  });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<JobApplicationFormData>({
+    resolver: zodResolver(jobApplicationSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      linkedIn: "",
+      coverLetter: "",
+    },
+  });
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -55,41 +61,41 @@ const JobApplicationModal = ({ children, jobTitle, location }: JobApplicationMod
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Validate required fields
-    if (!formData.firstName || !formData.lastName || !formData.email) {
-      toast({
-        title: "Missing information",
-        description: "Please fill in all required fields",
-        variant: "destructive",
-      });
-      return;
-    }
+  const onSubmit = (data: JobApplicationFormData) => {
+    // Sanitize all inputs before using in mailto
+    const sanitizedData = {
+      firstName: sanitizeForMailto(data.firstName),
+      lastName: sanitizeForMailto(data.lastName),
+      email: sanitizeForMailto(data.email),
+      phone: data.phone ? sanitizeForMailto(data.phone) : "",
+      linkedIn: data.linkedIn ? sanitizeForMailto(data.linkedIn) : "",
+      coverLetter: data.coverLetter ? sanitizeForMailto(data.coverLetter) : "",
+    };
 
     // Construct email body
     const emailBody = `
-Job Application for: ${jobTitle}
-Location: ${location}
+Job Application for: ${sanitizeForMailto(jobTitle)}
+Location: ${sanitizeForMailto(location)}
 
 APPLICANT DETAILS
 -----------------
-Name: ${formData.firstName} ${formData.lastName}
-Email: ${formData.email}
-Phone: ${formData.phone || "Not provided"}
-LinkedIn: ${formData.linkedIn || "Not provided"}
+Name: ${sanitizedData.firstName} ${sanitizedData.lastName}
+Email: ${sanitizedData.email}
+Phone: ${sanitizedData.phone || "Not provided"}
+LinkedIn: ${sanitizedData.linkedIn || "Not provided"}
 
 COVER LETTER
 ------------
-${formData.coverLetter || "Not provided"}
+${sanitizedData.coverLetter || "Not provided"}
 
 ---
 Note: Please attach your resume to this email before sending.
     `.trim();
 
     // Open email client
-    const mailtoLink = `mailto:careers@xantumcomputing.com?subject=Application for ${encodeURIComponent(jobTitle)} - ${encodeURIComponent(formData.firstName)} ${encodeURIComponent(formData.lastName)}&body=${encodeURIComponent(emailBody)}`;
+    const mailtoLink = `mailto:careers@xantumcomputing.com?subject=${encodeURIComponent(
+      `Application for ${sanitizeForMailto(jobTitle)} - ${sanitizedData.firstName} ${sanitizedData.lastName}`
+    )}&body=${encodeURIComponent(emailBody)}`;
     
     window.location.href = mailtoLink;
 
@@ -99,14 +105,7 @@ Note: Please attach your resume to this email before sending.
     });
 
     // Reset form and close modal
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      linkedIn: "",
-      coverLetter: "",
-    });
+    reset();
     setResumeFile(null);
     setOpen(false);
   };
@@ -122,29 +121,31 @@ Note: Please attach your resume to this email before sending.
           </DialogDescription>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 mt-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="firstName">First Name *</Label>
               <Input
                 id="firstName"
-                name="firstName"
-                value={formData.firstName}
-                onChange={handleInputChange}
                 placeholder="John"
-                required
+                maxLength={50}
+                {...register("firstName")}
               />
+              {errors.firstName && (
+                <p className="text-sm text-destructive">{errors.firstName.message}</p>
+              )}
             </div>
             <div className="space-y-2">
               <Label htmlFor="lastName">Last Name *</Label>
               <Input
                 id="lastName"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleInputChange}
                 placeholder="Doe"
-                required
+                maxLength={50}
+                {...register("lastName")}
               />
+              {errors.lastName && (
+                <p className="text-sm text-destructive">{errors.lastName.message}</p>
+              )}
             </div>
           </div>
 
@@ -152,37 +153,42 @@ Note: Please attach your resume to this email before sending.
             <Label htmlFor="email">Email Address *</Label>
             <Input
               id="email"
-              name="email"
               type="email"
-              value={formData.email}
-              onChange={handleInputChange}
               placeholder="john.doe@example.com"
-              required
+              maxLength={100}
+              {...register("email")}
             />
+            {errors.email && (
+              <p className="text-sm text-destructive">{errors.email.message}</p>
+            )}
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="phone">Phone Number</Label>
             <Input
               id="phone"
-              name="phone"
               type="tel"
-              value={formData.phone}
-              onChange={handleInputChange}
               placeholder="+91 98765 43210"
+              maxLength={20}
+              {...register("phone")}
             />
+            {errors.phone && (
+              <p className="text-sm text-destructive">{errors.phone.message}</p>
+            )}
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="linkedIn">LinkedIn Profile</Label>
             <Input
               id="linkedIn"
-              name="linkedIn"
               type="url"
-              value={formData.linkedIn}
-              onChange={handleInputChange}
               placeholder="https://linkedin.com/in/yourprofile"
+              maxLength={200}
+              {...register("linkedIn")}
             />
+            {errors.linkedIn && (
+              <p className="text-sm text-destructive">{errors.linkedIn.message}</p>
+            )}
           </div>
 
           <div className="space-y-2">
@@ -216,12 +222,14 @@ Note: Please attach your resume to this email before sending.
             <Label htmlFor="coverLetter">Cover Letter (Optional)</Label>
             <Textarea
               id="coverLetter"
-              name="coverLetter"
-              value={formData.coverLetter}
-              onChange={handleInputChange}
               placeholder="Tell us why you're interested in this role and what makes you a great fit..."
               rows={4}
+              maxLength={3000}
+              {...register("coverLetter")}
             />
+            {errors.coverLetter && (
+              <p className="text-sm text-destructive">{errors.coverLetter.message}</p>
+            )}
           </div>
 
           <div className="bg-muted/50 rounded-lg p-4 text-sm text-muted-foreground">
@@ -234,7 +242,7 @@ Note: Please attach your resume to this email before sending.
             </p>
           </div>
 
-          <Button type="submit" className="w-full" size="lg">
+          <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
             <Send className="w-4 h-4 mr-2" />
             Open Email to Apply
           </Button>

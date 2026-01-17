@@ -5,8 +5,71 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock, Send, Building2, Globe, ArrowRight } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { contactPageSchema, ContactPageFormData, sanitizeForMailto } from "@/lib/form-validation";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const { toast } = useToast();
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactPageFormData>({
+    resolver: zodResolver(contactPageSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      company: "",
+      subject: "",
+      message: "",
+    },
+  });
+
+  const onSubmit = (data: ContactPageFormData) => {
+    // Sanitize all inputs before using in mailto
+    const sanitizedData = {
+      firstName: sanitizeForMailto(data.firstName),
+      lastName: sanitizeForMailto(data.lastName),
+      email: sanitizeForMailto(data.email),
+      phone: data.phone ? sanitizeForMailto(data.phone) : "",
+      company: sanitizeForMailto(data.company),
+      subject: sanitizeForMailto(data.subject),
+      message: sanitizeForMailto(data.message),
+    };
+
+    const emailBody = `
+Contact Request from ${sanitizedData.firstName} ${sanitizedData.lastName}
+
+Company: ${sanitizedData.company}
+Email: ${sanitizedData.email}
+Phone: ${sanitizedData.phone || "Not provided"}
+
+Subject: ${sanitizedData.subject}
+
+Message:
+${sanitizedData.message}
+    `.trim();
+
+    const mailtoLink = `mailto:contact@xantumcomputing.com?subject=${encodeURIComponent(
+      sanitizedData.subject
+    )}&body=${encodeURIComponent(emailBody)}`;
+
+    window.location.href = mailtoLink;
+
+    toast({
+      title: "Email client opened",
+      description: "Please send the email to complete your message.",
+    });
+
+    reset();
+  };
+
   const offices = [
     {
       name: "Madhugiri Office",
@@ -73,7 +136,7 @@ const Contact = () => {
                     Fill out the form below and our team will get back to you within 24 hours.
                   </p>
                   
-                  <form className="space-y-6">
+                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="firstName" className="text-foreground font-medium">First Name *</Label>
@@ -81,7 +144,12 @@ const Contact = () => {
                           id="firstName" 
                           placeholder="John" 
                           className="h-12 bg-background/50 border-border focus:border-primary"
+                          maxLength={50}
+                          {...register("firstName")}
                         />
+                        {errors.firstName && (
+                          <p className="text-sm text-destructive">{errors.firstName.message}</p>
+                        )}
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="lastName" className="text-foreground font-medium">Last Name *</Label>
@@ -89,7 +157,12 @@ const Contact = () => {
                           id="lastName" 
                           placeholder="Doe" 
                           className="h-12 bg-background/50 border-border focus:border-primary"
+                          maxLength={50}
+                          {...register("lastName")}
                         />
+                        {errors.lastName && (
+                          <p className="text-sm text-destructive">{errors.lastName.message}</p>
+                        )}
                       </div>
                     </div>
                     <div className="grid sm:grid-cols-2 gap-4">
@@ -100,7 +173,12 @@ const Contact = () => {
                           type="email" 
                           placeholder="john@company.com" 
                           className="h-12 bg-background/50 border-border focus:border-primary"
+                          maxLength={100}
+                          {...register("email")}
                         />
+                        {errors.email && (
+                          <p className="text-sm text-destructive">{errors.email.message}</p>
+                        )}
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="phone" className="text-foreground font-medium">Phone Number</Label>
@@ -109,7 +187,12 @@ const Contact = () => {
                           type="tel" 
                           placeholder="+91 98765 43210" 
                           className="h-12 bg-background/50 border-border focus:border-primary"
+                          maxLength={20}
+                          {...register("phone")}
                         />
+                        {errors.phone && (
+                          <p className="text-sm text-destructive">{errors.phone.message}</p>
+                        )}
                       </div>
                     </div>
                     <div className="space-y-2">
@@ -118,7 +201,12 @@ const Contact = () => {
                         id="company" 
                         placeholder="Your Company" 
                         className="h-12 bg-background/50 border-border focus:border-primary"
+                        maxLength={100}
+                        {...register("company")}
                       />
+                      {errors.company && (
+                        <p className="text-sm text-destructive">{errors.company.message}</p>
+                      )}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="subject" className="text-foreground font-medium">Subject *</Label>
@@ -126,7 +214,12 @@ const Contact = () => {
                         id="subject" 
                         placeholder="How can we help your business?" 
                         className="h-12 bg-background/50 border-border focus:border-primary"
+                        maxLength={150}
+                        {...register("subject")}
                       />
+                      {errors.subject && (
+                        <p className="text-sm text-destructive">{errors.subject.message}</p>
+                      )}
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="message" className="text-foreground font-medium">Message *</Label>
@@ -134,9 +227,14 @@ const Contact = () => {
                         id="message" 
                         placeholder="Tell us about your project requirements, timeline, and any specific challenges you're facing..."
                         className="min-h-[150px] bg-background/50 border-border focus:border-primary resize-none"
+                        maxLength={2000}
+                        {...register("message")}
                       />
+                      {errors.message && (
+                        <p className="text-sm text-destructive">{errors.message.message}</p>
+                      )}
                     </div>
-                    <Button type="submit" className="w-full h-12 text-base font-semibold" size="lg">
+                    <Button type="submit" className="w-full h-12 text-base font-semibold" size="lg" disabled={isSubmitting}>
                       <Send className="w-4 h-4 mr-2" />
                       Send Message
                       <ArrowRight className="w-4 h-4 ml-2" />
