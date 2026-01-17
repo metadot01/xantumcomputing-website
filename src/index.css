@@ -20,13 +20,14 @@
     --cta: 193 100% 45%;
     --cta-foreground: 0 0% 100%;
 
-    /* CYXOR Blue - Professional Blue #2563EB */
-    --cyxor: 217 91% 53%;
+    /* CYXOR - Dark Navy #1E3A5F with Teal accent #2DD4BF */
+    --cyxor: 168 64% 51%;
     --cyxor-foreground: 0 0% 100%;
+    --cyxor-dark: 210 52% 24%;
 
-    /* Defantra - Mint Tech Green #5FD3B3 */
-    --defantra: 162 56% 60%;
-    --defantra-foreground: 212 68% 12%;
+    /* Defantra - Bright Cyan #00B4E6 (from logo) */
+    --defantra: 193 100% 45%;
+    --defantra-foreground: 0 0% 100%;
 
     /* Purple - Premium features #7C3AED */
     --purple: 263 70% 58%;
@@ -86,12 +87,13 @@
     --gradient-hero: linear-gradient(135deg, hsl(212 68% 12%) 0%, hsl(193 100% 45%) 100%);
     --gradient-primary: linear-gradient(135deg, hsl(212 68% 12%) 0%, hsl(193 100% 45%) 100%);
     --gradient-cta: linear-gradient(135deg, hsl(193 100% 45%) 0%, hsl(162 56% 60%) 100%);
-    --gradient-cyxor: linear-gradient(135deg, hsl(217 91% 53%) 0%, hsl(221 83% 43%) 100%);
-    --gradient-defantra: linear-gradient(135deg, hsl(162 56% 60%) 0%, hsl(193 100% 45%) 100%);
+    --gradient-cyxor: linear-gradient(135deg, hsl(210 52% 24%) 0%, hsl(168 64% 51%) 100%);
+    --gradient-defantra: linear-gradient(135deg, hsl(210 52% 20%) 0%, hsl(193 100% 45%) 100%);
     --gradient-text: linear-gradient(135deg, hsl(193 100% 45%) 0%, hsl(162 56% 60%) 100%);
     --glow-primary: 0 0 40px hsl(212 68% 12% / 0.25);
     --glow-cta: 0 0 40px hsl(193 100% 45% / 0.3);
-    --glow-cyxor: 0 0 40px hsl(217 91% 53% / 0.3);
+    --glow-cyxor: 0 0 40px hsl(168 64% 51% / 0.3);
+    --glow-defantra: 0 0 40px hsl(193 100% 45% / 0.3);
     --shadow-card: 0 4px 24px -4px hsl(0 0% 11% / 0.08);
     --shadow-elevated: 0 12px 40px -8px hsl(0 0% 11% / 0.15);
   }

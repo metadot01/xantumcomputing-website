@@ -44,7 +44,7 @@ const CyxorLearningSection = () => {
       {/* Background Effects */}
       <div className="absolute inset-0 tech-pattern opacity-20" />
       <div className="absolute top-0 left-0 w-72 h-72 bg-cyxor/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-cyxor/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Compact Header */}
@@ -112,20 +112,20 @@ const CyxorLearningSection = () => {
           </div>
 
           {/* Middle Column - Features Grid */}
-          <div className="lg:col-span-5 surface-dark rounded-2xl p-5 border border-border/10 flex flex-col">
+          <div className="lg:col-span-5 bg-[hsl(210,52%,24%)] rounded-2xl p-5 border border-cyxor/20 flex flex-col">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
-                <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyxor to-secondary flex items-center justify-center">
+                <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyxor to-cyxor/70 flex items-center justify-center">
                   <Award className="w-4.5 h-4.5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-base text-surface-dark-foreground">Learning Features</h3>
-                  <p className="text-surface-dark-foreground/50 text-[10px]">What sets us apart</p>
+                  <h3 className="font-display font-bold text-base text-white">Learning Features</h3>
+                  <p className="text-white/50 text-[10px]">What sets us apart</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-3.5 h-3.5 text-cyxor" />
-                <span className="text-[10px] text-surface-dark-foreground/60">Blockchain Verified</span>
+                <span className="text-[10px] text-white/60">Blockchain Verified</span>
               </div>
             </div>
 
@@ -141,14 +141,14 @@ const CyxorLearningSection = () => {
                       <feature.icon className="w-3.5 h-3.5 text-cyxor transition-colors duration-300 group-hover/card:text-cyxor" />
                     </div>
                   </div>
-                  <h4 className="font-semibold text-surface-dark-foreground text-xs mb-0.5 transition-colors duration-300 group-hover/card:text-white">{feature.title}</h4>
-                  <p className="text-surface-dark-foreground/50 text-[10px] leading-tight transition-colors duration-300 group-hover/card:text-surface-dark-foreground/70">{feature.description}</p>
+                  <h4 className="font-semibold text-white text-xs mb-0.5 transition-colors duration-300 group-hover/card:text-white">{feature.title}</h4>
+                  <p className="text-white/50 text-[10px] leading-tight transition-colors duration-300 group-hover/card:text-white/70">{feature.description}</p>
                 </div>
               ))}
             </div>
 
             <a href="https://www.cyxorlearning.co.uk" target="_blank" rel="noopener noreferrer" className="block mt-4">
-              <Button variant="hero" size="default" className="w-full bg-gradient-to-r from-cyxor to-secondary hover:shadow-cyxor/30">
+              <Button variant="cyxor" size="default" className="w-full">
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                 <BookOpen className="w-4 h-4" />
                 Start Learning
@@ -160,7 +160,7 @@ const CyxorLearningSection = () => {
           {/* Right Column - Partners & CTA */}
           <div className="lg:col-span-3 flex flex-col gap-4">
             {/* Trusted By Card */}
-            <div className="bg-gradient-to-br from-cyxor via-cyxor/95 to-secondary/90 rounded-2xl p-5 border border-white/10 flex-1">
+            <div className="bg-gradient-to-br from-[hsl(210,52%,24%)] via-[hsl(210,52%,20%)] to-cyxor/80 rounded-2xl p-5 border border-cyxor/20 flex-1">
               <div className="text-center mb-4">
                 <Users className="w-8 h-8 text-white/80 mx-auto mb-2" />
                 <p className="text-white/70 text-xs uppercase tracking-wider mb-1">Trusted By</p>
@@ -186,8 +186,8 @@ const CyxorLearningSection = () => {
                   <p className="text-2xl font-bold text-cyxor">UK</p>
                   <p className="text-[10px] text-muted-foreground">Focused</p>
                 </div>
-                <div className="text-center p-2 rounded-lg bg-muted/50 transition-all duration-300 hover:bg-secondary/10 hover:scale-105 cursor-pointer">
-                  <p className="text-2xl font-bold text-secondary">24/7</p>
+                <div className="text-center p-2 rounded-lg bg-muted/50 transition-all duration-300 hover:bg-cyxor/10 hover:scale-105 cursor-pointer">
+                  <p className="text-2xl font-bold text-cyxor">24/7</p>
                   <p className="text-[10px] text-muted-foreground">Access</p>
                 </div>
                 <div className="text-center p-2 rounded-lg bg-muted/50 transition-all duration-300 hover:bg-green-500/10 hover:scale-105 cursor-pointer">

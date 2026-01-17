@@ -49,7 +49,7 @@ const DefantraPartnershipSection = () => {
       {/* Background */}
       <div className="absolute inset-0 tech-pattern opacity-20" />
       <div className="absolute top-0 right-0 w-72 h-72 bg-defantra/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-defantra/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Compact Header */}
@@ -111,7 +111,7 @@ const DefantraPartnershipSection = () => {
           <div className="lg:col-span-5 surface-dark rounded-2xl p-5 border border-border/10 flex flex-col">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2">
-                <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-secondary to-defantra flex items-center justify-center">
+                <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-defantra to-defantra/70 flex items-center justify-center">
                   <Rocket className="w-4.5 h-4.5 text-white" />
                 </div>
                 <div>
@@ -122,7 +122,7 @@ const DefantraPartnershipSection = () => {
               <div className="flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
                 <span className="text-[10px] text-surface-dark-foreground/60">1 Live</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary/60 ml-2" />
+                <span className="w-1.5 h-1.5 rounded-full bg-defantra/60 ml-2" />
                 <span className="text-[10px] text-surface-dark-foreground/60">3 Coming</span>
               </div>
             </div>
@@ -135,19 +135,19 @@ const DefantraPartnershipSection = () => {
                   className={`p-3 rounded-xl border transition-all duration-300 cursor-pointer group/card ${
                     module.status === 'live' 
                       ? 'bg-green-500/10 border-green-500/30 hover:bg-green-500/20 hover:border-green-500/50 hover:shadow-lg hover:shadow-green-500/10 hover:scale-[1.02]' 
-                      : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-secondary/30 hover:shadow-lg hover:shadow-secondary/10 hover:scale-[1.02]'
+                      : 'bg-white/5 border-white/10 hover:bg-defantra/10 hover:border-defantra/30 hover:shadow-lg hover:shadow-defantra/10 hover:scale-[1.02]'
                   }`}
                 >
                   <div className="flex items-center gap-2 mb-1.5">
                     <div className={`w-7 h-7 rounded-md flex items-center justify-center transition-transform duration-300 group-hover/card:scale-110 ${
-                      module.status === 'live' ? 'bg-green-500/20' : 'bg-secondary/20'
+                      module.status === 'live' ? 'bg-green-500/20' : 'bg-defantra/20'
                     }`}>
-                      <module.icon className={`w-3.5 h-3.5 transition-colors duration-300 ${module.status === 'live' ? 'text-green-400 group-hover/card:text-green-300' : 'text-secondary group-hover/card:text-secondary'}`} />
+                      <module.icon className={`w-3.5 h-3.5 transition-colors duration-300 ${module.status === 'live' ? 'text-green-400 group-hover/card:text-green-300' : 'text-defantra group-hover/card:text-defantra'}`} />
                     </div>
                     <span className={`px-1.5 py-0.5 rounded text-[9px] font-medium transition-all duration-300 ${
                       module.status === 'live' 
                         ? 'bg-green-500/20 text-green-400' 
-                        : 'bg-secondary/20 text-secondary'
+                        : 'bg-defantra/20 text-defantra'
                     }`}>
                       {module.statusLabel}
                     </span>
@@ -171,7 +171,7 @@ const DefantraPartnershipSection = () => {
           {/* Right Column - Countdown & CTA */}
           <div className="lg:col-span-3 flex flex-col gap-4">
             {/* Countdown Card */}
-            <div className="bg-gradient-to-br from-primary via-primary/95 to-secondary/90 rounded-2xl p-5 border border-white/10 flex-1">
+            <div className="bg-gradient-to-br from-[hsl(210,52%,20%)] via-[hsl(210,52%,15%)] to-[hsl(193,100%,30%)] rounded-2xl p-5 border border-defantra/20 flex-1">
               <div className="text-center">
                 <p className="text-white/70 text-xs uppercase tracking-wider mb-2">Next Module Launch</p>
                 <h4 className="font-display font-bold text-white text-lg mb-1">Vendor Risk</h4>
@@ -194,7 +194,7 @@ const DefantraPartnershipSection = () => {
                   <p className="text-[10px] text-muted-foreground">Live Now</p>
                 </div>
                 <div className="text-center p-2 rounded-lg bg-muted/50">
-                  <p className="text-2xl font-bold text-secondary">UK</p>
+                  <p className="text-2xl font-bold text-defantra">UK</p>
                   <p className="text-[10px] text-muted-foreground">& USA</p>
                 </div>
                 <div className="text-center p-2 rounded-lg bg-muted/50">
