@@ -20,9 +20,9 @@
     --cta: 207 48% 47%;
     --cta-foreground: 0 0% 100%;
 
-    /* CYXOR Gold - Professional Gold #D4A84B */
-    --cyxor: 43 62% 56%;
-    --cyxor-foreground: 220 81% 11%;
+    /* CYXOR Blue - Professional Blue #2563EB */
+    --cyxor: 217 91% 53%;
+    --cyxor-foreground: 0 0% 100%;
 
     /* Defantra Teal - Soft Teal #14B8A6 */
     --defantra: 173 80% 40%;
@@ -85,12 +85,12 @@
     --gradient-hero: linear-gradient(135deg, hsl(220 81% 21%) 0%, hsl(207 48% 47%) 100%);
     --gradient-primary: linear-gradient(135deg, hsl(220 81% 21%) 0%, hsl(207 48% 47%) 100%);
     --gradient-cta: linear-gradient(135deg, hsl(207 48% 47%) 0%, hsl(160 85% 30%) 100%);
-    --gradient-cyxor: linear-gradient(135deg, hsl(43 62% 56%) 0%, hsl(43 70% 45%) 100%);
+    --gradient-cyxor: linear-gradient(135deg, hsl(217 91% 53%) 0%, hsl(221 83% 43%) 100%);
     --gradient-defantra: linear-gradient(135deg, hsl(173 80% 40%) 0%, hsl(207 48% 47%) 100%);
     --gradient-text: linear-gradient(135deg, hsl(207 48% 47%) 0%, hsl(160 85% 30%) 100%);
     --glow-primary: 0 0 40px hsl(220 81% 21% / 0.25);
     --glow-cta: 0 0 40px hsl(207 48% 47% / 0.3);
-    --glow-cyxor: 0 0 40px hsl(43 62% 56% / 0.3);
+    --glow-cyxor: 0 0 40px hsl(217 91% 53% / 0.3);
     --shadow-card: 0 4px 24px -4px hsl(0 0% 11% / 0.08);
     --shadow-elevated: 0 12px 40px -8px hsl(0 0% 11% / 0.15);
   }
@@ -264,10 +264,10 @@
 
   @keyframes pulse-glow {
     0%, 100% {
-      box-shadow: 0 0 20px hsl(43 62% 56% / 0.3);
+      box-shadow: 0 0 20px hsl(217 91% 53% / 0.3);
     }
     50% {
-      box-shadow: 0 0 40px hsl(43 62% 56% / 0.5);
+      box-shadow: 0 0 40px hsl(217 91% 53% / 0.5);
     }
   }
 
