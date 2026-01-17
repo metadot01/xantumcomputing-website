@@ -55,7 +55,7 @@ const CyxorLearningSection = () => {
               <span className="text-xs font-medium text-cyxor">CYXOR Learning</span>
             </span>
             <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">
-              Workforce <span className="text-cyxor">Learning</span>
+              Workforce <span className="text-cyxor">Development</span>
             </h2>
           </div>
           <p className="text-sm text-muted-foreground max-w-md">
